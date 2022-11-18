@@ -28,7 +28,6 @@ function Header(props) {
             <ul className="navbar-nav m-auto">
               <li className="nav-item dropdown">
                 <Link
-                  to={"/"}
                   className="nav-link dropdown-toggle mx-2"
                   id="navbarDropdownMenuLink"
                   role="button"
@@ -42,27 +41,19 @@ function Header(props) {
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Action
-                    </Link>
+                    <Link className="dropdown-item">Action</Link>
                   </li>
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Another action
-                    </Link>
+                    <Link className="dropdown-item">Another action</Link>
                   </li>
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Something else here
-                    </Link>
+                    <Link className="dropdown-item">Something else here</Link>
                   </li>
                 </ul>
               </li>
 
               <li className="nav-item dropdown mx-3">
                 <Link
-                  to={"/"}
-                  href="#/"
                   className="nav-link dropdown-toggle mx-2"
                   id="navbarDropdown"
                   role="button"
@@ -73,25 +64,18 @@ function Header(props) {
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Resources 1
-                    </Link>
+                    <Link className="dropdown-item">Resources 1</Link>
                   </li>
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Resources 2
-                    </Link>
+                    <Link className="dropdown-item">Resources 2</Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link to={"/"} className="nav-link mx-3">
-                  Pricing
-                </Link>
+                <Link className="nav-link mx-3">Pricing</Link>
               </li>
               <li className="nav-item dropdown mx-3">
                 <Link
-                  to={"/"}
                   className="nav-link dropdown-toggle mx-2"
                   id="navbarDropdown"
                   role="button"
@@ -102,14 +86,10 @@ function Header(props) {
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Approach 1
-                    </Link>
+                    <Link className="dropdown-item">Approach 1</Link>
                   </li>
                   <li>
-                    <Link to={"/"} className="dropdown-item">
-                      Approach 2
-                    </Link>
+                    <Link className="dropdown-item">Approach 2</Link>
                   </li>
                 </ul>
               </li>
@@ -150,11 +130,7 @@ function Header(props) {
         <nav className="nav-drill">
           <ul className="nav-items nav-level-1">
             <li className={`nav-item nav-expand ${setnavistoggledsubnew}`}>
-              <Link
-                to={"/"}
-                onClick={handleClick}
-                className="nav-link nav-expand-link"
-              >
+              <Link onClick={handleClick} className="nav-link nav-expand-link">
                 Product
                 <svg
                   className="mx-1"
@@ -174,7 +150,6 @@ function Header(props) {
                 <li className="nav-item">
                   <Link
                     className="nav-link nav-back-link"
-                    to={"/"}
                     onClick={handleClick}
                   >
                     <svg
@@ -194,23 +169,15 @@ function Header(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Product 1
-                  </Link>
+                  <Link className="nav-link">Product 1</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Product 2
-                  </Link>
+                  <Link className="nav-link">Product 2</Link>
                 </li>
               </ul>
             </li>
             <li className={`nav-item nav-expand ${setnavistoggledsubnew}`}>
-              <Link
-                to={"/"}
-                onClick={handleClick}
-                className="nav-link nav-expand-link"
-              >
+              <Link onClick={handleClick} className="nav-link nav-expand-link">
                 Resources
                 <svg
                   className="mx-1"
@@ -230,7 +197,6 @@ function Header(props) {
                 <li className="nav-item">
                   <Link
                     className="nav-link nav-back-link"
-                    to={"/"}
                     onClick={handleClick}
                   >
                     <svg
@@ -250,28 +216,18 @@ function Header(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Resources 1
-                  </Link>
+                  <Link className="nav-link">Resources 1</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Resources 2
-                  </Link>
+                  <Link className="nav-link">Resources 2</Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <Link to={"/"} className="nav-link">
-                Pricing
-              </Link>
+              <Link className="nav-link">Pricing</Link>
             </li>
             <li className={`nav-item nav-expand ${setnavistoggledsubnew}`}>
-              <Link
-                to={"/"}
-                onClick={handleClick}
-                className="nav-link nav-expand-link"
-              >
+              <Link onClick={handleClick} className="nav-link nav-expand-link">
                 Approach
                 <svg
                   className="mx-1"
@@ -291,7 +247,6 @@ function Header(props) {
                 <li className="nav-item">
                   <Link
                     className="nav-link nav-back-link"
-                    to={"/"}
                     onClick={handleClick}
                   >
                     <svg
@@ -311,17 +266,20 @@ function Header(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Approach 1
-                  </Link>
+                  <Link className="nav-link">Approach 1</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Approach 2
-                  </Link>
+                  <Link className="nav-link">Approach 2</Link>
                 </li>
               </ul>
             </li>
+            <div className=" ms-auto mobile-color">
+              <Link to={"/loginstep1"} className="nav-link">
+                Login or Register
+              </Link>
+
+              <button className="btn theme-btn ms-4">Start Free Trial</button>
+            </div>
           </ul>
         </nav>
       </div>

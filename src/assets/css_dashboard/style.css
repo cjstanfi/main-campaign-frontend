@@ -1221,7 +1221,7 @@ label {
   height: 90vh;
   margin-top: 10vh;
   background: rgba(59, 79, 152, 0.8);
-    border: 1px solid rgba(59, 79, 152, 0.8);
+  border: 1px solid rgba(59, 79, 152, 0.8);
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -1313,10 +1313,11 @@ label {
   display: none;
 }
 
-@media (max-width: 768px){
-  h2, h1 {
+@media (max-width: 768px) {
+  h2,
+  h1 {
     font-size: 40px;
-}
+  }
 }
 
 .navbar a.dropdown-toggle:after {
@@ -1330,11 +1331,11 @@ label {
   border-left: 0.3em solid transparent;
 }
 
-.margin-auto{
+.margin-auto {
   margin: auto;
 }
-.loading-main{
-  background-color: rgba(0, 0, 0, .5);
+.loading-main {
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   box-sizing: border-box;
   font-size: 1px;
@@ -1353,4 +1354,33 @@ label {
   width: 50px;
   position: relative;
   top: 47%;
+}
+.mobile-color button {
+  background: #fff;
+  color: #000;
+  margin-top: 16px !important;
+  margin-left: 15px !important;
+}
+.mobile-color button:hover {
+  background: #3b5998;
+  color: #fff;
+}
+.new-ab {
+  top: 70px;
+  right: 16px;
+}
+.revenue-section .nav-tabs .nav-link.active,
+.analytics-section .nav-tabs .nav-link.active {
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .homepage .subscribe-btn .theme-btn {
+    width: auto !important;
+  }
+  .text-md-center {
+    text-align: center;
+  }
+  .new-ab {
+    top: 59px;
+  }
 }

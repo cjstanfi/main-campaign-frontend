@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function LoginExpandContentStep4() {
   return (
     <>
-      <div className="row m-0 p-0 position-relative login-section animation-element bounce-up thirdStep in-view">
+      <div className="row p-0 position-relative login-section animation-element bounce-up thirdStep in-view">
         <div className="container main-container subject">
           <h2 className="text-center color-black2">Let’s go!</h2>
           <div className="row m-0 p-0 position-relative ">
@@ -122,7 +122,7 @@ export default function LoginExpandContentStep4() {
             </div>
             <div className="container-style CRM py-sm-5 py-4 mt-sm-4 mt-3">
               <div className="d-flex justify-content-center">
-                <div className="d-flex m-flex-column">
+                <div className="d-flex m-flex-column text-md-center">
                   <Link to={"/loginstep4"}>
                     <img src={CRMimg1} alt="" />
                   </Link>

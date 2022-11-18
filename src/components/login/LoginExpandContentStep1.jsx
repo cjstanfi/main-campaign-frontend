@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import arrowup from "../../assets/img/arrow-up.svg";
 import arrowdown from "../../assets/img/arrow-down.svg";
 import "../../assets/css/mdb.min.css";
@@ -23,8 +23,16 @@ export default function LoginExpand1ContentStep1(props) {
   };
   const password = useRef({});
   password.current = watch("password", "");
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [repasswordShown, setrePasswordShown] = useState(false);
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const togglerePassword = () => {
+    setrePasswordShown(!repasswordShown);
+  };
   return (
-    <div className="row m-0 p-0 position-relative login-section secondStep animation-element bounce-up in-view">
+    <div className="row p-0 position-relative login-section secondStep animation-element bounce-up in-view">
       <div className="container main-container subject">
         <h2 className="text-center color-black2">Let’s go!</h2>
         <div className="row m-0 p-0 position-relative ">
@@ -217,13 +225,13 @@ export default function LoginExpand1ContentStep1(props) {
                     </div>
                   </div>
                   <div className="d-flex m-flex-column">
-                    <div className="d-flex flex-column">
+                    <div className="position-relative d-flex flex-column">
                       <label className="color-black2 mt-sm-3 mt-3">
                         Choose password
                       </label>
                       <input
                         className="custom-input mt-2"
-                        type="text"
+                        type={passwordShown ? "text" : "password"}
                         placeholder="Min. 8 Characters"
                         name="password"
                         {...register("password", {
@@ -233,6 +241,7 @@ export default function LoginExpand1ContentStep1(props) {
                         })}
                         aria-invalid={errors.password ? "true" : "false"}
                       />
+
                       {errors.password &&
                         errors.password.type === "required" && (
                           <span>Password is required"</span>
@@ -245,19 +254,22 @@ export default function LoginExpand1ContentStep1(props) {
                         errors.password.type === "minLength" && (
                           <span>Please enter atleast 8 Characters</span>
                         )}
-                      <div className="position-relative">
-                        <Link className="position-absolute font-14 color-black1 show-label font-600">
+                      <div className="position-absolute new-ab">
+                        <Link
+                          className="font-14 color-black1 show-label font-600"
+                          onClick={togglePassword}
+                        >
                           SHOW
                         </Link>
                       </div>
                     </div>
-                    <div className="d-flex flex-column ps-sm-5">
+                    <div className="position-relative d-flex flex-column ps-sm-5">
                       <label className="color-black2 mt-sm-3 mt-3">
                         Re-enter password
                       </label>
                       <input
                         className="custom-input mt-2"
-                        type="text"
+                        type={repasswordShown ? "text" : "password"}
                         placeholder="Min. 8 Characters"
                         name="confirmPassword"
                         {...register("confirmPassword", {
@@ -286,8 +298,11 @@ export default function LoginExpand1ContentStep1(props) {
                           <span>Confirm Password is required</span>
                         )}
 
-                      <div className="position-relative">
-                        <Link className="position-absolute font-14 color-black1 show-label font-600">
+                      <div className="position-absolute new-ab">
+                        <Link
+                          className="font-14 color-black1 show-label font-600"
+                          onClick={togglerePassword}
+                        >
                           SHOW
                         </Link>
                       </div>

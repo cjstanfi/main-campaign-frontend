@@ -131,12 +131,10 @@ export default function Footer(props) {
                       </Link>
                     </div>
                     <div className="row m-0 p-0 position-relative mt-2">
-                      <Link to={"/"} className="color-black1 font-opacity">
-                        Pricing
-                      </Link>
+                      <Link className="color-black1 font-opacity">Pricing</Link>
                     </div>
                     <div className="row m-0 p-0 position-relative mt-2">
-                      <Link to={"/"} className="color-black1 font-opacity">
+                      <Link className="color-black1 font-opacity">
                         Start free trial
                       </Link>
                     </div>
@@ -148,14 +146,12 @@ export default function Footer(props) {
                       </h5>
                     </div>
                     <div className="row m-0 p-0 position-relative mt-sm-3 mt-0">
-                      <Link to={"/"} className="color-black1 font-opacity">
+                      <Link className="color-black1 font-opacity">
                         Contact us
                       </Link>
                     </div>
                     <div className="row m-0 p-0 position-relative mt-2">
-                      <Link to={"/"} className="color-black1 font-opacity">
-                        FAQs
-                      </Link>
+                      <Link className="color-black1 font-opacity">FAQs</Link>
                     </div>
                   </div>
                 </div>

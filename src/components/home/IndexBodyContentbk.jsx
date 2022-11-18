@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
 import founder1 from "../../assets/img/founder1.png";
 import founder2 from "../../assets/img/founder2.png";
@@ -10,18 +10,32 @@ import stats2 from "../../assets/img/stats2.png";
 import stats2mb from "../../assets/img/stats2-mb.png";
 import arrowdown from "../../assets/img/arrow-down.svg";
 import arrowup from "../../assets/img/arrow-up.svg";
-import { Link } from "react-router-dom";
+import company1 from "../../assets/img/companies/company1.svg";
+import company2 from "../../assets/img/companies/company2.svg";
+import company3 from "../../assets/img/companies/company3.svg";
+import company4 from "../../assets/img/companies/company4.svg";
+import company5 from "../../assets/img/companies/company5.svg";
+import company6 from "../../assets/img/companies/company6.svg";
+import company7 from "../../assets/img/companies/company7.svg";
+import company8 from "../../assets/img/companies/company8.svg";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
+import ArrowsPrev from "./ArrowsPrev";
+import ArrowsNext from "./ArrowsNext";
 export default function IndexBodyContent(props) {
-  const [isactive, setisactive] = useState("ex1-tab-1");
-  const [isactivenext, setisactivenext] = useState("ex2-tab-1");
-  const [isactiveselect, setisactiveselect] = useState("ex-tab-1");
-  const [isactiveselectnext, setisactiveselectnext] = useState("extab-1");
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 7,
+    slidesToScroll: 7,
+    arrows: true,
+
+    nextArrow: <ArrowsNext onClick={props.onClick} />,
+    prevArrow: <ArrowsPrev onClick={props.onClick} />,
+  };
   var settings1 = {
     dots: true,
     infinite: true,
@@ -38,35 +52,13 @@ export default function IndexBodyContent(props) {
     slidesToScroll: 1,
     arrows: false,
   };
+
   const showtab = (event) => {
-    //console.log(event.currentTarget.id);
+    console.log(event.currentTarget.id);
 
-    setisactive(event.currentTarget.id);
-    // event.currentTarget.className += " active";
+    event.currentTarget.className += " active";
   };
-  const showtabnext = (event) => {
-    //console.log(event.currentTarget.id);
 
-    setisactivenext(event.currentTarget.id);
-    // event.currentTarget.className += " active";
-  };
-  const showselecteddiv = (event) => {
-    //console.log(event.currentTarget.id);
-
-    setisactiveselect(event.currentTarget.value);
-    // console.log(event.currentTarget.value);
-    // event.currentTarget.className += " active";
-  };
-  const showselecteddivnext = (event) => {
-    //console.log(event.currentTarget.id);
-
-    setisactiveselectnext(event.currentTarget.value);
-    // console.log(event.currentTarget.value);
-    // event.currentTarget.className += " active";
-  };
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
   return (
     <>
       <div
@@ -90,9 +82,7 @@ export default function IndexBodyContent(props) {
               Seamless integrations with your CRM and marketing platforms
             </p>
             <div className="d-flex my-sm-3 my-1 m-flex-column">
-              <button className="btn theme-btn h-56 w-auto">
-                <Link style={{ color: "#FFFFFF" }}>Get started</Link>
-              </button>
+              <button className="btn theme-btn h-56 w-auto">Get started</button>
               <button className="btn theme-btn-light mx-sm-3 mt-sm-0 mt-3">
                 <svg
                   width="29"
@@ -117,7 +107,7 @@ export default function IndexBodyContent(props) {
           </div>
         </div>
       </div>
-      <div className="row m-0 p-0 position-relative stats-section my-5 animation-element bounce-down in-view">
+      <div className="row m-0 p-0 position-relative stats-section my-5 ">
         <div className="container main-container subject">
           <div className="position-relative arrow-up">
             <img src={arrowup} className="position-absolute" alt="" />
@@ -147,68 +137,60 @@ export default function IndexBodyContent(props) {
             <div className="row m-0 p-0 position-relative mx-5 my-4 px-5 desktop revenue-content desktop">
               <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-1" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link active"
                     id="ex1-tab-1"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/"
                     role="tab"
                     aria-controls="ex1-tabs-1"
                     aria-selected="true"
                     onClick={showtab}
                   >
                     CRM Integrations
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-2" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex1-tab-2"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/"
                     role="tab"
                     aria-controls="ex1-tabs-2"
                     aria-selected="false"
                     onClick={showtab}
                   >
                     Marketing Platform Integrations
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-3" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex1-tab-3"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/"
                     role="tab"
                     aria-controls="ex1-tabs-3"
                     aria-selected="false"
                     onClick={showtab}
                   >
                     Analytics
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-4" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex1-tab-4"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/"
                     role="tab"
                     aria-controls="ex1-tabs-4"
                     aria-selected="false"
                     onClick={showtab}
                   >
                     Easy, Safe and Secured
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <div
@@ -216,9 +198,7 @@ export default function IndexBodyContent(props) {
                 id="ex1-content"
               >
                 <div
-                  className={`tab-pane fade ${
-                    isactive === "ex1-tab-1" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade show active"
                   id="ex1-tabs-1"
                   role="tabpanel"
                   aria-labelledby="ex1-tab-1"
@@ -255,23 +235,19 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactive === "ex1-tab-2" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex1-tabs-2"
                   role="tabpanel"
                   aria-labelledby="ex1-tab-2"
                 >
                   <ul>
                     <li>
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
-                      Richard McClintock, a Latin professor at Hampden-Sydney
-                      College in Virginia, looked up one of the more obscure
-                      Latin words, consectetur, from a Lorem Ipsum passage, and
-                      going through the cites of the word in classical
-                      literature, discovered the undoubtable source.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -296,21 +272,19 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactive === "ex1-tab-3" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex1-tabs-3"
                   role="tabpanel"
                   aria-labelledby="ex1-tab-3"
                 >
                   <ul>
                     <li>
-                      The standard chunk of Lorem Ipsum used since the 1500s is
-                      reproduced below for those interested. Sections 1.10.32
-                      and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                      are also reproduced in their exact original form,
-                      accompanied by English versions from the 1914 translation
-                      by H. Rackham.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -335,27 +309,19 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactive === "ex1-tab-4" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex1-tabs-4"
                   role="tabpanel"
                   aria-labelledby="ex1-tab-4"
                 >
                   <ul>
                     <li>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. The point of using Lorem Ipsum is that it
-                      has a more-or-less normal distribution of letters, as
-                      opposed to using 'Content here, content here', making it
-                      look like readable English. Many desktop publishing
-                      packages and web page editors now use Lorem Ipsum as their
-                      default model text, and a search for 'lorem ipsum' will
-                      uncover many web sites still in their infancy. Various
-                      versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the
-                      like).
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -382,24 +348,15 @@ export default function IndexBodyContent(props) {
               </div>
             </div>
 
-            <select
-              className="filter-select btn theme-btn mobile my-4"
-              onClick={showselecteddiv}
-            >
-              <option value="ex-tab-1">CM Integration</option>
-              <option value="ex-tab-2">Marketing Platform Integrations</option>
-              <option value="ex-tab-3">Analytics</option>
-              <option value="ex-tab-4">Easy, Safe and Secured</option>
+            <select className="filter-select btn theme-btn mobile my-4">
+              <option value="0">CM Integration</option>
+              <option value="1">Marketing Platform Integrations</option>
+              <option value="2">Analytics</option>
+              <option value="3">Easy, Safe and Secured</option>
             </select>
 
             <div className="row m-0 position-relative mobile">
-              <div
-                className="column technology 0 box"
-                id="ex-tab-1"
-                style={{
-                  display: isactiveselect === "ex-tab-1" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 0 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 1</h2>
@@ -437,26 +394,19 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-              <div
-                className="column technology 1 box"
-                id="ex-tab-2"
-                style={{
-                  display: isactiveselect === "ex-tab-2" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 1 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 2</h2>
                     <ul className="listing-style">
                       <li>
-                        Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure
-                        Latin words, consectetur, from a Lorem Ipsum passage,
-                        and going through the cites of the word in classical
-                        literature, discovered the undoubtable source.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -482,24 +432,19 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-              <div
-                className="column technology 2 box"
-                id="ex-tab-3"
-                style={{
-                  display: isactiveselect === "ex-tab-3" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 2 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 3</h2>
                     <ul className="listing-style">
                       <li>
-                        The standard chunk of Lorem Ipsum used since the 1500s
-                        is reproduced below for those interested. Sections
-                        1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
-                        by Cicero are also reproduced in their exact original
-                        form, accompanied by English versions from the 1914
-                        translation by H. Rackham.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -526,30 +471,19 @@ export default function IndexBodyContent(props) {
                 </div>
               </div>
 
-              <div
-                className="column real-estate 3 box"
-                id="ex-tab-4"
-                style={{
-                  display: isactiveselect === "ex-tab-4" ? "block" : "none",
-                }}
-              >
+              <div className="column real-estate 3 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 4</h2>
                     <ul className="listing-style">
                       <li>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of
-                        letters, as opposed to using 'Content here, content
-                        here', making it look like readable English. Many
-                        desktop publishing packages and web page editors now use
-                        Lorem Ipsum as their default model text, and a search
-                        for 'lorem ipsum' will uncover many web sites still in
-                        their infancy. Various versions have evolved over the
-                        years, sometimes by accident, sometimes on purpose
-                        (injected humour and the like).
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -607,84 +541,69 @@ export default function IndexBodyContent(props) {
                 role="tablist"
               >
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-1" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link active"
                     id="ex2-tab-1"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/ex2-tabs-1"
                     role="tab"
                     aria-controls="ex2-tabs-1"
                     aria-selected="true"
-                    onClick={showtabnext}
                   >
                     Spending
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-2" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex2-tab-2"
                     data-mdb-toggle="tab"
                     href="#/ex2-tabs-2"
                     role="tab"
                     aria-controls="ex2-tabs-2"
                     aria-selected="false"
-                    onClick={showtabnext}
                   >
                     Reach
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-3" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex2-tab-3"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/ex2-tabs-3"
                     role="tab"
                     aria-controls="ex2-tabs-3"
                     aria-selected="false"
-                    onClick={showtabnext}
                   >
                     Revenue
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-4" ? "active" : ""
-                    }`}
+                  <a
+                    className="nav-link"
                     id="ex2-tab-4"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/ex2-tabs-4"
                     role="tab"
                     aria-controls="ex2-tabs-4"
                     aria-selected="false"
-                    onClick={showtabnext}
                   >
                     Inbound Leads
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-5" ? "active" : ""
-                    }`}
-                    id="ex2-tab-5"
+                  <a
+                    className="nav-link"
+                    id="ex2-tab-4"
                     data-mdb-toggle="tab"
-                    to={"/"}
+                    href="#/ex2-tabs-4"
                     role="tab"
                     aria-controls="ex2-tabs-4"
                     aria-selected="false"
-                    onClick={showtabnext}
                   >
                     Campaigns
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <div
@@ -692,9 +611,7 @@ export default function IndexBodyContent(props) {
                 id="ex2-content"
               >
                 <div
-                  className={`tab-pane fade ${
-                    isactivenext === "ex2-tab-1" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade show active"
                   id="ex2-tabs-1"
                   role="tabpanel"
                   aria-labelledby="ex2-tab-1"
@@ -703,10 +620,7 @@ export default function IndexBodyContent(props) {
                     <li>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur.
+                      aliqua.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -725,23 +639,16 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactivenext === "ex2-tab-2" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex2-tabs-2"
                   role="tabpanel"
                   aria-labelledby="ex2-tab-2"
                 >
                   <ul>
                     <li>
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
-                      Richard McClintock, a Latin professor at Hampden-Sydney
-                      College in Virginia, looked up one of the more obscure
-                      Latin words, consectetur, from a Lorem Ipsum passage, and
-                      going through the cites of the word in classical
-                      literature, discovered the undoubtable source.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -760,21 +667,16 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactivenext === "ex2-tab-3" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex2-tabs-3"
                   role="tabpanel"
                   aria-labelledby="ex2-tab-3"
                 >
                   <ul>
                     <li>
-                      The standard chunk of Lorem Ipsum used since the 1500s is
-                      reproduced below for those interested. Sections 1.10.32
-                      and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                      are also reproduced in their exact original form,
-                      accompanied by English versions from the 1914 translation
-                      by H. Rackham.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -793,60 +695,16 @@ export default function IndexBodyContent(props) {
                   </ul>
                 </div>
                 <div
-                  className={`tab-pane fade ${
-                    isactivenext === "ex2-tab-4" ? "show active" : ""
-                  }`}
+                  className="tab-pane fade"
                   id="ex2-tabs-4"
                   role="tabpanel"
                   aria-labelledby="ex2-tab-4"
                 >
                   <ul>
                     <li>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. The point of using Lorem Ipsum is that it
-                      has a more-or-less normal distribution of letters, as
-                      opposed to using 'Content here, content here', making it
-                      look like readable English. Many desktop publishing
-                      packages and web page editors now use Lorem Ipsum as their
-                      default model text, and a search for 'lorem ipsum' will
-                      uncover many web sites still in their infancy. Various
-                      versions have evolved over the years, sometimes by
-                      accident, sometimes on purpose (injected humour and the
-                      like).
-                    </li>
-                    <li>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium.{" "}
-                    </li>
-                    <li>
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur.
-                    </li>
-                    <li>
-                      Ut perspiciatis unde omnis iste natus error sit voluptatem
-                      accusantium doloremque laudantium, totam rem aperiam,
-                      eaque ipsa quae ab illo inventore veritatis et quasi
-                      architecto beatae vitae dicta sunt explicabo.{" "}
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  className={`tab-pane fade ${
-                    isactivenext === "ex2-tab-5" ? "show active" : ""
-                  }`}
-                  id="ex2-tabs-5"
-                  role="tabpanel"
-                  aria-labelledby="ex2-tab-5"
-                >
-                  <ul>
-                    <li>
-                      Many desktop publishing packages and web page editors now
-                      use Lorem Ipsum as their default model text, and a search
-                      for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the
-                      years, sometimes by accident, sometimes on purpose
-                      (injected humour and the like).
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
                     </li>
                     <li>
                       Sed ut perspiciatis unde omnis iste natus error sit
@@ -867,25 +725,16 @@ export default function IndexBodyContent(props) {
               </div>
             </div>
 
-            <select
-              className="filter-select btn theme-btn mobile my-4"
-              onClick={showselecteddivnext}
-            >
-              <option value="extab-1">Spending</option>
-              <option value="extab-2">Reach</option>
-              <option value="extab-3">Revenue</option>
-              <option value="extab-4">Inbound Leads</option>
-              <option value="extab-5">Campaigns</option>
+            <select className="filter-select btn theme-btn mobile my-4">
+              <option value="0">Spending</option>
+              <option value="1">Reach</option>
+              <option value="2">Revenue</option>
+              <option value="3">Inbound Leads</option>
+              <option value="4">Campaigns</option>
             </select>
 
             <div className="row m-0 position-relative mobile">
-              <div
-                className="column technology 0 box"
-                id="extab-1"
-                style={{
-                  display: isactiveselectnext === "extab-1" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 0 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 1</h2>
@@ -923,26 +772,19 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-              <div
-                className="column technology 1 box"
-                id="extab-2"
-                style={{
-                  display: isactiveselectnext === "extab-2" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 1 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 2</h2>
                     <ul className="listing-style">
                       <li>
-                        Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure
-                        Latin words, consectetur, from a Lorem Ipsum passage,
-                        and going through the cites of the word in classical
-                        literature, discovered the undoubtable source.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -968,24 +810,19 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-              <div
-                className="column technology 2 box"
-                id="extab-3"
-                style={{
-                  display: isactiveselectnext === "extab-3" ? "block" : "none",
-                }}
-              >
+              <div className="column technology 2 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 3</h2>
                     <ul className="listing-style">
                       <li>
-                        The standard chunk of Lorem Ipsum used since the 1500s
-                        is reproduced below for those interested. Sections
-                        1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
-                        by Cicero are also reproduced in their exact original
-                        form, accompanied by English versions from the 1914
-                        translation by H. Rackham.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -1012,30 +849,19 @@ export default function IndexBodyContent(props) {
                 </div>
               </div>
 
-              <div
-                className="column real-estate 3 box"
-                id="extab-4"
-                style={{
-                  display: isactiveselectnext === "extab-4" ? "block" : "none",
-                }}
-              >
+              <div className="column real-estate 3 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 4</h2>
                     <ul className="listing-style">
                       <li>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of
-                        letters, as opposed to using 'Content here, content
-                        here', making it look like readable English. Many
-                        desktop publishing packages and web page editors now use
-                        Lorem Ipsum as their default model text, and a search
-                        for 'lorem ipsum' will uncover many web sites still in
-                        their infancy. Various versions have evolved over the
-                        years, sometimes by accident, sometimes on purpose
-                        (injected humour and the like).
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -1062,22 +888,19 @@ export default function IndexBodyContent(props) {
                 </div>
               </div>
 
-              <div
-                className="column real-estate 4 box"
-                id="extab-5"
-                style={{
-                  display: isactiveselectnext === "extab-5" ? "block" : "none",
-                }}
-              >
+              <div className="column real-estate 4 box">
                 <div className="content assets">
                   <div className="">
                     <h2 className="mobile">content 5</h2>
                     <ul className="listing-style">
                       <li>
-                        Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur.
                       </li>
                       <li>
                         Sed ut perspiciatis unde omnis iste natus error sit
@@ -1111,21 +934,21 @@ export default function IndexBodyContent(props) {
           </div>
         </div>
       </div>
-      <div className="row m-0 p-0 position-relative plans-section mt-sm-5 mt-3 in-view">
+      <div className="row m-0 p-0 position-relative plans-section section-margin animation-element bounce-up in-view">
         <div className="container main-container">
           <h2 className="color-black2 text-center">
             Small business
             <br /> and agency plans
           </h2>
-          <div className="row m-0 p-0 position-relative mt-sm-5 mt-3 ">
-            <div
-              className="col-sm-6 animation-element bounce-up in-view"
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-easing="ease-in-out"
-              data-aos-mirror="true"
-              data-aos-once="false"
-            >
+          <div
+            className="row m-0 p-0 position-relative mt-sm-5 mt-3"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+          >
+            <div className="col-sm-6 animation-element bounce-up">
               <div className="content listing-style subject">
                 <h3 className="color-black3">Small Business</h3>
                 <ul>
@@ -1142,7 +965,7 @@ export default function IndexBodyContent(props) {
               </div>
             </div>
             <div
-              className="col-sm-6 mt-sm-0 mt-4 animation-element bounce-down in-view"
+              className="col-sm-6 mt-sm-0 mt-4 animation-element bounce-down"
               data-aos="fade-down"
               data-aos-duration="500"
               data-aos-easing="ease-in-out"
@@ -1450,6 +1273,64 @@ export default function IndexBodyContent(props) {
             <img src={stats3} className="w-100 desktop" alt="" />
             <img src={stats3mb} className="w-100 mobile" alt="" />
           </div>
+        </div>
+      </div>
+      <div
+        className="row m-0 p-0 position-relative companies-section background-grey section-margin animation-element bounce-down in-view"
+        data-aos="fade-down"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
+        <div className="container main-container pt-sm-5 pt-4 subject">
+          <section
+            className="companies-slider slider"
+            style={{ maxWidth: "100%" }}
+          >
+            <Slider {...settings}>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company1} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company2} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company3} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company4} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company5} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company6} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company7} alt="" />
+                </div>
+              </div>
+              <div className="slide">
+                <div className="slide-content">
+                  <img src={company8} alt="" />
+                </div>
+              </div>
+            </Slider>
+          </section>
         </div>
       </div>
     </>
