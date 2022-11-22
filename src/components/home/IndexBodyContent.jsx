@@ -16,6 +16,7 @@ import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {Login} from "../login/fb_login/FacebookLogin";
 
 export default function IndexBodyContent(props) {
   const [isactive, setisactive] = useState("ex1-tab-1");
@@ -89,6 +90,7 @@ export default function IndexBodyContent(props) {
             <p className="font-20 color-black1">
               Seamless integrations with your CRM and marketing platforms
             </p>
+            <Login/>
             <div className="d-flex my-sm-3 my-1 m-flex-column">
               <button className="btn theme-btn h-56 w-auto">
                 <Link style={{ color: "#FFFFFF" }}>Get started</Link>

@@ -4,6 +4,7 @@ import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
+
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
   function handleClick() {
@@ -99,6 +100,7 @@ function Header(props) {
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>
+
           </div>
         </div>
       </nav>
@@ -277,7 +279,6 @@ function Header(props) {
               <Link to={"/loginstep1"} className="nav-link">
                 Login or Register
               </Link>
-
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>
           </ul>

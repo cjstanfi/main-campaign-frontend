@@ -1,34 +1,27 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
-import FacebookLogin from "react-facebook-login";
+import React, { useEffect } from 'react';
+import {accountService} from "../../../services";
 
-const ReactFacebookLogin = () => {
-    const [accessToken, setAccessToken] = useState("");
-
-    const componentClicked = data => {
-        console.log("data", data);
-    };
-
-    const responseFacebook = response => {
-        // console.log(response.accessToken);
-        setAccessToken(response.accessToken);
-    };
+function Login({ history }) {
+    useEffect(() => {
+        // redirect to home if already logged in
+        if (accountService.accountValue) {
+            history.push('/');
+        }
+    }, [history]);
 
     return (
-        <div>
-            React Facebook Login
-            <br />
-            User Short-Lived Access Token:
-            <br />
-            {accessToken}
-            <br />
-            <FacebookLogin
-                appId="1614986128648687"
-                autoLoad={true}
-                fields="name,email,picture"
-                onClick={componentClicked}
-                callback={responseFacebook}
-            />
+        <div className="col-md-6 offset-md-3 mt-5 text-center">
+            <div className="card">
+                <h4 className="card-header">React - Facebook Login Example</h4>
+                <div className="card-body">
+                    <button className="btn btn-facebook" onClick={accountService.login}>
+                        <i className="fa fa-facebook mr-1"></i>
+                        Login with Facebook
+                    </button>
+                </div>
+            </div>
         </div>
     );
-};
+}
+
+export { Login };
