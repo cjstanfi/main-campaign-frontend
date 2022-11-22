@@ -4,7 +4,9 @@ import LoginExpandedStep2 from "./components/login/LoginExpandedStep2";
 import LoginExpandedStep3 from "./components/login/LoginExpandedStep3";
 import LoginExpandedStep4 from "./components/login/LoginExpandedStep4";
 import { Routes, Route } from "react-router-dom";
+
 import Dashboard from "./components/dashboard/Dashboard";
+import MainDashboard from "./components/MainDashboard/MainDashboard";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         <Route path="/loginstep2" element={<LoginExpandedStep2 />} />
         <Route path="/loginstep3" element={<LoginExpandedStep3 />} />
         <Route path="/loginstep4" element={<LoginExpandedStep4 />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<MainDashboard />} />
+        <Route path="/analytics" element={<Dashboard />} />
       </Routes>
     </div>
   );
