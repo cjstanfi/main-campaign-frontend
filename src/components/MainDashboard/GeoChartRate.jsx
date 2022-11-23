@@ -92,7 +92,6 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
-                        height="400px"
                         data={data1}
                         options={options1}
                       />
@@ -127,7 +126,6 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
-                        height="400px"
                         data={data1}
                         options={options1}
                       />
@@ -162,7 +160,6 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
-                        height="400px"
                         data={data1}
                         options={options1}
                       />

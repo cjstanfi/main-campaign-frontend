@@ -382,7 +382,7 @@ export default function IndexBodyContent(props) {
               </div>
             </div>
 
-            <select
+            {/* <select
               className="filter-select btn theme-btn mobile my-4"
               onClick={showselecteddiv}
             >
@@ -390,9 +390,9 @@ export default function IndexBodyContent(props) {
               <option value="ex-tab-2">Marketing Platform Integrations</option>
               <option value="ex-tab-3">Analytics</option>
               <option value="ex-tab-4">Easy, Safe and Secured</option>
-            </select>
+            </select> */}
 
-            <div className="row m-0 position-relative mobile">
+            {/* <div className="row m-0 position-relative mobile">
               <div
                 className="column technology 0 box"
                 id="ex-tab-1"
@@ -575,7 +575,7 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="position-relative arrow-down">
             <img src={arrowdown} className="position-absolute" alt="" />
@@ -867,7 +867,7 @@ export default function IndexBodyContent(props) {
               </div>
             </div>
 
-            <select
+            {/* <select
               className="filter-select btn theme-btn mobile my-4"
               onClick={showselecteddivnext}
             >
@@ -876,9 +876,9 @@ export default function IndexBodyContent(props) {
               <option value="extab-3">Revenue</option>
               <option value="extab-4">Inbound Leads</option>
               <option value="extab-5">Campaigns</option>
-            </select>
+            </select> */}
 
-            <div className="row m-0 position-relative mobile">
+            {/* <div className="row m-0 position-relative mobile">
               <div
                 className="column technology 0 box"
                 id="extab-1"
@@ -1103,7 +1103,7 @@ export default function IndexBodyContent(props) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="position-relative arrow-down">
