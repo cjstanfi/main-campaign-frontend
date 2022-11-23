@@ -69,77 +69,56 @@ export default function IndexBodyContent(props) {
   }, []);
   return (
     <>
-      
+      <div className="row m-0 position-relative header-content">
+        <div className="col-sm-6 order--new-1">
+          <div className="container main-container subject">
+            <div className="d-flex align-items-center text-center justify-content-center flex-column top-ma">
+              <h1 className="color-black1">
+                Powerful Data Visualization
+                <br /> for your <span className="color-blue">Business.</span>
+              </h1>
+              <p className="font-20 color-black1">
+                Seamless integrations with your CRM and marketing platforms
+              </p>
+              <div className="d-flex my-sm-3 my-1 m-flex-column">
+                <button className="btn theme-btn h-56 w-auto">
+                  <Link style={{ color: "#FFFFFF" }}>Get started</Link>
+                </button>
+                <button className="btn theme-btn-light mx-sm-3 mt-sm-0 mt-3">
+                  <svg
+                    width="29"
+                    height="30"
+                    viewBox="0 0 29 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="14.5" cy="15" r="14.5" fill="#/3B5998" />
+                    <path
+                      d="M12.5998 9.78446C11.6397 9.22208 10.8613 9.68279 10.8613 10.8127V19.1506C10.8613 20.2816 11.6397 20.7417 12.5998 20.1799L19.7364 16.0004C20.6968 15.4378 20.6968 14.5263 19.7364 13.9639L12.5998 9.78446Z"
+                      fill="white"
+                    />
+                  </svg>
 
-<div className="row m-0 position-relative header-content">
-<div className="col-sm-6 order--new-1" data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center">
-<div className="container main-container subject">
-          <div className="d-flex align-items-center text-center justify-content-center flex-column top-ma">
-            <h1 className="color-black1">
-              Powerful Data Visualization
-              <br /> for your <span className="color-blue">Business.</span>
-            </h1>
-            <p className="font-20 color-black1">
-              Seamless integrations with your CRM and marketing platforms
-            </p>
-            <div className="d-flex my-sm-3 my-1 m-flex-column">
-              <button className="btn theme-btn h-56 w-auto">
-                <Link style={{ color: "#FFFFFF" }}>Get started</Link>
-              </button>
-              <button className="btn theme-btn-light mx-sm-3 mt-sm-0 mt-3">
-                <svg
-                  width="29"
-                  height="30"
-                  viewBox="0 0 29 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="14.5" cy="15" r="14.5" fill="#/3B5998" />
-                  <path
-                    d="M12.5998 9.78446C11.6397 9.22208 10.8613 9.68279 10.8613 10.8127V19.1506C10.8613 20.2816 11.6397 20.7417 12.5998 20.1799L19.7364 16.0004C20.6968 15.4378 20.6968 14.5263 19.7364 13.9639L12.5998 9.78446Z"
-                    fill="white"
-                  />
-                </svg>
-
-                <span className="ms-3">Learn more about us</span>
-              </button>
+                  <span className="ms-3">Learn more about us</span>
+                </button>
+              </div>
+            </div>
+            <div className="position-relative arrow-down">
+              <img src={arrowdown} className="position-absolute" alt="" />
             </div>
           </div>
-          <div className="position-relative arrow-down">
-            <img src={arrowdown} className="position-absolute" alt="" />
+        </div>
+        <div className="col-sm-6 d-flex align-items-center justify-content-center order--new-2 mt-5 pt-sm-0 pt-5">
+          <div className="container subject ">
+            <div className="position-relative arrow-up">
+              <img src={arrowup} className="position-absolute" alt="" />
+            </div>
+            <img src={stats1} className=" w-100 " alt="" />
           </div>
         </div>
-</div>
-<div className="col-sm-6 d-flex align-items-center justify-content-center order--new-2 mt-5 pt-sm-0 pt-5" data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center">
-<div className="container subject ">
-          <div className="position-relative arrow-up">
-            <img src={arrowup} className="position-absolute" alt="" />
-          </div>
-          <img src={stats1} className=" w-100 " alt="" />
-          
-        </div>
-</div>
-</div>
+      </div>
 
-
-
-
-
-{/* ======================= */}
+      {/* ======================= */}
 
       <div
         className="row m-0 p-0 position-relative revenue-section animation-element bounce-up in-view"
@@ -160,73 +139,73 @@ export default function IndexBodyContent(props) {
             </h2>
 
             <div className="row m-0 p-0 position-relative mx-5 my-4 px-5 revenue-content">
-            <div className="sc-area">
-              <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-1" ? "active" : ""
-                    }`}
-                    id="ex1-tab-1"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex1-tabs-1"
-                    aria-selected="true"
-                    onClick={showtab}
-                  >
-                    CRM Integrations
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-2" ? "active" : ""
-                    }`}
-                    id="ex1-tab-2"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex1-tabs-2"
-                    aria-selected="false"
-                    onClick={showtab}
-                  >
-                    Marketing Platform Integrations
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-3" ? "active" : ""
-                    }`}
-                    id="ex1-tab-3"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex1-tabs-3"
-                    aria-selected="false"
-                    onClick={showtab}
-                  >
-                    Analytics
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactive === "ex1-tab-4" ? "active" : ""
-                    }`}
-                    id="ex1-tab-4"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex1-tabs-4"
-                    aria-selected="false"
-                    onClick={showtab}
-                  >
-                    Easy, Safe and Secured
-                  </Link>
-                </li>
-              </ul>
+              <div className="sc-area">
+                <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactive === "ex1-tab-1" ? "active" : ""
+                      }`}
+                      id="ex1-tab-1"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex1-tabs-1"
+                      aria-selected="true"
+                      onClick={showtab}
+                    >
+                      CRM Integrations
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactive === "ex1-tab-2" ? "active" : ""
+                      }`}
+                      id="ex1-tab-2"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex1-tabs-2"
+                      aria-selected="false"
+                      onClick={showtab}
+                    >
+                      Marketing Platform Integrations
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactive === "ex1-tab-3" ? "active" : ""
+                      }`}
+                      id="ex1-tab-3"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex1-tabs-3"
+                      aria-selected="false"
+                      onClick={showtab}
+                    >
+                      Analytics
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactive === "ex1-tab-4" ? "active" : ""
+                      }`}
+                      id="ex1-tab-4"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex1-tabs-4"
+                      aria-selected="false"
+                      onClick={showtab}
+                    >
+                      Easy, Safe and Secured
+                    </Link>
+                  </li>
+                </ul>
               </div>
               <div
                 className="tab-content revenue-tab listing-style pe-5 pb-5"
@@ -619,92 +598,92 @@ export default function IndexBodyContent(props) {
           >
             <div className="row m-0 p-0 position-relative">
               <div className="sc-area sc-area-1">
-              <ul
-                className="nav nav-tabs mb-3 mx-5 px-5"
-                id="ex2"
-                role="tablist"
-              >
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-1" ? "active" : ""
-                    }`}
-                    id="ex2-tab-1"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex2-tabs-1"
-                    aria-selected="true"
-                    onClick={showtabnext}
-                  >
-                    Spending
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-2" ? "active" : ""
-                    }`}
-                    id="ex2-tab-2"
-                    data-mdb-toggle="tab"
-                    href="#/ex2-tabs-2"
-                    role="tab"
-                    aria-controls="ex2-tabs-2"
-                    aria-selected="false"
-                    onClick={showtabnext}
-                  >
-                    Reach
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-3" ? "active" : ""
-                    }`}
-                    id="ex2-tab-3"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex2-tabs-3"
-                    aria-selected="false"
-                    onClick={showtabnext}
-                  >
-                    Revenue
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-4" ? "active" : ""
-                    }`}
-                    id="ex2-tab-4"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex2-tabs-4"
-                    aria-selected="false"
-                    onClick={showtabnext}
-                  >
-                    Inbound Leads
-                  </Link>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <Link
-                    className={`nav-link ${
-                      isactivenext === "ex2-tab-5" ? "active" : ""
-                    }`}
-                    id="ex2-tab-5"
-                    data-mdb-toggle="tab"
-                    to={"/"}
-                    role="tab"
-                    aria-controls="ex2-tabs-4"
-                    aria-selected="false"
-                    onClick={showtabnext}
-                  >
-                    Campaigns
-                  </Link>
-                </li>
-              </ul>
+                <ul
+                  className="nav nav-tabs mb-3 mx-5 px-5"
+                  id="ex2"
+                  role="tablist"
+                >
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactivenext === "ex2-tab-1" ? "active" : ""
+                      }`}
+                      id="ex2-tab-1"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex2-tabs-1"
+                      aria-selected="true"
+                      onClick={showtabnext}
+                    >
+                      Spending
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactivenext === "ex2-tab-2" ? "active" : ""
+                      }`}
+                      id="ex2-tab-2"
+                      data-mdb-toggle="tab"
+                      href="#/ex2-tabs-2"
+                      role="tab"
+                      aria-controls="ex2-tabs-2"
+                      aria-selected="false"
+                      onClick={showtabnext}
+                    >
+                      Reach
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactivenext === "ex2-tab-3" ? "active" : ""
+                      }`}
+                      id="ex2-tab-3"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex2-tabs-3"
+                      aria-selected="false"
+                      onClick={showtabnext}
+                    >
+                      Revenue
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactivenext === "ex2-tab-4" ? "active" : ""
+                      }`}
+                      id="ex2-tab-4"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex2-tabs-4"
+                      aria-selected="false"
+                      onClick={showtabnext}
+                    >
+                      Inbound Leads
+                    </Link>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <Link
+                      className={`nav-link ${
+                        isactivenext === "ex2-tab-5" ? "active" : ""
+                      }`}
+                      id="ex2-tab-5"
+                      data-mdb-toggle="tab"
+                      to={"/"}
+                      role="tab"
+                      aria-controls="ex2-tabs-4"
+                      aria-selected="false"
+                      onClick={showtabnext}
+                    >
+                      Campaigns
+                    </Link>
+                  </li>
+                </ul>
               </div>
               <div
                 className="tab-content revenue-tab pe-5 pb-5"
