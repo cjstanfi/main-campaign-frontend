@@ -69,19 +69,19 @@ export default function IndexBodyContent(props) {
   }, []);
   return (
     <>
-      <div
-        className="row m-0 p-0 position-relative header-content "
-        data-aos="fade-up"
+      
+
+<div className="row m-0 position-relative header-content">
+<div className="col-sm-6 order--new-1" data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="500"
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top-center"
-      >
-        <div className="container main-container subject">
-          <div className="d-flex align-items-center text-center justify-content-center flex-column mt-5 pt-sm-0 pt-5">
+        data-aos-anchor-placement="top-center">
+<div className="container main-container subject">
+          <div className="d-flex align-items-center text-center justify-content-center flex-column top-ma">
             <h1 className="color-black1">
               Powerful Data Visualization
               <br /> for your <span className="color-blue">Business.</span>
@@ -116,16 +116,31 @@ export default function IndexBodyContent(props) {
             <img src={arrowdown} className="position-absolute" alt="" />
           </div>
         </div>
-      </div>
-      <div className="row m-0 p-0 position-relative stats-section my-5 animation-element bounce-down in-view">
-        <div className="container main-container subject">
+</div>
+<div className="col-sm-6 d-flex align-items-center justify-content-center order--new-2 mt-5 pt-sm-0 pt-5" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+<div className="container subject ">
           <div className="position-relative arrow-up">
             <img src={arrowup} className="position-absolute" alt="" />
           </div>
-          <img src={stats1} className="desktop w-100 " alt="" />
-          <img src={stats1mb} className="mobile w-100 px-3" alt="" />
+          <img src={stats1} className=" w-100 " alt="" />
+          
         </div>
-      </div>
+</div>
+</div>
+
+
+
+
+
+{/* ======================= */}
+
       <div
         className="row m-0 p-0 position-relative revenue-section animation-element bounce-up in-view"
         data-aos="fade-up"
@@ -144,7 +159,8 @@ export default function IndexBodyContent(props) {
               <br /> real time with our dashboards.
             </h2>
 
-            <div className="row m-0 p-0 position-relative mx-5 my-4 px-5 desktop revenue-content desktop">
+            <div className="row m-0 p-0 position-relative mx-5 my-4 px-5 revenue-content">
+            <div className="sc-area">
               <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
                 <li className="nav-item" role="presentation">
                   <Link
@@ -211,6 +227,7 @@ export default function IndexBodyContent(props) {
                   </Link>
                 </li>
               </ul>
+              </div>
               <div
                 className="tab-content revenue-tab listing-style pe-5 pb-5"
                 id="ex1-content"
@@ -600,7 +617,8 @@ export default function IndexBodyContent(props) {
             data-aos-mirror="true"
             data-aos-once="false"
           >
-            <div className="row m-0 p-0 position-relative desktop">
+            <div className="row m-0 p-0 position-relative">
+              <div className="sc-area sc-area-1">
               <ul
                 className="nav nav-tabs mb-3 mx-5 px-5"
                 id="ex2"
@@ -687,6 +705,7 @@ export default function IndexBodyContent(props) {
                   </Link>
                 </li>
               </ul>
+              </div>
               <div
                 className="tab-content revenue-tab pe-5 pb-5"
                 id="ex2-content"
@@ -1111,7 +1130,7 @@ export default function IndexBodyContent(props) {
           </div>
         </div>
       </div>
-      <div className="row m-0 p-0 position-relative plans-section mt-sm-5 mt-3 in-view">
+      <div className="row m-0 p-0 position-relative plans-section mt-sm-5 mt-3 in-view section-margin">
         <div className="container main-container">
           <h2 className="color-black2 text-center">
             Small business

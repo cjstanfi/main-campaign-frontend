@@ -15575,3 +15575,18 @@ fieldset:disabled .btn-group-vertical {
 .dropdown:hover .dropdown-menu {
   display: block;
 } */
+
+.bar-chart-div .btn{
+  padding: 6px 10px;
+  box-shadow: inherit;
+}
+.bar-chart-div .country-name {
+  font-size: 0.9vw !important;
+}
+#columnminichart_material rect {
+  fill: #edf1f9;
+  /* stroke: initial; */
+}
+.bar-chart-div .card{
+  box-shadow: initial;
+}
