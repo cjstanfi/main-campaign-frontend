@@ -1,4 +1,4 @@
-import { accountService } from 'services';
+import { accountService } from '../services';
 
 // const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID;
 const facebookAppId = '593152215811984'

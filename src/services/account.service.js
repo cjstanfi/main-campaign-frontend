@@ -1,6 +1,7 @@
 // import env from '../../env';
 import { BehaviorSubject } from 'rxjs';
 import axios from 'axios';
+import {initFacebookSdk} from "../helpers";
 
 // import { history } from '../helpers';
 
@@ -22,6 +23,7 @@ export const accountService = {
 
 async function login() {
     // login with facebook then authenticate with the API to get a JWT auth token
+    await initFacebookSdk()
     const { authResponse } = await new Promise(window.FB.login);
     if (!authResponse) return;
 

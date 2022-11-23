@@ -1,2 +1,2 @@
-export * from './history';
-export * from './init-facebook-sdk';
+// export * from './history.js';
+export * from './init-facebook-sdk.js';
