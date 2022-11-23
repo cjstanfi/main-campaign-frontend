@@ -5,6 +5,7 @@ import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
+
 export default function LoginExpandContentStep2() {
   return (
     <div className="row p-0 position-relative login-section animation-element bounce-up in-view">
