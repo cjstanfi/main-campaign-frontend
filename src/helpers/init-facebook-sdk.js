@@ -16,11 +16,11 @@ export function initFacebookSdk() {
             });
 
             // auto authenticate with the api if already logged in with facebook
-            window.FB.getLoginStatus(({ authResponse }) => {
+            window.FB.getLoginStatus(response => {
                 console.log("doggy 3")
-                console.log(authResponse)
-                if (authResponse) {
-                    accountService.apiAuthenticate(authResponse.accessToken).then(resolve);
+                console.log(response)
+                if (response) {
+                    accountService.apiAuthenticate(response.authResponse.accessToken).then(resolve);
                 } else {
                     resolve();
                 }
