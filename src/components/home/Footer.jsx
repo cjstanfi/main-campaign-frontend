@@ -15,6 +15,7 @@ import company8 from "../../assets/img/companies/company8.svg";
 import ArrowsPrev from "./ArrowsPrev";
 import ArrowsNext from "./ArrowsNext";
 import { Link } from "react-router-dom";
+
 export default function Footer(props) {
   var settings = {
     dots: false,
@@ -190,7 +191,7 @@ export default function Footer(props) {
           <div className="d-flex footer-bottom m-flex-column m-txt-center py-sm-5 py-4 item-center">
             <div className="me-sm-auto my-0">
               <p className="mb-1 color-black1 font-opacity font-14">
-                Privacy Policy • Terms & Conditions
+                <Link to={"privacy"} target="_blank" >Privacy Policy</Link> • <Link>Terms & Conditions</Link>
               </p>
             </div>
             <div className="ms-sm-auto d-flex mt-sm-0 mt-2">

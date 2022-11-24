@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import MainDashboard from "./components/MainDashboard/MainDashboard";
+import Privacy from "./components/home/Privacy";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/loginstep4" element={<LoginExpandedStep4 />} />
         <Route path="/dashboard" element={<MainDashboard />} />
         <Route path="/analytics" element={<Dashboard />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </div>
   );

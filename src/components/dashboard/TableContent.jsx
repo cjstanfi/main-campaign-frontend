@@ -30,7 +30,7 @@ export default function TableContent() {
   const [load, setload] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [recordsPerPage, setrecordsPerPage] = useState(3);
+  const [recordsPerPage, setrecordsPerPage] = useState(10);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 

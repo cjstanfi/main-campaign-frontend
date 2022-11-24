@@ -21,13 +21,13 @@ export default function Sidebar() {
       >
         <div className="position-sticky">
           <div className="d-flex align-items-center px-4 pb-3 ">
-            <Link to={"/"} className="">
+            <Link to={"/dashboard"} className="">
               <img src={logo} alt="Main Campaign" />
             </Link>
           </div>
           <div className="list-group list-group-flush mx-3 mt-5">
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3 active-item"
               aria-current="true"
             >
@@ -35,7 +35,7 @@ export default function Sidebar() {
               <span className="mt-3">Dashboard</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -43,7 +43,7 @@ export default function Sidebar() {
               <span className="mt-3">Campaign</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -51,7 +51,7 @@ export default function Sidebar() {
               <span className="mt-3">Ads Manager</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -59,7 +59,7 @@ export default function Sidebar() {
               <span className="mt-3">Ads Sets</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -75,7 +75,7 @@ export default function Sidebar() {
               <span className="mt-3">Analytics</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -84,7 +84,7 @@ export default function Sidebar() {
             </Link>
             <span className="mt-5 mx-3 more-text">MORE</span>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >
@@ -92,7 +92,7 @@ export default function Sidebar() {
               <span className="mt-3">Settings</span>
             </Link>
             <Link
-              to={"/"}
+              to={"/dashboard"}
               className="list-group-item list-group-item-action py-3"
               aria-current="true"
             >

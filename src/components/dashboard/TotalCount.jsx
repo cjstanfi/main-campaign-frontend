@@ -32,8 +32,8 @@ export default function TotalCount() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3.7,
-    slidesToScroll: 3.7,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     arrows: false,
     mobileFirst: true,
     responsive: [

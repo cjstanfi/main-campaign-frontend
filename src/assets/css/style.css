@@ -1846,3 +1846,38 @@ footer a:hover path {
 .homepage .btn.theme-btn-light svg {
   fill: #3b5997;
 }
+
+/*==============privacy-policy-start================*/
+.privacy-page p, .privacy-page{
+  font-family: 'THICCCBOI';
+}
+.privacy-page td, .privacy-page th{
+  border: 2px dashed;
+  font-family: arial;
+  font-size: 16px;
+}
+.privacy-page .table{
+font-family: 'THICCCBOI';
+}
+.privacy-page h2{
+  font-size: 30px;
+}
+.privacy-page h5 {
+  font-size: 18px;
+  color: #000;
+  padding: 10px 0;
+}
+.privacy-page p{
+      color: #000;
+}
+.text-li a {
+  display: flex;
+  margin-bottom: 8px;
+}
+ul.bul-li strong{
+ color: #000;
+}
+.tabl li {
+  display: flex;
+}
+/*==============privacy-policy-end================*/
