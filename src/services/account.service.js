@@ -55,7 +55,7 @@ async function sendApiToken(userId, shortLivedAccessToken, longLivedAccessToken)
         "marketingPlatformAccountPlatform": "facebook"
     }
     console.log(body)
-    const response = await axios.post('https://test.api.maincampaign.com/marketing-platform-account', body)
+    const response = await axios.post(`https://test.api.maincampaign.com/marketing-platform-account/${userId}`, body)
     return response
 }
 
