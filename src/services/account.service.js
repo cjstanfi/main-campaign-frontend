@@ -24,7 +24,7 @@ async function login() {
     console.log("doggy 1")
     const { authResponse } = await new Promise(window.FB.login);
     console.log(authResponse)
-    const response = await sendApiToken(authResponse.userId, authResponse.accessToken, null)
+    const response = await sendApiToken(authResponse.userID, authResponse.accessToken, null)
     console.log(response)
     if (!response) return;
 
