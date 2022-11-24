@@ -19,7 +19,7 @@ export function initFacebookSdk() {
             window.FB.getLoginStatus(response => {
                 console.log("doggy 3")
                 console.log(response)
-                if (response) {
+                if (response.status === "connected") {
                     accountService.apiAuthenticate(response.authResponse.accessToken).then(resolve);
                 } else {
                     resolve();
