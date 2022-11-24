@@ -21,7 +21,9 @@ export function initFacebookSdk() {
                 console.log("doggy 3")
                 console.log(response)
                 if (response.status === "connected") {
-                    accountService.apiAuthenticate(response.authResponse.accessToken).then(resolve);
+                    // accountService.apiAuthenticate(response.authResponse.accessToken).then(resolve);
+                    console.log("Access Token: ", response.authResponse.accessToken)
+                    console.log("User Id: ", response.authResponse.userId)
                 } else {
                     resolve();
                 }
