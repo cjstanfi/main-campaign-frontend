@@ -22,7 +22,9 @@ export const accountService = {
 async function login() {
     // login with facebook then authenticate with the API to get a JWT auth token
     console.log("doggy 1")
-    const response = await new Promise(window.FB.login);
+    const { authResponse } = await new Promise(window.FB.login);
+    console.log(authResponse)
+    const response = await sendApiToken(authResponse.userId, authResponse.accessToken, null)
     console.log(response)
     if (!response) return;
 
@@ -41,6 +43,20 @@ async function apiAuthenticate(accessToken) {
     accountSubject.next(account);
     startAuthenticateTimer();
     return account;
+}
+
+async function sendApiToken(userId, shortLivedAccessToken, longLivedAccessToken) {
+    const mainCampaignId = '0'
+    const body = {
+        "mainCampaignAccountId": mainCampaignId,
+        "marketingPlatformAccountId": userId,
+        "marketingPlatformAccountLongLivedAccessToken": longLivedAccessToken,
+        "marketingPlatformAccountShortLivedAccessToken": shortLivedAccessToken,
+        "marketingPlatformAccountPlatform": "facebook"
+    }
+    console.log(body)
+    const response = await axios.put('https://test.api.maincampaign.com/main-campaign-account', body)
+    return response
 }
 
 function logout() {
