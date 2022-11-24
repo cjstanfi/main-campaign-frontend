@@ -21,7 +21,7 @@ export const accountService = {
 
 async function login() {
     // login with facebook then authenticate with the API to get a JWT auth token
-    console.log("doggy 3")
+    console.log("doggy 1")
     await initFacebookSdk()
     const { authResponse } = await new Promise(window.FB.login);
     if (!authResponse) return;
