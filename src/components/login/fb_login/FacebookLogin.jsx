@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import {accountService} from "../../../services";
+import {initFacebookSdk} from "../../../helpers";
 
 function Login({ history }) {
-    useEffect(() => {
+    useEffect(async () => {
         // redirect to home if already logged in
+        console.log("Login useEffect: initializing fb sdk")
+        await initFacebookSdk()
         if (accountService.accountValue) {
             history.push('/');
         }
