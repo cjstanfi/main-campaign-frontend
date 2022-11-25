@@ -4,6 +4,7 @@ import avatar from "../../assets/img/avatar.png";
 import Badge from "../../assets/img/Badge.svg";
 import { Link } from "react-router-dom";
 import { updatesearch } from "../../actions/action";
+import "./analytics.css";
 export default function Headingbar() {
   const [toggledclass, settoggledclass] = useState(false);
   const dispatch = useDispatch();
