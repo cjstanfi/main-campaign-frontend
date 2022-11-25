@@ -41,7 +41,7 @@ export default function BarChartRate() {
       <section className="bar-chart-sec pt-3 px-2">
         <div className="container">
           <div className="row bar-chart-div py-3">
-            <div className="col-md-9 border-end">
+            <div className="col-md-8 col-lg-9 border-end">
               <div className="row">
                 <div className="col-md-7">
                   <span className="stat-card-head d-block">Total Leads</span>
@@ -88,7 +88,7 @@ export default function BarChartRate() {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4 col-lg-3">
               <div className="row">
                 <div className="col-md-12 py-1">
                   <div className="grey-back d-flex justify-content-between px-2 py-2 rounded">

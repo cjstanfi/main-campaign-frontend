@@ -804,11 +804,11 @@ label {
   }
   .custom-input2,
   .custom-dropdown2 {
-    width: 334px !important;
+    width: 100% !important;
     height: 40px !important;
   }
   .custom-input2.w-180 {
-    width: 160px !important;
+    width: 50% !important;
   }
   .total-slider .slide-content {
     padding: 0 20px;
@@ -1388,6 +1388,10 @@ label {
 
 
 /*==============privacy-policy-start================*/
+
+.privacy-page {
+  padding-top: 25px;
+}
 .privacy-page p, .privacy-page{
   font-family: 'THICCCBOI';
 }
@@ -1420,4 +1424,38 @@ ul.bul-li strong{
 .tabl li {
   display: flex;
 }
+.privacy-page a{
+  font-size: 16px;
+}
+@media (max-width:1024px) {
+  .privacy-page {
+    padding-top: 120px;
+}
+}
 /*==============privacy-policy-end================*/
+.content-analy{
+  margin-left: 240px !important;
+}
+.product-section .my-5{
+  margin-top: 2rem !important;
+}
+.product-section .total-section .links {
+  margin-left: -10px;
+}
+@media (max-width:1024px) {
+  #sidebarMenu{
+    position: relative;
+    box-shadow: inherit;
+    padding: 0 20px;
+  }
+  .content-analy {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+.product-section #sidebarMenu{
+  padding: 0 0px;
+}
+.main-das .top-nav {
+  padding-top: 60px !important;
+}
+  }

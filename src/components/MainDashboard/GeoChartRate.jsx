@@ -5,17 +5,19 @@ import australia from "../../assets/MainDashboard/assets/images/australia.png";
 import unitedkingdom from "../../assets/MainDashboard/assets/images/united-kingdom.png";
 import brazil from "../../assets/MainDashboard/assets/images/brazil.png";
 import india from "../../assets/MainDashboard/assets/images/india.png";
-import france from "../../assets/MainDashboard/assets/images/france.png"
+import france from "../../assets/MainDashboard/assets/images/france.png";
 import { Chart } from "react-google-charts";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function GeoChartRate() {
-  const [collapseDivUS,setcollapseDivUS] = useState(false);
-  const [collapseDivAUS,setcollapseDivAUS] = useState(false);
-  const [collapseDivUK,setcollapseDivUK] = useState(false);
-  const [collapseDivBR,setcollapseDivBR] = useState(false);
-  const [collapseDivFR,setcollapseDivFR] = useState(false);
-  const [collapseDivIN,setcollapseDivIN] = useState(false);
+  const [collapseDivUS, setcollapseDivUS] = useState(false);
+  const [collapseDivAUS, setcollapseDivAUS] = useState(false);
+  const [collapseDivUK, setcollapseDivUK] = useState(false);
+  const [collapseDivBR, setcollapseDivBR] = useState(false);
+  const [collapseDivFR, setcollapseDivFR] = useState(false);
+  const [collapseDivIN, setcollapseDivIN] = useState(false);
   const data = [
     ["Country", "Leads"],
     ["Germany", 200],
@@ -27,7 +29,7 @@ export default function GeoChartRate() {
   ];
   var options2 = {
     colors: ["#3B5998"],
-    legend: 'none',
+    legend: "none",
   };
   const data1 = [
     ["Age groups", "Percentage"],
@@ -44,16 +46,79 @@ export default function GeoChartRate() {
     colors: ["#3B5998"],
     bar: { groupWidth: "30%" },
   };
-  const handleClick = ()=> {
+  const handleClick = () => {
     setcollapseDivUS(!collapseDivUS);
-    
-  }
-  const classname = collapseDivUS?'btn w-100 background-color':'btn w-100';
+    setcollapseDivUK(false);
+    setcollapseDivFR(false);
+    setcollapseDivBR(false);
+    setcollapseDivAUS(false);
+    setcollapseDivIN(false);
+  };
+  const handleClickuk = () => {
+    setcollapseDivUK(!collapseDivUK);
+    setcollapseDivUS(false);
+    setcollapseDivFR(false);
+    setcollapseDivBR(false);
+    setcollapseDivAUS(false);
+    setcollapseDivIN(false);
+  };
+  const handleClickaus = () => {
+    setcollapseDivAUS(!collapseDivAUS);
+    setcollapseDivUK(false);
+    setcollapseDivUS(false);
+    setcollapseDivFR(false);
+    setcollapseDivBR(false);
+    setcollapseDivIN(false);
+  };
+  const handleClickfc = () => {
+    setcollapseDivFR(!collapseDivFR);
+    setcollapseDivAUS(false);
+    setcollapseDivUK(false);
+    setcollapseDivUS(false);
+
+    setcollapseDivBR(false);
+    setcollapseDivIN(false);
+  };
+  const handleClickbz = () => {
+    setcollapseDivBR(!collapseDivBR);
+    setcollapseDivAUS(false);
+    setcollapseDivUK(false);
+    setcollapseDivUS(false);
+    setcollapseDivFR(false);
+    setcollapseDivIN(false);
+  };
+  const handleClickin = () => {
+    setcollapseDivIN(!collapseDivIN);
+    setcollapseDivBR(false);
+    setcollapseDivAUS(false);
+    setcollapseDivUK(false);
+    setcollapseDivUS(false);
+    setcollapseDivFR(false);
+  };
+  // const handleClickaus = () => {
+  //   setcollapseDivAUS(!collapseDivAUS);
+  // };
+  const classname = collapseDivUS ? "btn w-100 background-color" : "btn w-100";
+  const classnameaus = collapseDivAUS
+    ? "btn w-100 background-color"
+    : "btn w-100";
+  const classnameuk = collapseDivUK
+    ? "btn w-100 background-color"
+    : "btn w-100";
+  const classnamein = collapseDivIN
+    ? "btn w-100 background-color"
+    : "btn w-100";
+  const classnamebz = collapseDivBR
+    ? "btn w-100 background-color"
+    : "btn w-100";
+  const classnamefc = collapseDivFR
+    ? "btn w-100 background-color"
+    : "btn w-100";
   return (
     <section className="bar-chart-sec pt-3 px-2 pb-5">
       <div className="container">
         <div className="row bar-chart-div py-3">
-          <div className="col-md-9 border-end">
+          <div className="col-md-8 col-lg-9 border-end">
             <div className="row">
               <span className="stat-card-head d-block">
                 Your top demographics
@@ -71,7 +136,7 @@ export default function GeoChartRate() {
               </div>
             </div>
           </div>
-          <div className="col-md-3 p-0" >
+          <div className="col-md-4 col-lg-3 p-0">
             <div className="row">
               <div className="col-md-12 px-4 pt-2 pb-4">
                 <h3>
@@ -80,7 +145,7 @@ export default function GeoChartRate() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-12 py-2">
+              <div className="col-md-12 py-2" >
                 <Link
                   className={classname}
                   data-bs-toggle="collapse"
@@ -88,7 +153,7 @@ export default function GeoChartRate() {
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
-                  onClick={handleClick}
+                  onClick={handleClick} 
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -102,30 +167,30 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                { collapseDivUS &&
-                <div className="" id="collapse1" >
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivUS && (
+                  <div className="" id="collapse1">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-                }
+                )}
               </div>
               <div className="col-md-12 py-2">
                 <Link
-                  className="btn w-100"
+                  className={classnameaus}
                   data-bs-toggle="collapse"
                   href="#collapse2"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
+                  onClick={handleClickaus}
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -139,28 +204,30 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                <div className="collapse">
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        height="400px"
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivAUS && (
+                  <div className="" id="collapse2">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="col-md-12 py-2">
                 <Link
-                  className="btn w-100"
+                  className={classnameuk}
                   data-bs-toggle="collapse"
                   href="#collapse3"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
+                  onClick={handleClickuk}
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -174,28 +241,30 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                <div className="collapse" id="collapse3">
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        height="400px"
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivUK && (
+                  <div className="" id="collapse3">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="col-md-12 py-2">
                 <Link
-                  className="btn w-100"
+                  className={classnamebz}
                   data-bs-toggle="collapse"
-                  href="#collapse3"
+                  href="#collapse4"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
+                  onClick={handleClickbz}
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -209,28 +278,30 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                <div className="collapse" id="collapse3">
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        height="400px"
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivBR && (
+                  <div className="" id="collapse4">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="col-md-12 py-2">
                 <Link
-                  className="btn w-100"
+                  className={classnamefc}
                   data-bs-toggle="collapse"
-                  href="#collapse3"
+                  href="#collapse5"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
+                  onClick={handleClickfc}
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -244,28 +315,30 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                <div className="collapse" id="collapse3">
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        height="400px"
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivFR && (
+                  <div className="" id="collapse5">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="col-md-12 py-2">
                 <Link
-                  className="btn w-100"
+                  className={classnamein}
                   data-bs-toggle="collapse"
-                  href="#collapse3"
+                  href="#collapse6"
                   role="button"
                   aria-expanded="false"
                   aria-controls="collapseExample"
+                  onClick={handleClickin}
                 >
                   <div className="d-flex justify-content-between">
                     <div>
@@ -279,19 +352,20 @@ export default function GeoChartRate() {
                     </span>
                   </div>
                 </Link>
-                <div className="collapse" id="collapse3">
-                  <div className="card card-body">
-                    <div id="columnminichart_material" className="chart">
-                      <Chart
-                        chartType="Bar"
-                        width="100%"
-                        height="400px"
-                        data={data1}
-                        options={options1}
-                      />
+                {collapseDivIN && (
+                  <div className="" id="collapse6">
+                    <div className="card card-body">
+                      <div id="columnminichart_material" className="chart">
+                        <Chart
+                          chartType="Bar"
+                          width="100%"
+                          data={data1}
+                          options={options1}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="col-md-12 pt-4 px-4">
                 <div className="d-flex justify-content-between">

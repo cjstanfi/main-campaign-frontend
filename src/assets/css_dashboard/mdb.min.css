@@ -3204,7 +3204,7 @@ fieldset:disabled .btn {
   opacity: 0;
 }
 .collapse:not(.show) {
-  display: none;
+  display: block;
 }
 .collapsing {
   height: 0;
@@ -15590,3 +15590,53 @@ fieldset:disabled .btn-group-vertical {
 .bar-chart-div .card{
   box-shadow: initial;
 }
+
+/* ==========main-das(25-11-22)============ */
+@media (max-width:1024px) {
+  .content.main-das{
+    margin-left: 0px !important;
+  }
+  .stat-card-head{
+    font-size: 18px;
+  }
+  .col-2-half{
+    flex: 0 0 33.3% !important;
+      max-width: 33.3% !important;
+      margin-bottom: 10px;
+  }
+  .main-das .d-flex.justify-content-end .buttons, .main-das .d-flex.justify-content-end .profile-div{
+    display: none;
+  }
+  .bar-chart-div .country-name {
+    font-size: 9px !important;
+  }
+}
+@media (max-width:767px) {
+  
+  .px-3.main-das {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+}
+.main-das .d-flex.justify-content-end {
+  display: initial !important;
+}
+
+
+.col-2-half{
+  flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+}
+.col-2-half:first-child {
+  padding-left: 5px !important;
+}
+.col-2-half:last-child {
+  padding-right: 5px !important;
+}
+}
+/* ==========main-das(25-11-22)============ */
+.product-section .my-sm-5 {
+  margin-top: 1rem !important;
+}
+
+
