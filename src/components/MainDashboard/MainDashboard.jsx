@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BarChartRate from "./BarChartRate";
 import GeoChartRate from "./GeoChartRate";
 
@@ -7,14 +7,21 @@ import TopNav from "./TopNav";
 import TotalCount from "./TotalCount";
 
 export default function MainDashboard() {
+  const [navistoggled, setnavistoggled] = useState(false);
+
+  function clickEvent() {
+    setnavistoggled(!navistoggled);
+  }
   return (
     <>
-      <Sidebar />
-      <div className="content px-3">
-        <TopNav />
-        <TotalCount />
-        <BarChartRate />
-        <GeoChartRate />
+      <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
+        <Sidebar clickEvent={clickEvent} />
+        <div className="content px-3 main-das">
+          <TopNav />
+          <TotalCount />
+          <BarChartRate />
+          <GeoChartRate />
+        </div>
       </div>
     </>
   );

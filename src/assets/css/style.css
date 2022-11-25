@@ -64,7 +64,8 @@
   font-style: normal;
 }
 /*****************************************Scroll*****************************************/
-::-webkit-scrollbar {
+
+/* ::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -77,13 +78,13 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b5998;
-}
+} */
 /*****************************************Body and heading*****************************************/
 body {
   font-family: "THICCCBOI";
 }
 h1 {
-  font-size: 80px;
+  font-size: 62px;
   font-weight: 700;
 }
 h2 {
@@ -222,8 +223,8 @@ a {
   color: #ffffff;
 }
 /*****************************************others*****************************************/
-.section-margin {
-  margin-top: 130px !important;
+.homepage .section-margin {
+  margin-top: 90px !important;
 }
 .background-grey {
   background: rgba(217, 217, 255, 0.15);
@@ -277,7 +278,7 @@ ul:not(.navbar-nav) .dropdown-toggle:after {
   max-width: 1200px;
 }
 .header-content .arrow-down img {
-  top: -100px;
+  top: -6px;
   left: auto;
   right: 150px;
 }
@@ -334,7 +335,7 @@ footer a:hover path {
 }
 .revenue-section .main-container {
   max-width: 1400px;
-  margin-top: -170px;
+  margin-top: 0px;
 }
 .revenue-section .main-container1 {
   background: rgba(142, 169, 224, 0.15);
@@ -356,7 +357,7 @@ footer a:hover path {
   border-radius: 60px;
   color: #ffffff;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
 }
 .revenue-section .nav-tabs .nav-link {
   border-radius: 60px;
@@ -425,6 +426,7 @@ footer a:hover path {
   border-radius: 48px;
   min-height: 537px;
   padding: 49px 36px;
+  margin-left: 0px !important;
 }
 .plans-section .arrow-down img {
   z-index: -1;
@@ -1034,7 +1036,7 @@ footer a:hover path {
     top: -28px;
   }
   .revenue-section .main-container {
-    margin-top: -120px;
+    margin-top: 0px;
   }
   .revenue-section .main-container1 {
     border-radius: 18px;
@@ -1764,6 +1766,68 @@ footer a:hover path {
 .slide-content{
   text-align: center;
 }
+.top-ma{
+  margin-top: 3rem !important;
+}
+@media only screen and (max-width:767px){
+
+.revenue-section .px-5 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+.sc-area{
+  padding-top: 20px;
+  margin-bottom: 20px;
+  overflow-x: scroll;
+  padding-bottom: 15px;
+    
+}
+
+.sc-area:hover, .sc-area:focus {
+  -webkit-overflow-scrolling: touch;
+  
+}
+.sc-area ul{
+  width: 815px;
+}
+.sc-area-1 ul{
+  width: 600px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.analytics-section .tab-container .nav-tabs {
+  margin-top: 0px;
+}
+.revenue-section .nav-tabs .nav-link, .analytics-section .nav-tabs .nav-link{
+  font-size: 18px !important;
+  padding: 0px;
+  color: #040404;
+  margin: 0 18px;
+}
+.revenue-section .nav-tabs .nav-link.active, .analytics-section .nav-tabs .nav-link.active {
+  font-size: 18px !important;
+    border-bottom: 3px solid #3b5998;
+    border-radius: 0px;
+    background: inherit;
+    padding: 0px 0px 5px 0px;
+    color: #040404;
+}
+.homepage .section-margin {
+  margin-top: 60px !important;
+}
+.top-ma{
+  margin-top: 2rem !important;
+}
+.order--new-1{
+  order: 2 !important;
+}
+.order--new-2{
+  order: 1 !important;
+}
+
+}
 
 @media only screen and (max-width:640px){
   .links a{
@@ -1773,3 +1837,14 @@ footer a:hover path {
     width: 100%;
   }
 }
+
+
+.header-content{
+  padding-bottom:90px;
+}
+
+.homepage .btn.theme-btn-light svg {
+  fill: #3b5997;
+}
+
+

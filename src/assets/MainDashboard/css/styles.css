@@ -16,10 +16,14 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  padding: 58px 0 0; /* Height of navbar */
+  padding: 12px 0 0; /* Height of navbar */
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
   width: 270px;
   z-index: 600;
+  padding: 27px;
+}
+div#navbarSupportedContent {
+  margin-top: 40px;
 }
 
 @media (max-width: 991.98px) {
@@ -221,3 +225,40 @@ body {
 .columnchart_material .google-visualization-tooltip {
   padding-top: 10px !important;
 }
+/* ============dasbord(24)======== */
+.col-2-half:first-child{
+  padding-left: 0px !important;
+}
+.col-2-half:last-child{
+  padding-right: 0px !important;
+}
+.bar-chart-sec.px-2{
+  padding-right: 0rem !important;
+  padding-left:0rem !important;
+}
+.my-5.total-section-filters {
+  margin-bottom: 15px !important;
+}
+#sidebarMenu a, .top-nav a{
+  font-family: thicccboi !important;
+}
+.product-section a, .product-section p, .table-scroll label, .side-menu a{
+  font-family: thicccboi !important;
+}
+.table-scroll .mt-sm-5 {
+  margin-top: 1rem !important;
+}
+.table-scroll .mt-4 {
+  margin-top: 0.8rem !important;
+}
+.slick-slide{
+  margin-bottom: 10px;
+}
+.my-5.pagination{
+  margin-top: 1rem !important;
+}
+
+
+
+
+
