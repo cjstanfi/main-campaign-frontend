@@ -7,12 +7,7 @@ const accountSubject = new BehaviorSubject(null);
 
 export const accountService = {
     login,
-    apiAuthenticate,
     logout,
-    getAll,
-    getById,
-    update,
-    delete: _delete,
     account: accountSubject.asObservable(),
     get accountValue () { return accountSubject.value; }
 };
