@@ -17,8 +17,10 @@ async function login() {
     const { authResponse } = await new Promise(window.FB.login);
     console.log(authResponse)
     if(authResponse){
-        const response = await sendApiToken(authResponse.userID, authResponse.accessToken, null)
-        console.log(response)
+        const response1 = await sendApiToken(authResponse.userID, authResponse.accessToken, null)
+        const response2 = await populateFacebookData('0', authResponse.userID)
+        console.log(response1)
+        console.log(response2)
         if (!response) return;
     } else {
         console.log("Authorization failed from facebook")
@@ -27,6 +29,11 @@ async function login() {
     // get return url from location state or default to home page
     const { from } = history.location.state || { from: { pathname: "/" } };
     history.push(from);
+}
+
+async function populateFacebookData(mainCampaignBusinessId, facebookAccountId){
+    const response = await axios.put(`https://test.api.maincampaign.com/marketing-platform-account/${mainCampaignBusinessId}/${facebookAccountId}`)
+    return response
 }
 
 async function sendApiToken(userId, shortLivedAccessToken, longLivedAccessToken) {
