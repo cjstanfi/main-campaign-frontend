@@ -1,4 +1,3 @@
-// import env from '../../env';
 import { BehaviorSubject } from 'rxjs';
 import axios from 'axios';
 import { history } from "../helpers";
@@ -17,9 +16,13 @@ async function login() {
     console.log("doggy 1")
     const { authResponse } = await new Promise(window.FB.login);
     console.log(authResponse)
-    const response = await sendApiToken(authResponse.userID, authResponse.accessToken, null)
-    console.log(response)
-    if (!response) return;
+    if(authResponse){
+        const response = await sendApiToken(authResponse.userID, authResponse.accessToken, null)
+        console.log(response)
+        if (!response) return;
+    } else {
+        console.log("Authorization failed from facebook")
+    }
 
     // get return url from location state or default to home page
     const { from } = history.location.state || { from: { pathname: "/" } };
@@ -43,7 +46,6 @@ async function sendApiToken(userId, shortLivedAccessToken, longLivedAccessToken)
 function logout() {
     // revoke app permissions to logout completely because FB.logout() doesn't remove FB cookie
     window.FB.api('/me/permissions', 'delete', null, () => window.FB.logout());
-    stopAuthenticateTimer();
     accountSubject.next(null);
     history.push('/login');
 }
