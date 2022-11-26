@@ -32,7 +32,7 @@ async function login() {
 }
 
 async function populateFacebookData(mainCampaignBusinessId, facebookAccountId){
-    const response = await axios.put(`https://test.api.maincampaign.com/facebook-everything//${mainCampaignBusinessId}/${facebookAccountId}`)
+    const response = await axios.put(`https://test.api.maincampaign.com/facebook-everything/${mainCampaignBusinessId}/${facebookAccountId}`)
     return response
 }
 
