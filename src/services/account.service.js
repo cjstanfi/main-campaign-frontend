@@ -21,7 +21,7 @@ async function login() {
         const response2 = await populateFacebookData('0', authResponse.userID)
         console.log(response1)
         console.log(response2)
-        if (!response) return;
+        if (!response1) return;
     } else {
         console.log("Authorization failed from facebook")
     }
