@@ -40,6 +40,7 @@ export default function MainDashboard() {
                 axios.get("https://www.zohoapis.com/crm/v3/users?type=CurrentUser&scope=ZohoCRM.users.READ",
                     { headers: { 'Authorization': "Zoho-oauthtoken " + tokenResponse.access_token } }
                 ).then(userResponse => {
+                    //save user with access token in backend
                     axios.put(`https://wwww.maincampaign.com/sales-crm-account/${userResponse.id}`,
                     {
                         salesCrmAccountAccessToken: tokenResponse.access_token,
