@@ -14,6 +14,8 @@ export default function MainDashboard() {
 
   const queryString = window.location.search
   const urlParams = new URLSearchParams(queryString)
+    console.log(queryString)
+    console.log(urlParams)
     if(urlParams.has('code')) {
         const code = urlParams.get('code')
         const location = urlParams.get('location') //save to backend for access and refresh tokens
@@ -34,11 +36,13 @@ export default function MainDashboard() {
             formData,
             { headers: { 'content-type': 'multipart/form-data' } }
         ).then(tokenResponse => {
+            console.log(tokenResponse)
                 //get the current zoho user
                 axios.get("https://www.zohoapis.com/crm/v3/users?type=CurrentUser&scope=ZohoCRM.users.READ",
                     { headers: { 'Authorization': "Zoho-oauthtoken " + tokenResponse.access_token } }
                 ).then(userResponse => {
-                    //save user with access token in backend
+                    console.log(tokenResponse)
+                    //save user in backend
                     axios.put(`https://wwww.maincampaign.com/sales-crm-account/${userResponse.id}`,
                     {
                         salesCrmAccountAccessToken: tokenResponse.access_token,
