@@ -29,8 +29,6 @@ export default function MainDashboard() {
         formData.append('redirect_uri', "https://www.maincampaign.com/dashboard")
         formData.append('code', code)
 
-        const config =
-
         //get access_token and refresh_token
         axios.post(`${domainSpecificUrl}/oauth/v2/token`,
             formData,
