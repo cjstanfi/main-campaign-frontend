@@ -26,7 +26,7 @@ export default function MainDashboard() {
   formData.append('client_id', "1000.TO2UPAI0LXK9RRU0HYS5ZQ1OZ8UPBI")
   formData.append('client_secret', "650254d3a45ed3113b0580863453e1e5af6cb2e9db")
   formData.append('redirect_uri', "https://www.maincampaign.com/dashboard")
-  formData.append('code', code
+  formData.append('code', code)
 
   //get access_token and refresh_token
   axios.post(`${domainSpecificUrl}/oauth/v2/token`,
