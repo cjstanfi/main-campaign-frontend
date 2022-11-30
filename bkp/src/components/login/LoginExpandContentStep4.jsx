@@ -134,6 +134,10 @@ export default function LoginExpandContentStep4() {
                   </Link>
                   <Link to={"/loginstep4"}>
                     <img src={CRMimg4} alt="" />
+                    onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href="https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.ALL&client_id=1000.TO2UPAI0LXK9RRU0HYS5ZQ1OZ8UPBI&response_type=code&access_type=offline&redirect_uri=https://maincampaign.com"
+                  }}
                   </Link>
                 </div>
               </div>
