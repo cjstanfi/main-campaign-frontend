@@ -32,7 +32,7 @@ export default function LoginExpand1ContentStep1(props) {
     setrePasswordShown(!repasswordShown);
   };
   return (
-    <div className="row p-0 position-relative login-section secondStep animation-element bounce-up in-view">
+    <div className="row pt-5 mt-5 position-relative login-section secondStep animation-element bounce-up in-view">
       <div className="container main-container subject">
         <h2 className="text-center color-black2">Let’s go!</h2>
         <div className="row m-0 p-0 position-relative ">

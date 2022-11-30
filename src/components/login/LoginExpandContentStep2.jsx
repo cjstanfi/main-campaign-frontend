@@ -7,7 +7,7 @@ import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
 export default function LoginExpandContentStep2() {
   return (
-    <div className="row p-0 position-relative login-section animation-element bounce-up in-view">
+    <div className="row pt-5 mt-5 position-relative login-section animation-element bounce-up in-view">
       <div className="container main-container subject">
         <h2 className="text-center color-black2">Let’s go!</h2>
         <div className="row m-0 p-0 position-relative ">
