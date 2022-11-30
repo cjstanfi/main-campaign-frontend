@@ -26,17 +26,31 @@ export default function MainDashboard() {
   formData.append('client_id', "1000.TO2UPAI0LXK9RRU0HYS5ZQ1OZ8UPBI")
   formData.append('client_secret', "650254d3a45ed3113b0580863453e1e5af6cb2e9db")
   formData.append('redirect_uri', "https://www.maincampaign.com/dashboard")
-  formData.append('code', code)
+  formData.append('code', code
 
-  const config = {
-    headers: { 'content-type': 'multipart/form-data' }
-  }
+  //get access_token and refresh_token
+  axios.post(`${domainSpecificUrl}/oauth/v2/token`,
+      formData,
+      { headers: { 'content-type': 'multipart/form-data' } }).then(tokenResponse => {
+        axios.get("https://www.zohoapis.com/crm/v3/users?type=CurrentUser").then(userResponse => {
+          axios.put(`https://wwww.maincampaign.com/sales-crm-account/${userResponse.id}`,
+              {
+                salesCrmAccountAccessToken: tokenResponse.access_token,
+                salesCrmAccountDomainUrl: accountsServer,
+                salesCrmAccountRefreshToken: tokenResponse.refresh_token,
+                salesCrmAccountId: userResponse.id,
+              }
+              )
+        })
+      })
 
-  axios.post(`${domainSpecificUrl}/oauth/v2/token`, formData, config).then(response => {
-    console.log(response);
-  }).catch(error => {
-        console.log(error);
-  });
+    // axios.get(
+    //     "https://profile.zoho.com/api/v1/user/self/profile",
+    //     { headers: {
+    //         'Authorization': `Zoho-oauthtoken ${response.access_token}`
+    //       }}
+    // ).then()
+
 
   function clickEvent() {
     setnavistoggled(!navistoggled);
