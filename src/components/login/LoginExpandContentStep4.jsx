@@ -137,9 +137,12 @@ export default function LoginExpandContentStep4() {
                   </Link>
                 </div>
               </div>
-              <div className="d-flex align-items-center justify-content-center my-sm-5 my-2">
+              <div className="d-flex flex-column align-items-center justify-content-center my-sm-5 my-2">
                 <Link to={"/dashboard"} className="btn theme-btn">
                   Finish now
+                </Link>
+                <Link to={"/dashboard"} className="btn theme-btn w-auto mt-2">
+                  Skip for now & add later
                 </Link>
               </div>
             </div>

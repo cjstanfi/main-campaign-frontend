@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../assets/img/logo.svg";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";

@@ -3,6 +3,26 @@
 }
 /*****************************************Fonts*****************************************/
 @font-face {
+  font-family: "thicccboi";
+  src: url("../../../public/fonts/THICCCBOI/THICCCBOI-Regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "THICCCBOI-Bold";
+  src: url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.woff") format("woff"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.woff2") format("woff2"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.svg#THICCCBOI-Bold")
+      format("svg"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.eot"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*@font-face {
   font-family: "THICCCBOI";
   src: url("../fonts/THICCCBOI/THICCCBOI-Black.ttf");
   font-weight: 900;
@@ -33,7 +53,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "THICCCBOI";
+  font-family: "THICCCBOI-Regular";
   src: url("../fonts/THICCCBOI/THICCCBOI-Regular.ttf");
   font-weight: 400;
   font-style: normal;
@@ -53,13 +73,13 @@
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../fonts/Avenir/Avenir-Medium.ttf");
+  src: url("../fonts/Avenir/Avenir-Medium.ttf") format("ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../fonts/Avenir/Avenir-Roman.ttf");
+  src: url("../fonts/Avenir/Avenir-Roman.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
@@ -81,47 +101,52 @@
 } */
 /*****************************************Body and heading*****************************************/
 body {
-  font-family: "THICCCBOI";
+  font-family: thicccboi !important;
 }
 h1 {
   font-size: 62px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h2 {
   font-size: 65px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h3 {
   font-size: 36px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h4 {
   font-size: 22px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h5 {
   font-size: 20px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 p {
   font-size: 18px;
   font-weight: 400;
-  font-family: "Avenir";
+  font-family: "thicccboi";
 }
 li {
   font-size: 18px;
   font-weight: 500;
-  font-family: "Avenir";
+  font-family: "thicccboi";
 }
 label {
   font-size: 14px;
   font-weight: 500;
-  font-family: "Avenir";
+  font-family: "thicccboi";
 }
 a {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Avenir";
+  font-family: "thicccboi";
 }
 /*****************************************Fonts*****************************************/
 .font-12 {
@@ -312,7 +337,7 @@ footer .main-container1 {
   opacity: 0.75;
   padding: 10px;
   font-size: 16px;
-  font-family: "Avenir";
+  font-family: "thicccboi";
 }
 .subscribe-btn .theme-btn {
   width: 127px;
@@ -350,6 +375,7 @@ footer a:hover path {
   font-size: 22px;
   text-transform: inherit;
   border: none;
+  font-family: "THICCCBOI-Bold";
 }
 .revenue-section .nav-tabs .nav-link.active,
 .analytics-section .nav-tabs .nav-link.active {
@@ -593,7 +619,7 @@ footer a:hover path {
   font-weight: 600;
   font-size: 14px;
   color: #0a0a0d;
-  font-family: "THICCCBOI";
+  font-family: "thicccboi";
 }
 .navbar .nav-link {
   font-weight: 600;
@@ -1752,7 +1778,6 @@ footer a:hover path {
   display: block;
 }
 
-
 .dropdown-toggle:after {
   display: inline-block;
   margin-left: 0.255em;
@@ -1763,88 +1788,85 @@ footer a:hover path {
   border-bottom: 0;
   border-left: 0.3em solid transparent;
 }
-.slide-content{
-  text-align: center;
+.slide-content {
+  text-align: left;
+  padding: 0px !important;
 }
-.top-ma{
+.top-ma {
   margin-top: 3rem !important;
 }
-@media only screen and (max-width:767px){
+@media only screen and (max-width: 767px) {
+  .revenue-section .px-5 {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  .sc-area {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+    padding-bottom: 15px;
+  }
 
-.revenue-section .px-5 {
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-.sc-area{
-  padding-top: 20px;
-  margin-bottom: 20px;
-  overflow-x: scroll;
-  padding-bottom: 15px;
-    
-}
-
-.sc-area:hover, .sc-area:focus {
-  -webkit-overflow-scrolling: touch;
-  
-}
-.sc-area ul{
-  width: 815px;
-}
-.sc-area-1 ul{
-  width: 600px;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-.analytics-section .tab-container .nav-tabs {
-  margin-top: 0px;
-}
-.revenue-section .nav-tabs .nav-link, .analytics-section .nav-tabs .nav-link{
-  font-size: 18px !important;
-  padding: 0px;
-  color: #040404;
-  margin: 0 18px;
-}
-.revenue-section .nav-tabs .nav-link.active, .analytics-section .nav-tabs .nav-link.active {
-  font-size: 18px !important;
+  .sc-area:hover,
+  .sc-area:focus {
+    -webkit-overflow-scrolling: touch;
+  }
+  .sc-area ul {
+    width: 815px;
+  }
+  .sc-area-1 ul {
+    width: 600px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .analytics-section .tab-container .nav-tabs {
+    margin-top: 0px;
+  }
+  .revenue-section .nav-tabs .nav-link,
+  .analytics-section .nav-tabs .nav-link {
+    font-size: 18px !important;
+    padding: 0px;
+    color: #040404;
+    margin: 0 18px;
+  }
+  .revenue-section .nav-tabs .nav-link.active,
+  .analytics-section .nav-tabs .nav-link.active {
+    font-size: 18px !important;
     border-bottom: 3px solid #3b5998;
     border-radius: 0px;
     background: inherit;
     padding: 0px 0px 5px 0px;
     color: #040404;
-}
-.homepage .section-margin {
-  margin-top: 60px !important;
-}
-.top-ma{
-  margin-top: 2rem !important;
-}
-.order--new-1{
-  order: 2 !important;
-}
-.order--new-2{
-  order: 1 !important;
+  }
+  .homepage .section-margin {
+    margin-top: 60px !important;
+  }
+  .top-ma {
+    margin-top: 2rem !important;
+  }
+  .order--new-1 {
+    order: 2 !important;
+  }
+  .order--new-2 {
+    order: 1 !important;
+  }
 }
 
-}
-
-@media only screen and (max-width:640px){
-  .links a{
+@media only screen and (max-width: 640px) {
+  .links a {
     width: 100% !important;
   }
-  .m-flex-column{
+  .m-flex-column {
     width: 100%;
   }
 }
 
-
-.header-content{
-  padding-bottom:90px;
+.header-content {
+  padding-bottom: 90px;
 }
 
 .homepage .btn.theme-btn-light svg {
   fill: #3b5997;
 }
-
-
