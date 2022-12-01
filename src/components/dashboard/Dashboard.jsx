@@ -18,15 +18,17 @@ export default function Dashboard() {
   }
   useEffect(() => {
     document.title = "Dashboard Page";
-
-    const getAnything = async () => {
-      const result = await axios.get(`https://test.api.maincampaign.com/facebook-ad-set/0`)
-      setAnything(result)
-    }
-
-    const result = getAnything("0")
-    setAnything(result)
+    getAnything()
   }, []);
+
+
+  const getAnything = async () => {
+    const { data } = await axios.get(`https://test.api.maincampaign.com/facebook-ad-set/0`)
+    setAnything(data)
+    console.log("Result from axios", data)
+    console.log("Result after axios state", anything)
+  }
+
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
