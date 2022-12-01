@@ -1,6 +1,6 @@
 import React from "react";
 import exclamation from "../../assets/img/exclamation.svg";
-import SummaryViewSmall from "./SummaryViewSmall";
+import SummaryViewSmall from "../dashboard/SummaryViewSmall";
 // import info from "../../assets/MainDashboard/assets/images/info.svg";
 export default function TotalCount() {
   return (

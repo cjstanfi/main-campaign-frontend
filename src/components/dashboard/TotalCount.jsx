@@ -6,7 +6,7 @@ import greenvector from "../../assets/img/green-vector.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getallPost } from "../../actions/action";
 import { Link } from "react-router-dom";
-import SummaryViewSmall from "../analytics/SummaryViewSmall";
+import SummaryViewSmall from "./SummaryViewSmall";
 export default function TotalCount() {
   const dispatch = useDispatch();
   useEffect(() => {
