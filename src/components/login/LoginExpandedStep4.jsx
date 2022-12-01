@@ -9,6 +9,9 @@ export default function LoginExpandedStep4() {
   function clickEvent() {
     setnavistoggled(!navistoggled);
   }
+  // useEffect(() => {
+  //   document.title = "CRM Connection Page";
+  // }, []);
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">

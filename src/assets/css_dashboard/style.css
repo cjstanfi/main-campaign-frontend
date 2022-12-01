@@ -1510,3 +1510,8 @@ ul.bul-li strong {
 .me-1 {
   max-width: 40px;
 }
+#reactgooglegraph-11 > div {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+}

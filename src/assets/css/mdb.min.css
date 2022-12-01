@@ -2402,7 +2402,9 @@ textarea.form-control-lg {
   border-bottom-right-radius: 0;
 }
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -3203,8 +3205,14 @@ fieldset:disabled .btn {
 .fade:not(.show) {
   opacity: 0;
 }
-.collapse:not(.show) {
+/* .collapse:not(.show) {
   display: none;
+} */
+.collapse {
+  display: none;
+}
+.collapse.show {
+  display: block;
 }
 .collapsing {
   height: 0;

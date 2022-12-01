@@ -101,17 +101,13 @@ export default function TotalCount() {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Action
-                        </Link>
+                        <Link className="dropdown-item">Action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Another action
-                        </Link>
+                        <Link className="dropdown-item">Another action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
+                        <Link className="dropdown-item">
                           Something else here
                         </Link>
                       </li>
@@ -175,17 +171,13 @@ export default function TotalCount() {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Action
-                        </Link>
+                        <Link className="dropdown-item">Action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Another action
-                        </Link>
+                        <Link className="dropdown-item">Another action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
+                        <Link className="dropdown-item">
                           Something else here
                         </Link>
                       </li>
@@ -249,17 +241,13 @@ export default function TotalCount() {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Action
-                        </Link>
+                        <Link className="dropdown-item">Action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Another action
-                        </Link>
+                        <Link className="dropdown-item">Another action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
+                        <Link className="dropdown-item">
                           Something else here
                         </Link>
                       </li>
@@ -323,17 +311,13 @@ export default function TotalCount() {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Action
-                        </Link>
+                        <Link className="dropdown-item">Action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Another action
-                        </Link>
+                        <Link className="dropdown-item">Another action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
+                        <Link className="dropdown-item">
                           Something else here
                         </Link>
                       </li>
@@ -397,17 +381,13 @@ export default function TotalCount() {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Action
-                        </Link>
+                        <Link className="dropdown-item">Action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
-                          Another action
-                        </Link>
+                        <Link className="dropdown-item">Another action</Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={"/"}>
+                        <Link className="dropdown-item">
                           Something else here
                         </Link>
                       </li>

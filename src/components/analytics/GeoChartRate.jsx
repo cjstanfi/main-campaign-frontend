@@ -201,9 +201,10 @@ export default function GeoChartRate() {
                     <div id="columnminichart_material" className="chart">
                       <Chart
                         chartType="Bar"
-                        width="100%"
                         data={data1}
                         options={options1}
+                        width="100%"
+                        height="100%"
                       />
                     </div>
                   </div>
@@ -238,6 +239,7 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
+                        height="70%"
                         data={data1}
                         options={options1}
                       />
@@ -274,6 +276,7 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
+                        height="70%"
                         data={data1}
                         options={options1}
                       />
@@ -310,6 +313,7 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
+                        height="70%"
                         data={data1}
                         options={options1}
                       />
@@ -346,6 +350,7 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
+                        height="60%"
                         data={data1}
                         options={options1}
                       />
@@ -382,6 +387,7 @@ export default function GeoChartRate() {
                       <Chart
                         chartType="Bar"
                         width="100%"
+                        height="60%"
                         data={data1}
                         options={options1}
                       />

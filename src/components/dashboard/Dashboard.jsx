@@ -13,7 +13,9 @@ export default function Dashboard() {
   function clickEvent() {
     setnavistoggled(!navistoggled);
   }
-
+  // useEffect(() => {
+  //   document.title = "Dashboard Page";
+  // }, []);
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
