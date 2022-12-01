@@ -42,7 +42,7 @@ export default function MainDashboard() {
             // ).then()
         }
     }
-    sendZohoTokens()
+    sendZohoTokens().catch(error => console.log(error))
     });
 
 
