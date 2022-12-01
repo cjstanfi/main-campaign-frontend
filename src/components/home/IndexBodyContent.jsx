@@ -5,7 +5,7 @@ import founder2 from "../../assets/img/founder2.png";
 import stats3 from "../../assets/img/stats3.png";
 import stats3mb from "../../assets/img/stats3-mb.png";
 import stats1 from "../../assets/img/stats1.png";
-import stats1mb from "../../assets/img/stats1-mb.png";
+// import stats1mb from "../../assets/img/stats1-mb.png";
 import stats2 from "../../assets/img/stats2.png";
 import stats2mb from "../../assets/img/stats2-mb.png";
 import arrowdown from "../../assets/img/arrow-down.svg";
@@ -20,8 +20,8 @@ import "aos/dist/aos.css";
 export default function IndexBodyContent(props) {
   const [isactive, setisactive] = useState("ex1-tab-1");
   const [isactivenext, setisactivenext] = useState("ex2-tab-1");
-  const [isactiveselect, setisactiveselect] = useState("ex-tab-1");
-  const [isactiveselectnext, setisactiveselectnext] = useState("extab-1");
+  // const [isactiveselect, setisactiveselect] = useState("ex-tab-1");
+  // const [isactiveselectnext, setisactiveselectnext] = useState("extab-1");
   var settings1 = {
     dots: true,
     infinite: true,
@@ -50,20 +50,20 @@ export default function IndexBodyContent(props) {
     setisactivenext(event.currentTarget.id);
     // event.currentTarget.className += " active";
   };
-  const showselecteddiv = (event) => {
-    //console.log(event.currentTarget.id);
+  // const showselecteddiv = (event) => {
+  //   //console.log(event.currentTarget.id);
 
-    setisactiveselect(event.currentTarget.value);
-    // console.log(event.currentTarget.value);
-    // event.currentTarget.className += " active";
-  };
-  const showselecteddivnext = (event) => {
-    //console.log(event.currentTarget.id);
+  //   setisactiveselect(event.currentTarget.value);
+  //   // console.log(event.currentTarget.value);
+  //   // event.currentTarget.className += " active";
+  // };
+  // const showselecteddivnext = (event) => {
+  //   //console.log(event.currentTarget.id);
 
-    setisactiveselectnext(event.currentTarget.value);
-    // console.log(event.currentTarget.value);
-    // event.currentTarget.className += " active";
-  };
+  //   setisactiveselectnext(event.currentTarget.value);
+  //   // console.log(event.currentTarget.value);
+  //   // event.currentTarget.className += " active";
+  // };
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -103,9 +103,9 @@ export default function IndexBodyContent(props) {
                 </button>
               </div>
             </div>
-            <div className="position-relative arrow-down">
+            {/* <div className="position-relative arrow-down">
               <img src={arrowdown} className="position-absolute" alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-sm-6 d-flex align-items-center justify-content-center order--new-2 mt-5 pt-sm-0 pt-5">
@@ -129,9 +129,9 @@ export default function IndexBodyContent(props) {
         data-aos-once="false"
       >
         <div className="container main-container px-sm-0 px-4 subject">
-          <div className="position-relative arrow-up">
+          {/* <div className="position-relative arrow-up">
             <img src={arrowup} className="position-absolute" alt="" />
-          </div>
+          </div> */}
           <div className="row m-0 p-0 position-relative main-container1 justify-content-center">
             <h2 className="color-black2 mt-sm-5 mt-3 text-center px-5">
               See your revenue grow in

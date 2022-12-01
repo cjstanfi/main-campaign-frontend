@@ -9,6 +9,9 @@ export default function LoginExpandedStep2() {
   function clickEvent() {
     setnavistoggled(!navistoggled);
   }
+  // useEffect(() => {
+  //   document.title = "Register Page";
+  // }, []);
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">

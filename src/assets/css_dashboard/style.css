@@ -3,6 +3,26 @@
 }
 /*****************************************Fonts*****************************************/
 @font-face {
+  font-family: "thicccboi";
+  src: url("../../../public/fonts/THICCCBOI/THICCCBOI-Regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "THICCCBOI-Bold";
+  src: url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.woff") format("woff"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.woff2") format("woff2"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.svg#THICCCBOI-Bold")
+      format("svg"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.eot"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../public/fonts/THICCCBOI/THICCCBOI-Bold.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* @font-face {
   font-family: "THICCCBOI";
   src: url("../fonts/THICCCBOI/THICCCBOI-Black.ttf");
   font-weight: 900;
@@ -38,12 +58,12 @@
   font-weight: 400;
   font-style: normal;
 }
-/* @font-face {
+@font-face {
     font-family: 'THICCCBOI';
     src: url('../fonts/Biennale/Biennale%20Regular.otf');
     font-weight: 300;
     font-style: normal;
-} */
+}
 @font-face {
   font-family: "THICCCBOI";
   src: url("../fonts/THICCCBOI/THICCCBOI-Thin.ttf");
@@ -55,7 +75,7 @@
   src: url("../fonts/THICCCBOI/THICCCBOI-Light.ttf");
   font-weight: 100;
   font-style: normal;
-}
+} */
 
 /*****************************************Scroll*****************************************/
 .homepage::-webkit-scrollbar {
@@ -74,27 +94,32 @@
 }
 /*****************************************Body and heading*****************************************/
 body {
-  font-family: "THICCCBOI";
+  font-family: thicccboi !important;
 }
 h1 {
   font-size: 62px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h2 {
   font-size: 65px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h3 {
   font-size: 36px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h4 {
   font-size: 20px;
   font-weight: 700;
+  font-family: "THICCCBOI-Bold";
 }
 h5 {
   font-size: 16px;
   font-weight: 600;
+  font-family: "THICCCBOI-Bold";
 }
 p {
   font-size: 16px;
@@ -644,9 +669,9 @@ label {
   .product-section .col-sm-2 {
     width: 18%;
   }
-  .product-section .col-sm-10 {
+  /* .product-section .col-sm-10 {
     width: 82%;
-  }
+  } */
   .custom-dropdown2,
   .custom-input2.w-350 {
     width: 200px !important;
@@ -1386,24 +1411,25 @@ label {
   }
 }
 
-
 /*==============privacy-policy-start================*/
 
 .privacy-page {
   padding-top: 25px;
 }
-.privacy-page p, .privacy-page{
-  font-family: 'THICCCBOI';
+.privacy-page p,
+.privacy-page {
+  font-family: "THICCCBOI";
 }
-.privacy-page td, .privacy-page th{
+.privacy-page td,
+.privacy-page th {
   border: 2px dashed;
   font-family: arial;
   font-size: 16px;
 }
-.privacy-page .table{
-font-family: 'THICCCBOI';
+.privacy-page .table {
+  font-family: "THICCCBOI";
 }
-.privacy-page h2{
+.privacy-page h2 {
   font-size: 30px;
 }
 .privacy-page h5 {
@@ -1411,39 +1437,39 @@ font-family: 'THICCCBOI';
   color: #000;
   padding: 10px 0;
 }
-.privacy-page p{
-      color: #000;
+.privacy-page p {
+  color: #000;
 }
 .text-li a {
   display: flex;
   margin-bottom: 8px;
 }
-ul.bul-li strong{
- color: #000;
+ul.bul-li strong {
+  color: #000;
 }
 .tabl li {
   display: flex;
 }
-.privacy-page a{
+.privacy-page a {
   font-size: 16px;
 }
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .privacy-page {
     padding-top: 120px;
-}
+  }
 }
 /*==============privacy-policy-end================*/
-.content-analy{
+.content-analy {
   margin-left: 240px !important;
 }
-.product-section .my-5{
+.product-section .my-5 {
   margin-top: 2rem !important;
 }
 .product-section .total-section .links {
   margin-left: -10px;
 }
-@media (max-width:1024px) {
-  #sidebarMenu{
+@media (max-width: 1024px) {
+  #sidebarMenu {
     position: relative;
     box-shadow: inherit;
     padding: 0 20px;
@@ -1451,11 +1477,41 @@ ul.bul-li strong{
   .content-analy {
     margin-left: 0px !important;
     padding-left: 0px !important;
-}
-.product-section #sidebarMenu{
-  padding: 0 0px;
-}
-.main-das .top-nav {
-  padding-top: 60px !important;
-}
   }
+  .product-section #sidebarMenu {
+    padding: 0 0px;
+  }
+  .main-das .top-nav {
+    padding-top: 60px !important;
+  }
+}
+/* @media (max-width: 767px) {
+  .slider_wrap {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+} */
+.product-section .total-section .links {
+  margin-left: 0 !important;
+}
+.slider_wrap h3 {
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .slider_wrap h3 {
+    font-size: 48px;
+    margin-bottom: 27px;
+  }
+  .greenline {
+    height: 60px;
+  }
+}
+.me-1 {
+  max-width: 40px;
+}
+#reactgooglegraph-11 > div {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+}

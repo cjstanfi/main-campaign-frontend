@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../assets/img/logo.svg";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
@@ -10,7 +10,9 @@ function Header(props) {
     setnavistoggledsub(!navistoggledsub);
   }
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
-
+  // useEffect(() => {
+  //   document.title = "Home";
+  // }, []);
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg m-0 desktop my-4">

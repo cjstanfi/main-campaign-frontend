@@ -22,7 +22,7 @@ export default function LoginExpandContentStep3() {
   }, [history]);
   return (
     <>
-      <div className="row p-0 position-relative login-section animation-element bounce-up thirdStep in-view">
+      <div className="row pt-5 mt-5 position-relative login-section animation-element bounce-up thirdStep in-view">
         <div className="container main-container subject">
           <h2 className="text-center color-black2">Let’s go!</h2>
           <div className="row m-0 p-0 position-relative ">
@@ -159,9 +159,12 @@ export default function LoginExpandContentStep3() {
                   </button>
                 </div>
               </div>
-              <div className="d-flex align-items-center justify-content-center my-sm-5 my-2 pt-4">
+              <div className="d-flex flex-column align-items-center justify-content-center my-sm-5 my-2 pt-4">
                 <Link to={"/loginstep4"} className="btn theme-btn w-auto">
                   Proceed to next step
+                </Link>
+                <Link to={"/loginstep4"} className="btn theme-btn w-auto mt-2">
+                  Skip for now & add later
                 </Link>
               </div>
             </div>

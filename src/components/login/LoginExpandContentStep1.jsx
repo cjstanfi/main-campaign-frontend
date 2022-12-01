@@ -32,7 +32,7 @@ export default function LoginExpand1ContentStep1(props) {
     setrePasswordShown(!repasswordShown);
   };
   return (
-    <div className="row p-0 position-relative login-section secondStep animation-element bounce-up in-view">
+    <div className="row pt-5 mt-5 position-relative login-section secondStep animation-element bounce-up in-view">
       <div className="container main-container subject">
         <h2 className="text-center color-black2">Let’s go!</h2>
         <div className="row m-0 p-0 position-relative ">
@@ -150,7 +150,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder=""
                         name="fullname"
                         {...register("fullname", {
                           required: true,
@@ -169,7 +169,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type="text"
-                        placeholder="Lorem Org"
+                        placeholder=""
                         name="compname"
                         {...register("compname", {
                           required: true,
@@ -188,7 +188,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type="text"
-                        placeholder="example@site.com"
+                        placeholder=""
                         name="email"
                         {...register("email", {
                           required: "Email Address is required",
@@ -204,7 +204,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type="text"
-                        placeholder="00 800 12574"
+                        placeholder=""
                         name="phone"
                         {...register("phone", {
                           required: true,
@@ -232,7 +232,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type={passwordShown ? "text" : "password"}
-                        placeholder="Min. 8 Characters"
+                        placeholder=""
                         name="password"
                         {...register("password", {
                           required: true,
@@ -270,7 +270,7 @@ export default function LoginExpand1ContentStep1(props) {
                       <input
                         className="custom-input mt-2"
                         type={repasswordShown ? "text" : "password"}
-                        placeholder="Min. 8 Characters"
+                        placeholder=""
                         name="confirmPassword"
                         {...register("confirmPassword", {
                           required: true,

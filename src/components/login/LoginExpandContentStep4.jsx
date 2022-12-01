@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function LoginExpandContentStep4() {
   return (
     <>
-      <div className="row p-0 position-relative login-section animation-element bounce-up thirdStep in-view">
+      <div className="row pt-5 mt-5 position-relative login-section animation-element bounce-up thirdStep in-view">
         <div className="container main-container subject">
           <h2 className="text-center color-black2">Let’s go!</h2>
           <div className="row m-0 p-0 position-relative ">
@@ -137,9 +137,12 @@ export default function LoginExpandContentStep4() {
                   </Link>
                 </div>
               </div>
-              <div className="d-flex align-items-center justify-content-center my-sm-5 my-2">
+              <div className="d-flex flex-column align-items-center justify-content-center my-sm-5 my-2">
                 <Link to={"/dashboard"} className="btn theme-btn">
                   Finish now
+                </Link>
+                <Link to={"/dashboard"} className="btn theme-btn w-auto mt-2">
+                  Skip for now & add later
                 </Link>
               </div>
             </div>
