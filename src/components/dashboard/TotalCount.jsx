@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getallPost } from "../../actions/action";
 import { Link } from "react-router-dom";
 import SummaryViewSmall from "./SummaryViewSmall";
-export default function TotalCount() {
+export default function TotalCount({data}) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getallPost());

@@ -1,5 +1,7 @@
 import axios from "axios";
 
-export async function getAnything(id) {
-    await axios.get(`https://test.api.maincampaign.com/facebook-ad-set-daily-insight/${id}`)
+export function getAnything(id) {
+   return axios.get(`https://test.api.maincampaign.com/facebook-ad-set-daily-insight/${id}`).then(result => {
+       return result
+   })
 }

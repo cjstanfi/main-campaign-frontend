@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Sidebar from "../analytics/Sidebar";
 import "../../assets/css_dashboard/mdb.min.css";
 import "../../assets/css_dashboard/style.css";
@@ -6,16 +6,27 @@ import "../../assets/css_dashboard/slick.css";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
+import {getAnything} from "../../api/main-campaign-api";
+import axios from "axios";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
+  const [anything, setAnything] = useState([]);
 
   function clickEvent() {
     setnavistoggled(!navistoggled);
   }
-  // useEffect(() => {
-  //   document.title = "Dashboard Page";
-  // }, []);
+  useEffect(() => {
+    document.title = "Dashboard Page";
+
+    const getAnything = async () => {
+      const result = await axios.get(`https://test.api.maincampaign.com/facebook-ad-set/0`)
+      setAnything(result)
+    }
+
+    const result = getAnything("0")
+    setAnything(result)
+  }, []);
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
@@ -26,7 +37,7 @@ export default function Dashboard() {
               <div className="col-sm-10 ps-sm-5 p-0 content-analy">
                 <div className="row m-0 p-0 position-relative total-section">
                   <Headingbar />
-                  <TotalCount />
+                  <TotalCount data={anything}/>
                   <TableContent />
                 </div>
               </div>
