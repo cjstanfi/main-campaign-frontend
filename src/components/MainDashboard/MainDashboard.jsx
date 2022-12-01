@@ -23,7 +23,7 @@ export default function MainDashboard() {
         //there are more of these
         const domainSpecificUrl = location === "us" ? "https://accounts.zoho.com" : null
 
-        axios.post('https://wwww.maincampaign.com/zoho-access-token',
+        axios.post('https://wwww.api.maincampaign.com/zoho-access-token',
             {
                 code,
                 domainSpecificUrl
