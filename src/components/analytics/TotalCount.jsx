@@ -1,4 +1,5 @@
 import React from "react";
+import exclamation from "../../assets/img/exclamation.svg";
 // import info from "../../assets/MainDashboard/assets/images/info.svg";
 export default function TotalCount() {
   return (
@@ -10,15 +11,16 @@ export default function TotalCount() {
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Revenue</span>
+                  <img src={exclamation} className="ms-2" alt="" />
                 </span>
                 <span className="stat-valuep green-back green-color">
                   +1.5%
                 </span>
               </div>
               <div className="pt-2 px-2">
-                <h4>
+                <h3>
                   <b>$25000</b>
-                </h4>
+                </h3>
               </div>
               <div className="greenline"></div>
             </div>
@@ -28,15 +30,16 @@ export default function TotalCount() {
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Spend</span>
+                  <img src={exclamation} className="ms-2" alt="" />
                 </span>
                 <span className="stat-valuep green-back green-color">
                   +1.5%
                 </span>
               </div>
               <div className="pt-2 px-2">
-                <h4>
+                <h3>
                   <b>$1200</b>
-                </h4>
+                </h3>
               </div>
               <div className="greenline"></div>
             </div>
@@ -46,15 +49,16 @@ export default function TotalCount() {
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Impression</span>
+                  <img src={exclamation} className="ms-2" alt="" />
                 </span>
                 <span className="stat-valuep green-back green-color">
                   +1.5%
                 </span>
               </div>
               <div className="pt-2 px-2">
-                <h4>
+                <h3>
                   <b>250.45K</b>
-                </h4>
+                </h3>
               </div>
               <div className="greenline"></div>
             </div>
@@ -64,15 +68,16 @@ export default function TotalCount() {
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Reached</span>
+                  <img src={exclamation} className="ms-2" alt="" />
                 </span>
                 <span className="stat-valuep green-back green-color">
                   +1.5%
                 </span>
               </div>
               <div className="pt-2 px-2">
-                <h4>
+                <h3>
                   <b>50.2K</b>
-                </h4>
+                </h3>
               </div>
               <div className="greenline"></div>
             </div>
@@ -82,13 +87,14 @@ export default function TotalCount() {
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Clicks</span>
+                  <img src={exclamation} className="ms-2" alt="" />
                 </span>
                 <span className="stat-valuep pink-back pink-color">-0.5%</span>
               </div>
               <div className="pt-2 px-2">
-                <h4>
+                <h3>
                   <b>45.5K</b>
-                </h4>
+                </h3>
               </div>
               <div className="pinkline"></div>
             </div>

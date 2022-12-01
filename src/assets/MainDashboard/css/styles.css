@@ -64,7 +64,7 @@ div#navbarSupportedContent {
   font-weight: 600;
 }
 .content {
-  margin-left: 270px !important;
+  margin-left: 265px !important;
 }
 .heading {
   font-size: 28px !important;
@@ -148,7 +148,7 @@ div#navbarSupportedContent {
 
 .stat-card {
   border: solid #cecece99 1px;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 .stat-card-head {
   color: #7d889e !important;
