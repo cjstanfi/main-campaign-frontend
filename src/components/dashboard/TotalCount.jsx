@@ -61,7 +61,7 @@ export default function TotalCount() {
       <div className="col-2-half">
         <div className="slide-content">
           <div className="content">
-            <div className="data p-3 px-3">
+            <div className="data p-3 px-3 rev-dash">
               <div className="d-flex">
                 <div className="me-auto d-flex align-items-center">
                   <h5 className="color-grey mb-0">Total Revenue</h5>
@@ -131,7 +131,7 @@ export default function TotalCount() {
       <div className="col-2-half">
         <div className="slide-content">
           <div className="content">
-            <div className="data p-3 px-3">
+            <div className="data p-3 px-3 rev-dash">
               <div className="d-flex">
                 <div className="me-auto d-flex align-items-center">
                   <h5 className="color-grey mb-0">Total Leads</h5>
@@ -201,7 +201,7 @@ export default function TotalCount() {
       <div className="col-2-half">
         <div className="slide-content">
           <div className="content">
-            <div className="data p-3 px-3">
+            <div className="data p-3 px-3 rev-dash">
               <div className="d-flex">
                 <div className="me-auto d-flex align-items-center">
                   <h5 className="color-grey mb-0">Total Campaigns</h5>
@@ -271,7 +271,7 @@ export default function TotalCount() {
       <div className="col-2-half">
         <div className="slide-content">
           <div className="content">
-            <div className="data p-3 px-3">
+            <div className="data p-3 px-3 rev-dash">
               <div className="d-flex">
                 <div className="me-auto d-flex align-items-center">
                   <h5 className="color-grey mb-0">Ad Sets</h5>
@@ -341,7 +341,7 @@ export default function TotalCount() {
       <div className="col-2-half">
         <div className="slide-content">
           <div className="content">
-            <div className="data p-3 px-3">
+            <div className="data p-3 px-3 rev-dash">
               <div className="d-flex">
                 <div className="me-auto d-flex align-items-center">
                   <h5 className="color-grey mb-0">Ads</h5>
