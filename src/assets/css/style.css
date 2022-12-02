@@ -101,52 +101,53 @@
 } */
 /*****************************************Body and heading*****************************************/
 body {
-  font-family: thicccboi !important;
+  /* font-family: thicccboi !important; */
+  font-family: "Poppins", sans-serif;
 }
 h1 {
   font-size: 62px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h2 {
   font-size: 65px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h3 {
   font-size: 36px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h4 {
   font-size: 22px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h5 {
   font-size: 20px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 p {
   font-size: 18px;
   font-weight: 400;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 li {
   font-size: 18px;
   font-weight: 500;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 label {
   font-size: 14px;
   font-weight: 500;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 a {
   font-size: 16px;
   font-weight: 400;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 /*****************************************Fonts*****************************************/
 .font-12 {
@@ -337,7 +338,7 @@ footer .main-container1 {
   opacity: 0.75;
   padding: 10px;
   font-size: 16px;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 .subscribe-btn .theme-btn {
   width: 127px;
@@ -371,11 +372,11 @@ footer a:hover path {
 .revenue-section .nav-tabs .nav-link,
 .analytics-section .nav-tabs .nav-link {
   color: #14142b;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 22px;
   text-transform: inherit;
   border: none;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 .revenue-section .nav-tabs .nav-link.active,
 .analytics-section .nav-tabs .nav-link.active {
@@ -403,7 +404,7 @@ footer a:hover path {
   padding: 12px 0 12px 60px;
   background-position: left center;
   color: #14142b;
-  font-weight: 500;
+  font-weight: 400;
 }
 .revenue-section .arrow-up img {
   z-index: -1;
@@ -619,7 +620,7 @@ footer a:hover path {
   font-weight: 600;
   font-size: 14px;
   color: #0a0a0d;
-  font-family: "thicccboi";
+  /* font-family: "thicccboi"; */
 }
 .navbar .nav-link {
   font-weight: 600;

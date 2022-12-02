@@ -7,7 +7,8 @@
   } */
 
 body {
-  font-family: thicccboi !important;
+  /* font-family: thicccboi !important; */
+  font-family: "Poppins", sans-serif;
 }
 
 /* Sidebar */
@@ -153,7 +154,7 @@ div#navbarSupportedContent {
 .stat-card-head {
   color: #7d889e !important;
   font-size: 1vw;
-  font-weight: 600;
+  font-weight: 400;
 }
 .stat-valuep {
   font-size: 14px !important;
@@ -241,13 +242,13 @@ div#navbarSupportedContent {
 }
 #sidebarMenu a,
 .top-nav a {
-  font-family: thicccboi !important;
+  /* font-family: thicccboi !important; */
 }
 .product-section a,
 .product-section p,
 .table-scroll label,
 .side-menu a {
-  font-family: thicccboi !important;
+  /* font-family: thicccboi !important; */
 }
 .table-scroll .mt-sm-5 {
   margin-top: 1rem !important;
@@ -266,4 +267,11 @@ div#navbarSupportedContent {
     overflow-x: scroll;
     flex-wrap: nowrap;
   }
+  .total-section .content .img-vector {
+    margin-top: -82px !important;
+  }
+  .mt-4.dash-new {
+    margin-top: 0.7rem !important;
+  } 
+  .slider_wrap .col-2-half{    margin-bottom: 10px; }
 }

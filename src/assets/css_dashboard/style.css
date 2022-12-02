@@ -94,40 +94,41 @@
 }
 /*****************************************Body and heading*****************************************/
 body {
-  font-family: thicccboi !important;
+  /* font-family: thicccboi !important; */
+  font-family: "Poppins", sans-serif;
 }
 h1 {
   font-size: 62px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h2 {
   font-size: 65px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h3 {
   font-size: 36px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h4 {
   font-size: 20px;
   font-weight: 700;
-  font-family: "THICCCBOI-Bold";
+  /* font-family: "THICCCBOI-Bold"; */
 }
 h5 {
   font-size: 16px;
-  font-weight: 600;
-  font-family: "THICCCBOI-Bold";
+  font-weight: 500;
+  /* font-family: "THICCCBOI-Bold"; */
 }
 p {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /*****************************************Fonts*****************************************/
@@ -379,7 +380,7 @@ label {
   color: #7d889e;
   padding: 15px 30px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   width: 247px;
   height: 50px;
 }
@@ -1418,7 +1419,7 @@ label {
 }
 .privacy-page p,
 .privacy-page {
-  font-family: "THICCCBOI";
+  /* font-family: "THICCCBOI"; */
 }
 .privacy-page td,
 .privacy-page th {
@@ -1427,7 +1428,7 @@ label {
   font-size: 16px;
 }
 .privacy-page .table {
-  font-family: "THICCCBOI";
+  /* font-family: "THICCCBOI"; */
 }
 .privacy-page h2 {
   font-size: 30px;
@@ -1499,12 +1500,24 @@ ul.bul-li strong {
 }
 
 @media (max-width: 768px) {
-  .slider_wrap h3 {
+  /* .slider_wrap h3 {
     font-size: 48px;
     margin-bottom: 27px;
+  } */
+  .stat-card.dashboard-count {
+    padding-top: 5px !important;
   }
+  .wel-analytices {
+    padding-bottom: 0px !important;
+    padding-top: 0.5rem !important;
+  }
+  .slider_wrap h3 {
+    font-size: 22px;
+    margin-bottom: 0px;
+  }
+
   .greenline {
-    height: 60px;
+    height: 45px;
   }
 }
 .me-1 {

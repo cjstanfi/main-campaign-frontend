@@ -22,7 +22,7 @@ export default function Headingbar() {
     <div className="d-flex my-5 pt-3 m-flex-column total-section-filters">
       <div className="me-auto d-flex m-flex-column links">
         <div
-          className="dropdown mt-sm-0 mt-4"
+          className="dropdown mt-sm-0 mt-4 dash-new"
           onMouseLeave={addremoveclassmouseleave}
         >
           <Link
