@@ -268,10 +268,15 @@ div#navbarSupportedContent {
     flex-wrap: nowrap;
   }
   .total-section .content .img-vector {
-    margin-top: -82px !important;
+    margin-top: -93px !important;
   }
   .mt-4.dash-new {
     margin-top: 0.7rem !important;
-  } 
-  .slider_wrap .col-2-half{    margin-bottom: 10px; }
+  }
+  .slider_wrap .col-2-half {
+    margin-bottom: 10px;
+  }
+  .slide-content .rev-dash {
+    padding-top: 5px !important;
+  }
 }

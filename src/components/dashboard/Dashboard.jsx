@@ -25,7 +25,6 @@ export default function Dashboard() {
     setnavistoggled(!navistoggled);
   }
 
-
   return (
     <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
