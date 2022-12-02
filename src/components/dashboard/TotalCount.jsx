@@ -19,9 +19,6 @@ export default function TotalCount() {
         return state.data.datas;
     });
 
-    useEffect(() => {
-        console.log(adSetData)
-    }, [adSetData])
 
     var Revenue = currentUser.reduce(function (_this, val) {
         return _this + parseInt(val.Revenue);
@@ -66,7 +63,7 @@ export default function TotalCount() {
         <section className="row slider_wrap p-0">
             {/* <Slider {...settings}> */}
             {
-                adSetData.map(adSet => {
+                adSetData?.map(adSet => {
                     return <SummaryViewSmall title={adSet?.facebookAdSetName} amount={adSet?.facebookAdSetSpend} percent="+%1.5"/>
                 })
             }
