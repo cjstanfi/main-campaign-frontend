@@ -14,7 +14,7 @@ export default function TopNav() {
     <section className="top-nav pt-4 pb-1">
       <div className="container">
         <div className="row">
-          <div className="col-md-4 py-3">
+          <div className="col-md-4 py-3 wel-analytices">
             <h4 className="heading mb-0">Welcome Back!</h4>
             <span className="text-thin">
               Track your Facebook Data Analytics here

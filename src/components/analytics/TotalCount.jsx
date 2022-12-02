@@ -7,7 +7,7 @@ export default function TotalCount() {
       <div className="container">
         <div className="row slider_wrap">
           <div className="col-2-half">
-            <div className="stat-card pt-3">
+            <div className="stat-card pt-3 dashboard-count">
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Revenue</span>
@@ -26,7 +26,7 @@ export default function TotalCount() {
             </div>
           </div>
           <div className="col-2-half">
-            <div className="stat-card pt-3">
+            <div className="stat-card pt-3 dashboard-count">
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Spend</span>
@@ -45,7 +45,7 @@ export default function TotalCount() {
             </div>
           </div>
           <div className="col-2-half">
-            <div className="stat-card pt-3">
+            <div className="stat-card pt-3 dashboard-count">
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Impression</span>
@@ -64,7 +64,7 @@ export default function TotalCount() {
             </div>
           </div>
           <div className="col-2-half">
-            <div className="stat-card pt-3">
+            <div className="stat-card pt-3 dashboard-count">
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Reached</span>
@@ -83,7 +83,7 @@ export default function TotalCount() {
             </div>
           </div>
           <div className="col-2-half">
-            <div className="stat-card pt-3">
+            <div className="stat-card pt-3 dashboard-count">
               <div className="d-flex justify-content-between px-2">
                 <span>
                   <span className="stat-card-head">Total Clicks</span>

@@ -1500,12 +1500,24 @@ ul.bul-li strong {
 }
 
 @media (max-width: 768px) {
-  .slider_wrap h3 {
+  /* .slider_wrap h3 {
     font-size: 48px;
     margin-bottom: 27px;
+  } */
+  .stat-card.dashboard-count {
+    padding-top: 5px !important;
   }
+  .wel-analytices {
+    padding-bottom: 0px !important;
+    padding-top: 0.5rem !important;
+  }
+  .slider_wrap h3 {
+    font-size: 22px;
+    margin-bottom: 0px;
+  }
+
   .greenline {
-    height: 60px;
+    height: 45px;
   }
 }
 .me-1 {
