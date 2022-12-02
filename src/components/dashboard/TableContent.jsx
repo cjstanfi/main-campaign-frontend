@@ -15,6 +15,8 @@ import {addCampaignData} from "../../reducer/CampaignSlice";
 export default function TableContent() {
   const [statedata, setstatedata] = useState(false);
   const dispatch = useDispatch();
+  const { campaignData } = useSelector((state) => state.campaign)
+
   const { is_loading } = useSelector((state) => {
     return state.data;
   });
@@ -274,43 +276,43 @@ export default function TableContent() {
               </h1>
             </div>
           )}
-          {currentRecords.map((user) => (
+          {campaignData?.map((user) => (
             <div
               className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3"
-              key={user.id}
+              key={user.facebookCampaignName}
             >
               <div className="w-10">
-                <h5 className="color-black2">{user.Campaigns}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Adsets}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Ads}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">${user.Revenue}</h5>
+                <h5 className="color-black2">${user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Spend}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-10">
-                <h5 className="color-black2">{user.ROAS}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Impressions}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Reach}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-10">
-                <h5 className="color-black2">{user.Conversions}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Leads}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.Budget}</h5>
+                <h5 className="color-black2">{user.facebookCampaignName}</h5>
               </div>
               <div className="w-6">
                 <img src={greenup} alt="" />
