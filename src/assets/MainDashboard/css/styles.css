@@ -267,5 +267,11 @@ div#navbarSupportedContent {
     overflow-x: scroll;
     flex-wrap: nowrap;
   }
-  
+  .total-section .content .img-vector {
+    margin-top: -82px !important;
+  }
+  .mt-4.dash-new {
+    margin-top: 0.7rem !important;
+  } 
+  .slider_wrap .col-2-half{    margin-bottom: 10px; }
 }
