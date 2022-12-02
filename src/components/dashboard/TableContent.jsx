@@ -10,6 +10,8 @@ import {
   updatePostdesc,
   updatePostasc,
 } from "../../actions/action";
+import axios from "axios";
+import {addCampaignData} from "../../reducer/CampaignSlice";
 export default function TableContent() {
   const [statedata, setstatedata] = useState(false);
   const dispatch = useDispatch();
@@ -35,6 +37,17 @@ export default function TableContent() {
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
   let currentRecords = currentUser.slice(indexOfFirstRecord, indexOfLastRecord);
+
+  useEffect(() => {
+    document.title = "TableContent Page";
+    getCampaigns()
+  }, []);
+
+  const getCampaigns = async () => {
+    const { data: data1 } = await axios.get(`https://test.api.maincampaign.com/facebook-campaign/marketing-platform-business/0`)
+    dispatch(addCampaignData(data1))
+    console.log("Result from axios", [data1])
+  }
 
   useEffect(() => {
     if (currentRecords.length === 0) {
