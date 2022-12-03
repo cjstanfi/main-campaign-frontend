@@ -10,7 +10,7 @@ export const adSlice = createSlice({
             state.adData = action.payload
         },
         addAdData: (state, action) => {
-            state.adData = [...state.adData, action.payload[0]]
+            state.adData = [...state.adData, ...action.payload]
         }
     }
 })

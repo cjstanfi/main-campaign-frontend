@@ -10,7 +10,7 @@ export const adSetDailyInsightSlice = createSlice({
             state.adSetDailyInsightData = action.payload
         },
         addAdSetData: (state, action) => {
-            state.adSetDailyInsightData = [...state.adSetData, action.payload[0]]
+            state.adSetDailyInsightData = [...state.adSetData, ...action.payload]
         }
     }
 })

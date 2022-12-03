@@ -10,7 +10,7 @@ export const marketingPlatformBusinessSlice = createSlice({
             state.marketingPlatformBusinessData = action.payload
         },
         addMarketingPlatformBusinessData: (state, action) => {
-            state.campaignData = [...state.campaignData, action.payload[0]]
+            state.campaignData = [...state.campaignData, ...action.payload]
         }
     }
 })

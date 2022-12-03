@@ -10,7 +10,7 @@ export const campaignSlice = createSlice({
             state.campaignData = action.payload
         },
         addCampaignData: (state, action) => {
-            state.campaignData = [...state.campaignData, action.payload[0]]
+            state.campaignData = [...state.campaignData, ...action.payload]
         }
     }
 })

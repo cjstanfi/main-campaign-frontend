@@ -6,11 +6,11 @@ export const campaignDailyInsightSlice = createSlice({
         campaignDailyInsightData: []
     },
     reducers: {
-        setAdSetData: (state, action) => {
+        setCampaignDailyInsightData: (state, action) => {
             state.campaignDailyInsightData = action.payload
         },
-        addAdSetData: (state, action) => {
-            state.adSetData = [...state.adSetData, action.payload[0]]
+        addCampaignDailyInsightData: (state, action) => {
+            state.campaignDailyInsightData = [...state.campaignDailyInsightData, ...action.payload]
         }
     }
 })

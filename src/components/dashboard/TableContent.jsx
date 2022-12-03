@@ -10,12 +10,10 @@ import {
   updatePostdesc,
   updatePostasc,
 } from "../../actions/action";
-import axios from "axios";
-import {addCampaignData} from "../../reducer/CampaignSlice";
 export default function TableContent() {
   const [statedata, setstatedata] = useState(false);
   const dispatch = useDispatch();
-  const { campaignData } = useSelector((state) => state.campaign)
+  const { campaignSummaryData } = useSelector((state) => state.campaignSummary)
 
   const { is_loading } = useSelector((state) => {
     return state.data;
@@ -39,17 +37,6 @@ export default function TableContent() {
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
   let currentRecords = currentUser.slice(indexOfFirstRecord, indexOfLastRecord);
-
-  useEffect(() => {
-    document.title = "TableContent Page";
-    getCampaigns()
-  }, []);
-
-  const getCampaigns = async () => {
-    const { data: data1 } = await axios.get(`https://test.api.maincampaign.com/facebook-campaign/marketing-platform-business/0`)
-    dispatch(addCampaignData(data1))
-    console.log("Result from axios", [data1])
-  }
 
   useEffect(() => {
     if (currentRecords.length === 0) {
@@ -276,43 +263,43 @@ export default function TableContent() {
               </h1>
             </div>
           )}
-          {campaignData?.map((user) => (
+          {campaignSummaryData?.map((campaignSummary) => (
             <div
               className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3"
-              key={user.facebookCampaignName}
+              key={campaignSummary.facebookCampaignId}
             >
               <div className="w-10">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.facebookCampaignName}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.adSetCount}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.adCount}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">${user.facebookCampaignName}</h5>
+                <h5 className="color-black2">${campaignSummary.revenue}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.facebookCampaignSpend}</h5>
               </div>
               <div className="w-10">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.roas}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.facebookCampaignImpressions}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.facebookCampaignReach}</h5>
               </div>
               <div className="w-10">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.conversions}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary.leads}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{user.facebookCampaignName}</h5>
+                <h5 className="color-black2">{campaignSummary?.budget}</h5>
               </div>
               <div className="w-6">
                 <img src={greenup} alt="" />

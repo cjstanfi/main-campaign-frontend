@@ -9,16 +9,15 @@ import TableContent from "./TableContent";
 import {addAdSetData} from "../../reducer/AdSetSlice";
 import makeAdSet from "../../models/facebook-ad-set-model";
 import useFetchWithRedux from "../../hooks/useFetchWithRedux";
-import makeFacebookCampaign from "../../models/facebook-campaign-model";
-import {addCampaignData} from "../../reducer/CampaignSlice";
+import makeCampaignSummary from "../../models/campaign-summary-model";
+import {addCampaignSummaryData} from "../../reducer/CampaignSummarySlice";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
   useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/0", makeAdSet, addAdSetData)
   useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/1", makeAdSet, addAdSetData)
   useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/2", makeAdSet, addAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-campaign/0", makeFacebookCampaign, addCampaignData)
-
+  useFetchWithRedux("https://test.api.maincampaign.com/campaign-summary/facebook/0", makeCampaignSummary, addCampaignSummaryData)
 
   function clickEvent() {
     setnavistoggled(!navistoggled);
