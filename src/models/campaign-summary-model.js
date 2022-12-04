@@ -1,7 +1,6 @@
 import requiredParam from "../helpers/utils/required-param";
 import {toCamel} from "../helpers/utils/case";
 
-
 export default function makeCampaignSummary(campaignSummaryInfo) {
 
     campaignSummaryInfo = toCamel(campaignSummaryInfo)
