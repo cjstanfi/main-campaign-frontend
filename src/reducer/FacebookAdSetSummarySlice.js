@@ -9,7 +9,7 @@ export const facebookAdSetSummarySlice = createSlice({
         setFacebookAdSetSummaryData: (state, action) => {
             state.facebookAdSetSummaryData = action.payload
         },
-        addAdSetSummaryData: (state, action) => {
+        addFacebookAdSetSummaryData: (state, action) => {
             state.facebookAdSetSummaryData = [...state.facebookAdSetSummaryData, ...action.payload]
         }
     }

@@ -6,18 +6,25 @@ import "../../assets/css_dashboard/slick.css";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
-import makeAdSet from "../../models/facebook-ad-set-model";
+import makeFacebookAdSet from "../../models/facebook-ad-set-model";
 import useFetchWithRedux from "../../hooks/useFetchWithRedux";
 import {addFacebookCampaignSummaryData} from "../../reducer/FacebookCampaignSummarySlice";
 import makeFacebookCampaignSummary from "../../models/facebook-campaign-summary-model";
 import {addFacebookAdSetData} from "../../reducer/FacebookAdSetSlice";
+import {addFacebookAdSummaryData} from "../../reducer/FacebookAdSummarySlice";
+import makeFacebookAdSetSummary from "../../models/facebook-ad-set-summary-model";
+import makeFacebookAdSummary from "../../models/facebook-ad-summary-model";
+import {addFacebookAdSetSummaryData} from "../../reducer/FacebookAdSetSummarySlice";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/0", makeAdSet, addFacebookAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/1", makeAdSet, addFacebookAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/2", makeAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/0", makeFacebookAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/1", makeFacebookAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/2", makeFacebookAdSet, addFacebookAdSetData)
   useFetchWithRedux("https://test.api.maincampaign.com/campaign-summary/facebook/0", makeFacebookCampaignSummary, addFacebookCampaignSummaryData)
+  useFetchWithRedux("https://test.api.maincampaign.com/ad-set-summary/facebook/0", makeFacebookAdSetSummary, addFacebookAdSetSummaryData)
+  useFetchWithRedux("https://test.api.maincampaign.com/ad-summary/facebook/0", makeFacebookAdSummary, addFacebookAdSummaryData)
+
 
   function clickEvent() {
     setnavistoggled(!navistoggled);

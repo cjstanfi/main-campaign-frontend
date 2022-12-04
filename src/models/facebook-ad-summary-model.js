@@ -1,11 +1,11 @@
 import requiredParam from "../helpers/utils/required-param";
 import {toCamel} from "../helpers/utils/case";
 
-export default function makeAdSummary(adSummaryInfo) {
+export default function makeFacebookAdSummary(facebookAdSummaryInfo) {
 
-    adSummaryInfo = toCamel(adSummaryInfo)
-    const validAdSummary = validate(adSummaryInfo)
-    return Object.freeze(validAdSummary)
+    facebookAdSummaryInfo = toCamel(facebookAdSummaryInfo)
+    const validFacebookAdSummary = validate(facebookAdSummaryInfo)
+    return Object.freeze(validFacebookAdSummary)
     function validate({   facebookAdId = requiredParam('facebook_ad_id'),
                           facebookAdName = requiredParam('facebook_ad_name'),
                           revenue = requiredParam('revenue'),

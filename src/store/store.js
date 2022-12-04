@@ -4,7 +4,7 @@ import { facebookAdSetSlice} from "../reducer/FacebookAdSetSlice";
 import {facebookCampaignSlice} from "../reducer/FacebookCampaignSlice";
 import {facebookCampaignSummarySlice} from "../reducer/FacebookCampaignSummarySlice";
 import {facebookAdSlice} from "../reducer/FacebookAdSlice";
-import {facebookAdSummarySlice} from "../reducer/FacebookAdSummaryData";
+import {facebookAdSummarySlice} from "../reducer/FacebookAdSummarySlice";
 import {facebookAdSetSummarySlice} from "../reducer/FacebookAdSetSummarySlice";
 import {facebookAdDailyInsightSlice} from "../reducer/FacebookAdDailyInsightSlice";
 import {facebookAdSetDailyInsightSlice} from "../reducer/FacebookAdSetDailyInsightSlice";
