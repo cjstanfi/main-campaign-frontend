@@ -6,11 +6,11 @@ import "../../assets/css_dashboard/slick.css";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
-import {addAdSetData} from "../../reducer/AdSetSlice";
+import {addAdSetData} from "../../reducer/FacebookAdSetSlice";
 import makeAdSet from "../../models/facebook-ad-set-model";
 import useFetchWithRedux from "../../hooks/useFetchWithRedux";
-import makeCampaignSummary from "../../models/campaign-summary-model";
-import {addCampaignSummaryData} from "../../reducer/CampaignSummarySlice";
+import makeCampaignSummary from "../../models/facebook-campaign-summary-model";
+import {addCampaignSummaryData} from "../../reducer/FacebookCampaignSummarySlice";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);

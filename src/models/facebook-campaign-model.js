@@ -2,7 +2,6 @@ import requiredParam from "../helpers/utils/required-param";
 import {toCamel} from "../helpers/utils/case";
 import optionalParam from "../helpers/utils/optional-param";
 
-
 export default function makeFacebookCampaign(facebookCampaignInfo) {
 
     facebookCampaignInfo = toCamel(facebookCampaignInfo)
