@@ -6,18 +6,18 @@ import "../../assets/css_dashboard/slick.css";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
-import {addAdSetData} from "../../reducer/FacebookAdSetSlice";
 import makeAdSet from "../../models/facebook-ad-set-model";
 import useFetchWithRedux from "../../hooks/useFetchWithRedux";
-import makeCampaignSummary from "../../models/facebook-campaign-summary-model";
-import {addCampaignSummaryData} from "../../reducer/FacebookCampaignSummarySlice";
+import {addFacebookCampaignSummaryData} from "../../reducer/FacebookCampaignSummarySlice";
+import makeFacebookCampaignSummary from "../../models/facebook-campaign-summary-model";
+import {addFacebookAdSetData} from "../../reducer/FacebookAdSetSlice";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/0", makeAdSet, addAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/1", makeAdSet, addAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/2", makeAdSet, addAdSetData)
-  useFetchWithRedux("https://test.api.maincampaign.com/campaign-summary/facebook/0", makeCampaignSummary, addCampaignSummaryData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/0", makeAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/1", makeAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/facebook-ad-set/2", makeAdSet, addFacebookAdSetData)
+  useFetchWithRedux("https://test.api.maincampaign.com/campaign-summary/facebook/0", makeFacebookCampaignSummary, addFacebookCampaignSummaryData)
 
   function clickEvent() {
     setnavistoggled(!navistoggled);

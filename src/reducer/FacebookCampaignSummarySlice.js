@@ -1,18 +1,18 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 export const facebookCampaignSummarySlice = createSlice({
-    name: "campaignSummary",
+    name: "facebookCampaignSummary",
     initialState: {
-        campaignSummaryData: []
+        facebookCampaignSummaryData: []
     },
     reducers: {
-        setCampaignSummaryData: (state, action) => {
-            state.campaignSummaryData = action.payload
+        setFacebookCampaignSummaryData: (state, action) => {
+            state.facebookCampaignSummaryData = action.payload
         },
-        addCampaignSummaryData: (state, action) => {
-            state.campaignSummaryData = [...state.campaignSummaryData, ...action.payload]
+        addFacebookCampaignSummaryData: (state, action) => {
+            state.facebookCampaignSummaryData = [...state.facebookCampaignSummaryData, ...action.payload]
         }
     }
 })
 
-export const {setCampaignSummaryData, addCampaignSummaryData} = facebookCampaignSummarySlice.actions
+export const {setFacebookCampaignSummaryData, addFacebookCampaignSummaryData} = facebookCampaignSummarySlice.actions

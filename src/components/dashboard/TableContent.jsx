@@ -13,7 +13,7 @@ import {
 export default function TableContent() {
   const [statedata, setstatedata] = useState(false);
   const dispatch = useDispatch();
-  const { campaignSummaryData } = useSelector((state) => state.campaignSummary)
+  const { facebookCampaignSummaryData } = useSelector((state) => state.facebookCampaignSummary)
 
   const { is_loading } = useSelector((state) => {
     return state.data;
@@ -263,7 +263,7 @@ export default function TableContent() {
               </h1>
             </div>
           )}
-          {campaignSummaryData?.map((campaignSummary) => (
+          {facebookCampaignSummaryData?.map((campaignSummary) => (
             <div
               className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3"
               key={campaignSummary.facebookCampaignId}
