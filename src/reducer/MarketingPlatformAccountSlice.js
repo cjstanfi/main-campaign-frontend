@@ -9,7 +9,7 @@ export const marketingPlatformAccountSlice = createSlice({
         setMarketingPlatformAccountData: (state, action) => {
             state.marketingPlatformAccountData = action.payload
         },
-        addMarketingPlatformBusinessData: (state, action) => {
+        addMarketingPlatformAccountData: (state, action) => {
             state.marketingPlatformAccountData = [...state.marketingPlatformAccountData, ...action.payload]
         }
     }

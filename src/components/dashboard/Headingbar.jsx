@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import avatar from "../../assets/img/avatar.png";
 import Badge from "../../assets/img/Badge.svg";
 import { Link } from "react-router-dom";
 import { updatesearch } from "../../actions/action";
 import "./analytics.css";
 export default function Headingbar() {
+  const { marketingPlatformBusinessData } = useSelector((state) => state.marketingPlatformBusiness)
   const [toggledclass, settoggledclass] = useState(false);
   const dispatch = useDispatch();
 
@@ -54,15 +55,13 @@ export default function Headingbar() {
             className={`dropdown-menu ${toggledclass ? "show" : ""}`}
             aria-labelledby="dropdownMenuLink"
           >
-            <li>
-              <Link className="dropdown-item">Business 1</Link>
-            </li>
-            <li>
-              <Link className="dropdown-item">Business 2</Link>
-            </li>
-            <li>
-              <Link className="dropdown-item">Business 3</Link>
-            </li>
+            {
+              marketingPlatformBusinessData.map(marketingPlatformBusiness => {
+              return <li>
+                <Link className="dropdown-item">{marketingPlatformBusiness.marketingPlatformBusinessName}</Link>
+              </li>
+            })
+            }
           </ul>
         </div>
         <div className="custom-input2 d-t-none h-50 w-350 ms-sm-3 d-flex align-items-center mt-sm-0 mt-3">
