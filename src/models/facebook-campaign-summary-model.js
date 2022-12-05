@@ -17,6 +17,7 @@ export default function makeFacebookCampaignSummary(facebookCampaignSummaryInfo)
                           facebookCampaignReach = requiredParam('facebook_campaign_reach'),
                           leads = requiredParam('leads'),
                           conversions = requiredParam('conversions'),
+                          total = requiredParam('total')
                       } = {}) {
         return {
             facebookCampaignId,
@@ -29,7 +30,8 @@ export default function makeFacebookCampaignSummary(facebookCampaignSummaryInfo)
             facebookCampaignImpressions,
             facebookCampaignReach,
             leads,
-            conversions
+            conversions,
+            total
         }
     }
 }
