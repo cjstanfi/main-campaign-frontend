@@ -70,7 +70,7 @@ export default function IndexBodyContent(props) {
   return (
     <>
       <div className="row m-0 position-relative header-content">
-        <div className="col-sm-6 order--new-1">
+        <div className="col-sm-12 order--new-0 pt-5 pt-sm-0">
           <div className="container main-container subject">
             <div className="d-flex align-items-center text-center justify-content-center flex-column top-ma">
               <h1 className="color-black1">
@@ -108,11 +108,11 @@ export default function IndexBodyContent(props) {
             </div> */}
           </div>
         </div>
-        <div className="col-sm-6 d-flex align-items-center justify-content-center order--new-2 mt-5 pt-sm-0 pt-5">
+        <div className="col-sm-12 d-flex align-items-center justify-content-center order--new-0 pt-5">
           <div className="container subject ">
-            <div className="position-relative arrow-up">
+            {/* <div className="position-relative arrow-up">
               <img src={arrowup} className="position-absolute" alt="" />
-            </div>
+            </div> */}
             <img src={stats1} className=" w-100 " alt="" />
           </div>
         </div>

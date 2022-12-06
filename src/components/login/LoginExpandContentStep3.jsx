@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import arrowup from "../../assets/img/arrow-up.svg";
 import arrowdown from "../../assets/img/arrow-down.svg";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
+import {accountService} from "../../services";
+import {initFacebookSdk, history} from "../../helpers";
+
 export default function LoginExpandContentStep3() {
+  useEffect( () => {
+    async function initFacebook(){
+      // redirect to home if already logged in
+      console.log("Login useEffect: initializing fb sdk")
+      await initFacebookSdk()
+      if (accountService.accountValue) {
+        history.push('/');
+      }
+    }
+    initFacebook()
+  }, [history]);
   return (
     <>
       <div className="row pt-5 mt-5 position-relative login-section animation-element bounce-up thirdStep in-view">
@@ -119,7 +133,7 @@ export default function LoginExpandContentStep3() {
             <div className="container-style  h-312 py-sm-5 py-2 mt-sm-4 mt-3">
               <div className="d-flex  justify-content-center">
                 <div className="d-flex flex-column">
-                  <button className="btn facebook-btn mt-sm-3 mt-4 w-auto">
+                  <button className="btn facebook-btn mt-sm-3 mt-4 w-auto" onClick={accountService.login}>
                     <svg
                       width="29"
                       height="30"
