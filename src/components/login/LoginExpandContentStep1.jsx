@@ -7,6 +7,8 @@ import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import makeMainCampaignAccount from "../../models/main-campaign-account-model";
+import axios from "axios";
 
 export default function LoginExpand1ContentStep1(props) {
   const {
@@ -16,8 +18,30 @@ export default function LoginExpand1ContentStep1(props) {
     watch,
   } = useForm();
   const navigate = useNavigate();
-  const onSubmit = (data) => {
+
+  const onSubmit = async (data) => {
+    let headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // headers.append('Access-Control-Allow-Credentials', 'true');
+
+    const tempBody = {
+      "main_campaign_account_id": "1",
+      "main_campaign_account_name": "Main Campaign Account Name POST",
+      "full_name": "Rexton Cole Jon Rider",
+      "email": "rextonColeJonRider@maincampaign.com",
+      "password": "12345678",
+      "phone_number": "480-234-5678"
+    }
     if (data) {
+      axios.post("https://test.api.maincampaign.com/main-campaign-account", makeMainCampaignAccount(tempBody)).then(res => {
+        console.log(res)
+      }).catch(
+          error => console.log(error)
+      )
       navigate("/loginstep2");
     }
   };

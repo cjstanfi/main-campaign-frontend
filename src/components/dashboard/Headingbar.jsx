@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import avatar from "../../assets/img/avatar.png";
 import Badge from "../../assets/img/Badge.svg";
 import { Link } from "react-router-dom";
 import { updatesearch } from "../../actions/action";
 import "./analytics.css";
+import useFetchWithRedux from "../../hooks/useFetchWithRedux";
+import makeFacebookCampaignSummary from "../../models/facebook-campaign-summary-model";
+import {
+  addFacebookCampaignSummaryData,
+  setFacebookCampaignSummaryData
+} from "../../reducer/FacebookCampaignSummarySlice";
+import {marketingPlatformBusinessByNameSelector} from "../../reducer/MarketingPlatformBusinessSlice";
 export default function Headingbar() {
-  const { marketingPlatformBusinessData } = useSelector((state) => state.marketingPlatformBusiness)
+  const [businessId, setBusinessId] = useState("")
   const [toggledclass, settoggledclass] = useState(false);
+  const { marketingPlatformBusinessData } = useSelector((state) => state.marketingPlatformBusiness)
+  const filteredBusiness = useSelector(marketingPlatformBusinessByNameSelector(businessId))
+  useFetchWithRedux(`https://test.api.maincampaign.com/campaign-summary/facebook/${filteredBusiness[0]?.marketingPlatformBusinessId}?orderBy=facebook_campaign_id&recordLimit=10&orderDirection=ASC&recordOffset=0`, makeFacebookCampaignSummary, setFacebookCampaignSummaryData)
+
   const dispatch = useDispatch();
 
   function searchItems(e) {
@@ -19,6 +30,12 @@ export default function Headingbar() {
   function addremoveclassmouseleave() {
     settoggledclass(false);
   }
+
+  function onClickBusiness(e){
+    setBusinessId(e.target.innerHTML)
+    console.log(e.target.innerHTML)
+  }
+
   return (
     <div className="d-flex my-5 pt-3 m-flex-column total-section-filters">
       <div className="me-auto d-flex m-flex-column links">
@@ -58,7 +75,7 @@ export default function Headingbar() {
             {
               marketingPlatformBusinessData.map(marketingPlatformBusiness => {
               return <li>
-                <Link className="dropdown-item">{marketingPlatformBusiness.marketingPlatformBusinessName}</Link>
+                <Link className="dropdown-item" onClick={onClickBusiness}>{marketingPlatformBusiness.marketingPlatformBusinessName}</Link>
               </li>
             })
             }
