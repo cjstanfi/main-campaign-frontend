@@ -32,6 +32,10 @@ export default function Dashboard() {
   useFetchWithRedux("https://test.api.maincampaign.com/ad-summary/facebook/0", makeFacebookAdSummary, addFacebookAdSummaryData)
   useFetchWithRedux("https://test.api.maincampaign.com/marketing-platform-business?mainCampaignAccountId=0", makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
   useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=revenue&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
+  // useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=spend&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
+  // useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=impressions&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
+  // useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=reach&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
+  // useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=clicks&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
   useFetchWithRedux("https://test.api.maincampaign.com/chart/0?category=revenue&startTime=85400", makeChart, addChartData)
   function clickEvent() {
     setnavistoggled(!navistoggled);
