@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import {chartSlice} from "../reducer/ChartSlice";
 import { dataSlice } from "../reducer/reducer";
 import { facebookAdSetSlice} from "../reducer/FacebookAdSetSlice";
 import {facebookCampaignSlice} from "../reducer/FacebookCampaignSlice";
@@ -16,11 +17,12 @@ import {marketingPlatformAccountSlice} from "../reducer/MarketingPlatformAccount
 import {mainCampaignAccountSlice} from "../reducer/MainCampaignAccountSlice";
 import {mainCampaignBusinessSlice} from "../reducer/MainCampaignBusinessSlice";
 import {salesCrmAccountSlice} from "../reducer/SalesCrmAccountSlice";
-
+import {smallViewNumbersSlice} from "../reducer/SmallViewNumbersSlice";
 export const dataActions = dataSlice.actions;
 
 const store = configureStore({
   reducer: {
+    chart: chartSlice.reducer,
     data: dataSlice.reducer,
     facebookAdAccount: facebookAdAccountSlice.reducer,
     facebookAd: facebookAdSlice.reducer,
@@ -37,7 +39,8 @@ const store = configureStore({
     mainCampaignBusiness: mainCampaignBusinessSlice.reducer,
     marketingPlatformAccount: marketingPlatformAccountSlice.reducer,
     marketingPlatformBusiness: marketingPlatformBusinessSlice.reducer,
-    salesCrmAccountModel: salesCrmAccountSlice.reducer
+    salesCrmAccount: salesCrmAccountSlice.reducer,
+    smallViewNumbers: smallViewNumbersSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

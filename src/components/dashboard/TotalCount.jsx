@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import SummaryViewSmall from "./SummaryViewSmall";
 
 export default function TotalCount() {
-    const { facebookAdSetData } = useSelector((state) => state.facebookAdSet)
+    const { smallViewNumbersData } = useSelector((state) => state.smallViewNumbers)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -63,8 +63,8 @@ export default function TotalCount() {
         <section className="row slider_wrap p-0">
             {/* <Slider {...settings}> */}
             {
-                facebookAdSetData?.map(adSet => {
-                    return <SummaryViewSmall title={adSet?.facebookAdSetName} amount={adSet?.facebookAdSetSpend} percent="+%1.5"/>
+                smallViewNumbersData?.map(smallViewNumbers => {
+                    return <SummaryViewSmall title={smallViewNumbers?.title} amount={smallViewNumbers?.valueDuringTimeframe} percent={smallViewNumbers?.valuePercentChange}/>
                 })
             }
             {/* </Slider> */}

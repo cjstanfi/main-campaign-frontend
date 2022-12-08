@@ -15,9 +15,12 @@ import {addFacebookAdSummaryData} from "../../reducer/FacebookAdSummarySlice";
 import makeFacebookAdSetSummary from "../../models/facebook-ad-set-summary-model";
 import makeFacebookAdSummary from "../../models/facebook-ad-summary-model";
 import {addFacebookAdSetSummaryData} from "../../reducer/FacebookAdSetSummarySlice";
-import makeMarketingPlatformAccount from "../../models/marketing-platform-account-model";
 import makeMarketingPlatformBusiness from "../../models/marketing-platform-business-model";
 import {addMarketingPlatformBusinessData} from "../../reducer/MarketingPlatformBusinessSlice";
+import {addChartData} from "../../reducer/ChartSlice";
+import makeSmallViewNumbers from "../../models/small-view-numbers-model";
+import makeChart from "../../models/chart-model";
+import {addSmallViewNumbersData} from "../../reducer/SmallViewNumbersSlice";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
@@ -28,7 +31,8 @@ export default function Dashboard() {
   useFetchWithRedux("https://test.api.maincampaign.com/ad-set-summary/facebook/0", makeFacebookAdSetSummary, addFacebookAdSetSummaryData)
   useFetchWithRedux("https://test.api.maincampaign.com/ad-summary/facebook/0", makeFacebookAdSummary, addFacebookAdSummaryData)
   useFetchWithRedux("https://test.api.maincampaign.com/marketing-platform-business?mainCampaignAccountId=0", makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
-
+  useFetchWithRedux("https://test.api.maincampaign.com/small-view-numbers/0?category=revenue&startTime=85400", makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux("https://test.api.maincampaign.com/chart/0?category=revenue&startTime=85400", makeChart, addChartData)
   function clickEvent() {
     setnavistoggled(!navistoggled);
   }
