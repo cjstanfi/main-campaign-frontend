@@ -8,6 +8,7 @@ export default function makeFacebookCampaign(facebookCampaignInfo) {
     const validFacebookCampaign = validate(facebookCampaignInfo)
     return Object.freeze(validFacebookCampaign)
     function validate({   facebookAdAccountId = requiredParam('facebook_ad_account_id'),
+                          facebookCampaignClicks = optionalParam(),
                           facebookCampaignEffectiveStatus = requiredParam('facebook_campaign_effective_status'),
                           facebookCampaignImpressions = optionalParam(),
                           facebookCampaignName = requiredParam('facebook_campaign_name'),
@@ -22,6 +23,7 @@ export default function makeFacebookCampaign(facebookCampaignInfo) {
                       } = {}) {
         return {
             facebookAdAccountId,
+            facebookCampaignClicks,
             facebookCampaignEffectiveStatus,
             facebookCampaignImpressions,
             facebookCampaignName,
