@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Sidebar from "../analytics/Sidebar";
 import "../../assets/css_dashboard/mdb.min.css";
 import "../../assets/css_dashboard/style.css";

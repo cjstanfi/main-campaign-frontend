@@ -5,7 +5,6 @@ import pinkvector from "../../assets/img/pink-vector.svg";
 import greenvector from "../../assets/img/green-vector.svg";
 import {useDispatch, useSelector} from "react-redux";
 import {getallPost} from "../../actions/action";
-import {Link} from "react-router-dom";
 import SummaryViewSmall from "./SummaryViewSmall";
 
 export default function TotalCount() {
@@ -64,7 +63,9 @@ export default function TotalCount() {
             {/* <Slider {...settings}> */}
             {
                 smallViewNumbersData?.map(smallViewNumbers => {
-                    return <SummaryViewSmall title={smallViewNumbers?.title} amount={smallViewNumbers?.valueDuringTimeframe} percent={smallViewNumbers?.valuePercentChange}/>
+                    return <SummaryViewSmall title={smallViewNumbers?.title}
+                                             amount={smallViewNumbers?.valueDuringTimeframe}
+                                             percent={smallViewNumbers?.valuePercentChange}/>
                 })
             }
             {/* </Slider> */}
