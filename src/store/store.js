@@ -3,10 +3,7 @@ import {chartSlice} from "../reducer/ChartSlice";
 import { dataSlice } from "../reducer/reducer";
 import { facebookAdSetSlice} from "../reducer/FacebookAdSetSlice";
 import {facebookCampaignSlice} from "../reducer/FacebookCampaignSlice";
-import {facebookCampaignSummarySlice} from "../reducer/FacebookCampaignSummarySlice";
 import {facebookAdSlice} from "../reducer/FacebookAdSlice";
-import {facebookAdSummarySlice} from "../reducer/FacebookAdSummarySlice";
-import {facebookAdSetSummarySlice} from "../reducer/FacebookAdSetSummarySlice";
 import {facebookAdDailyInsightSlice} from "../reducer/FacebookAdDailyInsightSlice";
 import {facebookAdSetDailyInsightSlice} from "../reducer/FacebookAdSetDailyInsightSlice";
 import {facebookCampaignDailyInsightSlice} from "../reducer/FacebookCampaignDailyInsightSlice";
@@ -18,6 +15,7 @@ import {mainCampaignAccountSlice} from "../reducer/MainCampaignAccountSlice";
 import {mainCampaignBusinessSlice} from "../reducer/MainCampaignBusinessSlice";
 import {salesCrmAccountSlice} from "../reducer/SalesCrmAccountSlice";
 import {smallViewNumbersSlice} from "../reducer/SmallViewNumbersSlice";
+import {facebookSummarySlice} from "../reducer/FacebookSummarySlice";
 export const dataActions = dataSlice.actions;
 
 const store = configureStore({
@@ -27,13 +25,11 @@ const store = configureStore({
     facebookAdAccount: facebookAdAccountSlice.reducer,
     facebookAd: facebookAdSlice.reducer,
     facebookAdDailyInsight: facebookAdDailyInsightSlice.reducer,
-    facebookAdSummary: facebookAdSummarySlice.reducer,
+    facebookSummary: facebookSummarySlice.reducer,
     facebookAdSet: facebookAdSetSlice.reducer,
     facebookAdSetDailyInsight: facebookAdSetDailyInsightSlice.reducer,
-    facebookAdSetSummary: facebookAdSetSummarySlice.reducer,
     facebookCampaign: facebookCampaignSlice.reducer,
     facebookCampaignDailyInsight: facebookCampaignDailyInsightSlice.reducer,
-    facebookCampaignSummary: facebookCampaignSummarySlice.reducer,
     generatedLead: generatedLeadSlice.reducer,
     mainCampaignAccount: mainCampaignAccountSlice.reducer,
     mainCampaignBusiness: mainCampaignBusinessSlice.reducer,

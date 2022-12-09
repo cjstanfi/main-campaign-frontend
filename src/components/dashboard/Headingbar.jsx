@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { updatesearch } from "../../actions/action";
 import "./analytics.css";
 import useFetchWithRedux from "../../hooks/useFetchWithRedux";
-import makeFacebookCampaignSummary from "../../models/facebook-campaign-summary-model";
+import makeFacebookCampaignSummary from "../../models/summary-model";
 import {
   addFacebookCampaignSummaryData,
   setFacebookCampaignSummaryData
