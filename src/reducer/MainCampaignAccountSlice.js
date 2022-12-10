@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const mainCampaignAccountSlice = createSlice({
     name: "mainCampaignAccount",
     initialState: {
-        mainCampaignAccountData: []
+        mainCampaignAccountData: {}
     },
     reducers: {
         setMainCampaignAccountData: (state, action) => {
