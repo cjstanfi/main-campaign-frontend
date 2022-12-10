@@ -9,8 +9,12 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
+import {useDispatch} from "react-redux";
+import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 
 export default function LoginExpand1ContentStep1(props) {
+  const dispatch = useDispatch()
   const {
     register,
     handleSubmit,
@@ -19,30 +23,17 @@ export default function LoginExpand1ContentStep1(props) {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-
-    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-    // headers.append('Access-Control-Allow-Credentials', 'true');
-
-    const tempBody = {
-      "main_campaign_account_id": "1",
-      "main_campaign_account_name": "Main Campaign Account Name POST",
-      "full_name": "Rexton Cole Jon Rider",
-      "email": "rextonColeJonRider@maincampaign.com",
-      "password": "12345678",
-      "phone_number": "480-234-5678"
-    }
+  const onSubmit = (data) => {
     if (data) {
-      axios.post("https://test.api.maincampaign.com/main-campaign-account", makeMainCampaignAccount(tempBody)).then(res => {
+      const body = makeMainCampaignAccountBody(data)
+      axios.post("https://test.api.maincampaign.com/main-campaign-account", body).then(res => {
+        dispatch(setMainCampaignAccountData(body))
         console.log(res)
-      }).catch(
-          error => console.log(error)
-      )
-      navigate("/loginstep2");
+        navigate("/loginstep2");
+      }).catch(error => {
+        //Print Error message. If its caused by duplicate data, let user know that email is already taken
+        console.log(error)
+      })
     }
   };
   const password = useRef({});
@@ -55,6 +46,18 @@ export default function LoginExpand1ContentStep1(props) {
   const togglerePassword = () => {
     setrePasswordShown(!repasswordShown);
   };
+
+  function makeMainCampaignAccountBody(data){
+    const mainCampaignAccountInfo = {
+      "main_campaign_account_id": uuidv4(),
+      "main_campaign_account_name": data?.compname,
+      "full_name": data?.fullname,
+      "email": data?.email,
+      "password": data?.password,
+      "phone_number": data?.phone
+    }
+    return makeMainCampaignAccount(mainCampaignAccountInfo)
+  }
   return (
     <div className="row pt-5 mt-5 position-relative login-section secondStep animation-element bounce-up in-view">
       <div className="container main-container subject">

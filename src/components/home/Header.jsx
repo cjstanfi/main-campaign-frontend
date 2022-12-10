@@ -97,7 +97,7 @@ function Header(props) {
               </li>
             </ul>
             <div className="d-flex ms-auto align-items-center">
-              <Link to={"/loginstep1"}>Login or Register</Link>
+              <Link to={"/login"}>Login or Register</Link>
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>

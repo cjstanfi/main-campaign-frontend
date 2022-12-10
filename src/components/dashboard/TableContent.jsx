@@ -13,7 +13,9 @@ import {
 export default function TableContent() {
   const [statedata, setstatedata] = useState(false);
   const dispatch = useDispatch();
-  const { facebookCampaignSummaryData } = useSelector((state) => state.facebookCampaignSummary)
+  // const { facebookCampaignSummaryData } = useSelector((state) => state.facebookCampaignSummary)
+  const facebookCampaignSummaryData = []
+
 
   const { is_loading } = useSelector((state) => {
     return state.data;

@@ -14,7 +14,7 @@ export default function Headingbar() {
   const [toggledclass, settoggledclass] = useState(false);
   const { marketingPlatformBusinessData } = useSelector((state) => state.marketingPlatformBusiness)
   const filteredBusiness = useSelector(marketingPlatformBusinessByNameSelector(businessId))
-  useFetchWithRedux(`https://test.api.maincampaign.com/summary/facebook/campaign/${filteredBusiness[0]?.marketingPlatformBusinessId}?orderBy=id&recordLimit=10&orderDirection=ASC&recordOffset=0`, makeSummary, setSummaryData)
+  // useFetchWithRedux(`https://test.api.maincampaign.com/summary/facebook/campaign/${filteredBusiness[0]?.marketingPlatformBusinessId}?orderBy=id&recordLimit=10&orderDirection=ASC&recordOffset=0`, makeSummary, setSummaryData)
 
   const dispatch = useDispatch();
 
@@ -70,7 +70,7 @@ export default function Headingbar() {
             aria-labelledby="dropdownMenuLink"
           >
             {
-              marketingPlatformBusinessData.map(marketingPlatformBusiness => {
+              marketingPlatformBusinessData?.map(marketingPlatformBusiness => {
               return <li>
                 <Link className="dropdown-item" onClick={onClickBusiness}>{marketingPlatformBusiness.marketingPlatformBusinessName}</Link>
               </li>
