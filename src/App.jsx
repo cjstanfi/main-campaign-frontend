@@ -1,5 +1,6 @@
 import React from "react";
 import IndexComponent from "./components/home/IndexComponent";
+import LoginExpandContent from "./components/login/LoginExpandContent";
 import LoginExpandedStep1 from "./components/login/LoginExpandedStep1";
 import LoginExpandedStep2 from "./components/login/LoginExpandedStep2";
 import LoginExpandedStep3 from "./components/login/LoginExpandedStep3";
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<IndexComponent />} />
+        <Route path="/login" element={<LoginExpandContent />}/>
         <Route path="/loginstep1" element={<LoginExpandedStep1 />} />
         <Route path="/loginstep2" element={<LoginExpandedStep2 />} />
         <Route path="/loginstep3" element={<LoginExpandedStep3 />} />
