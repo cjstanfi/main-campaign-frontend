@@ -22,7 +22,7 @@ export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
 
   //Marketing Platform Businesses
-  useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business?mainCampaignAccountId=0`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business/mainCampaignBusiness/0`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
 
   useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=revenue&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
   useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=revenue&startTime=85400`, makeChart, addChartData)
