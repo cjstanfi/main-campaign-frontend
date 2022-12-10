@@ -7,9 +7,7 @@ import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import axios from "axios";
-import { v4 as uuidv4 } from 'uuid';
 import {useDispatch} from "react-redux";
 import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
@@ -28,7 +26,7 @@ export default function LoginExpandContent(props) {
   const onSubmit = (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
-      axios.get("https://test.api.maincampaign.com/main-campaign-account/login", body).then(res => {
+      axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(res => {
         dispatch(setMainCampaignAccountData(body))
         console.log(res)
         navigate("/dashboard");

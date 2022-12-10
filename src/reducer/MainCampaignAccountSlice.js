@@ -15,4 +15,8 @@ export const mainCampaignAccountSlice = createSlice({
     }
 })
 
+export function getMainCampaignAccountIdSelector(state) {
+    return state.mainCampaignAccountData?.mainCampaignAccountId
+}
+
 export const {setMainCampaignAccountData, addMainCampaignAccountData} = mainCampaignAccountSlice.actions
