@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {useDispatch} from "react-redux";
 import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
+import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 
 export default function LoginExpandContent(props) {
   const dispatch = useDispatch()
@@ -26,8 +27,8 @@ export default function LoginExpandContent(props) {
 
   const onSubmit = (data) => {
     if (data) {
-      const loginData = makemainC
-      axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(res => {
+      const body = makeMainCampaignLogin(data)
+      axios.get("https://test.api.maincampaign.com/main-campaign-account/login", body).then(res => {
         dispatch(setMainCampaignAccountData(body))
         console.log(res)
         navigate("/dashboard");
