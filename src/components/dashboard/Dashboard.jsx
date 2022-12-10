@@ -25,25 +25,25 @@ export default function Dashboard() {
   const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount)
   // const mainCampaignAccountId = useSelector(getMainCampaignAccountIdSelector)
 
-  // //Marketing Platform Businesses
-  // useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business/mainCampaignBusiness/${mainCampaignAccountData.mainCampaignAccountId}`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
-  //
-  // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=revenue&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=revenue&startTime=85400`, makeChart, addChartData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=spend&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=spend&startTime=85400`, makeChart, addChartData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=impressions&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=impressions&startTime=85400`, makeChart, addChartData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=reach&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=reach&startTime=85400`, makeChart, addChartData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=clicks&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
-  // useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=clicks&startTime=85400`, makeChart, addChartData)
-  //
-  // //Leads Center
-  // useFetchWithRedux(`https://test.api.maincampaign.com/generated-leads/marketingPlatformBusiness/0`, makeGeneratedLead, addGeneratedLeadData)
-  //
-  // //Campaign Summary
-  // useFetchWithRedux(`https://test.api.maincampaign.com/summary/facebook/campaign/0?orderBy=id&recordLimit=10&orderDirection=ASC&recordOffset=0`, makeSummary, addSummaryData)
+  //Marketing Platform Businesses
+  useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business/mainCampaignBusiness/${mainCampaignAccountData.mainCampaignAccountId}`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
+
+  useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=revenue&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=revenue&startTime=85400`, makeChart, addChartData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=spend&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=spend&startTime=85400`, makeChart, addChartData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=impressions&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=impressions&startTime=85400`, makeChart, addChartData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=reach&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=reach&startTime=85400`, makeChart, addChartData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/0?category=clicks&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/chart/0?category=clicks&startTime=85400`, makeChart, addChartData)
+
+  //Leads Center
+  useFetchWithRedux(`https://test.api.maincampaign.com/generated-leads/marketingPlatformBusiness/0`, makeGeneratedLead, addGeneratedLeadData)
+
+  //Campaign Summary
+  useFetchWithRedux(`https://test.api.maincampaign.com/summary/facebook/0?childType=campaign&orderBy=id&recordLimit=10&orderDirection=ASC&recordOffset=0`, makeSummary, addSummaryData)
 
   function clickEvent() {
     setnavistoggled(!navistoggled);
