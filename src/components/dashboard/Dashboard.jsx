@@ -22,9 +22,11 @@ import {getMainCampaignAccountIdSelector} from "../../reducer/MainCampaignAccoun
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
-  const mainCampaignAccountId = useSelector(getMainCampaignAccountIdSelector)
+  const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount)
+  // const mainCampaignAccountId = useSelector(getMainCampaignAccountIdSelector)
+
   //Marketing Platform Businesses
-  useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business?mainCampaignAccountId=${mainCampaignAccountId}`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
+  useFetchWithRedux(`https://test.api.maincampaign.com/marketing-platform-business?mainCampaignAccountId=${mainCampaignAccountData.mainCampaignAccountId}`, makeMarketingPlatformBusiness, addMarketingPlatformBusinessData)
 
   // useFetchWithRedux(`https://test.api.maincampaign.com/small-view-numbers/${mainCampaignAccountId}?category=revenue&startTime=85400`, makeSmallViewNumbers, addSmallViewNumbersData)
   // useFetchWithRedux(`https://test.api.maincampaign.com/chart/${mainCampaignAccountId}?category=revenue&startTime=85400`, makeChart, addChartData)

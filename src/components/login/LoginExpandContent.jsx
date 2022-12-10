@@ -12,6 +12,7 @@ import {useDispatch} from "react-redux";
 import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
+import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 
 export default function LoginExpandContent(props) {
   const dispatch = useDispatch()
@@ -26,9 +27,10 @@ export default function LoginExpandContent(props) {
   const onSubmit = (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
-      axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(res => {
-        dispatch(setMainCampaignAccountData(body))
-        console.log(res)
+      axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(({ data }) => {
+        const validMainCampaignAccount = makeMainCampaignAccount(data)
+        dispatch(setMainCampaignAccountData(validMainCampaignAccount))
+        console.log(data)
         navigate("/dashboard");
       }).catch(error => {
         //Print Error message. Email or password probably incorrect
