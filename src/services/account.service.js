@@ -1,6 +1,6 @@
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import axios from 'axios';
-import { history } from "../helpers";
+import {history} from "../helpers";
 
 const accountSubject = new BehaviorSubject(null);
 
@@ -13,7 +13,10 @@ export const accountService = {
 
 async function login(mainCampaignAccountId) {
     // login with facebook then authenticate with the API to get a JWT auth token
-    const { authResponse } = await new Promise(window.FB.login);
+    const { authResponse } = await new Promise(window.FB.login(function(response) {
+        return response
+    }, {scope: 'business_management, ads_management, ads_read, pages_read_engagement, leads_retrieval, Page Public Metadata Access, read_insights, pages_show_list, Business Asset User Profile Access'}));
+
     if(authResponse){
         const response1 = await sendApiToken(mainCampaignAccountId, authResponse.userID, authResponse.accessToken, null)
         const response2 = await populateFacebookData(mainCampaignAccountId, authResponse.userID)
@@ -30,8 +33,7 @@ async function login(mainCampaignAccountId) {
 }
 
 async function populateFacebookData(mainCampaignAccountId, facebookAccountId){
-    const response = await axios.put(`https://test.api.maincampaign.com/facebook-everything/${mainCampaignAccountId}/${facebookAccountId}`)
-    return response
+    return await axios.put(`https://test.api.maincampaign.com/facebook-everything/${mainCampaignAccountId}/${facebookAccountId}`)
 }
 
 async function sendApiToken(mainCampaignAccountId, userId, shortLivedAccessToken, longLivedAccessToken) {
@@ -43,8 +45,7 @@ async function sendApiToken(mainCampaignAccountId, userId, shortLivedAccessToken
         "marketingPlatformAccountPlatform": "facebook"
     }
     console.log(body)
-    const response = await axios.put(`https://test.api.maincampaign.com/marketing-platform-account/${userId}`, body)
-    return response
+    return await axios.put(`https://test.api.maincampaign.com/marketing-platform-account/${userId}`, body)
 }
 
 function logout() {

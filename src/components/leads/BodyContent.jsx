@@ -16,11 +16,12 @@ import makeGeneratedLead from "../../models/generated-lead-model";
 import {addGeneratedLeadData} from "../../reducer/GeneratedLeadSlice";
 import {useSelector} from "react-redux";
 import Sorting from "../Sorting";
+import {formatUtcToDate} from "../../helpers/utils/formatUtcToDate";
 export default function BodyContent() {
   const { currentMarketingPlatformBusinessData: {marketingPlatformBusinessId} } = useSelector((state) => state.marketingPlatformBusiness)
   const {validData: leadData} = useFetchWithRedux(`https://test.api.maincampaign.com/generated-lead/marketingPlatformBusiness/${marketingPlatformBusinessId}`, [marketingPlatformBusinessId], makeGeneratedLead, addGeneratedLeadData)
- 
-    
+
+
   useEffect(() => {
     console.log(leadData)
   }, [leadData])
@@ -81,7 +82,7 @@ export default function BodyContent() {
                               <td>{lead.generatedLeadEmail}</td>
                               <td>{lead.generatedLeadPhoneNumber}</td>
                               <td>{lead.generatedLeadIsConverted === 1 ? <img src={check} className={leadStyle.check_icon} alt="true"/> : <img src={uncheck} className={leadStyle.check_icon} alt="false"/>}</td>
-                              <td>{lead.generatedLeadCreatedTime}</td>
+                              <td>{formatUtcToDate(lead.generatedLeadCreatedTime)}</td>
                             </tr>
                         )})}
                       </tbody>
