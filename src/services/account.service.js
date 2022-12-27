@@ -15,7 +15,7 @@ async function login(mainCampaignAccountId) {
     // login with facebook then authenticate with the API to get a JWT auth token
     const { authResponse } = await new Promise(window.FB.login(function(response) {
         return response
-    }, {scope: 'business_management, ads_management, ads_read, pages_read_engagement, leads_retrieval, Page Public Metadata Access, read_insights, pages_show_list, Business Asset User Profile Access'}));
+    }, {scope: 'business_management, ads_management, ads_read, pages_read_engagement, leads_retrieval, read_insights, pages_show_list'}));
 
     if(authResponse){
         const response1 = await sendApiToken(mainCampaignAccountId, authResponse.userID, authResponse.accessToken, null)
