@@ -70,6 +70,9 @@ export default function BodyContent() {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Campaign</th>
+                        <th>Ad Set</th>
+                        <th>Ad</th>
                         <th>Converted</th>
                         <th>Created Date</th>
                       </tr>
@@ -81,6 +84,9 @@ export default function BodyContent() {
                               <td>{lead.generatedLeadName}</td>
                               <td>{lead.generatedLeadEmail}</td>
                               <td>{lead.generatedLeadPhoneNumber}</td>
+                              <td>{lead.campaignId}</td>
+                              <td>{lead.adSetId}</td>
+                              <td>{lead.adId}</td>
                               <td>{lead.generatedLeadIsConverted === 1 ? <img src={check} className={leadStyle.check_icon} alt="true"/> : <img src={uncheck} className={leadStyle.check_icon} alt="false"/>}</td>
                               <td>{formatUtcToDate(lead.generatedLeadCreatedTime)}</td>
                             </tr>
