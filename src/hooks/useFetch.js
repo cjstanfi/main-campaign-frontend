@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useCookies} from "react-cookie";
+import axios from "axios";
 
 export default function useFetch(url, params) {
     const [data, setData] = useState(null)
@@ -8,24 +9,13 @@ export default function useFetch(url, params) {
     const [cookies, setCookies] = useCookies()
 
     useEffect(() => {
-        if(isArrayItemNotNull(params)) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Authorization", "Bearer " + cookies['_auth']);
-
-            const requestOptions = {
-                method: "GET",
-                headers: myHeaders,
-            };
-
-            fetch(url, requestOptions)
-                .then(res => {
-                    if (!res.ok) {
-                        throw Error('Could not fetch data from resource')
-                    }
-                    return res.json()
-                })
-                .then(data => {
+        if (isArrayItemNotNull([...params, cookies['_auth']])) {
+            axios.get(url, {
+                headers: {
+                    'Authorization': `Bearer ${cookies['_auth']}`
+                }
+            })
+                .then(({data}) => {
                     setData(data)
                     setIsPending(false)
                     setError(null)
