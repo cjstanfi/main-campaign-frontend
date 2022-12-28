@@ -8,38 +8,23 @@ import profilepicbig from "../../assets/Settings/images/profile-pic-big.png";
 import crmicon from "../../assets/Settings/images/crm-icon.png";
 import airtablelogo from "../../assets/Settings/images/airtable-logo.png";
 import facebook from "../../assets/Settings/images/facebook.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen,faPlus,faTrashCan,faFacebookF } from '@fortawesome/free-solid-svg-icons'
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPen,
+  faPlus,
+  faTrashCan,
+  faFacebookF,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
+import Header from "../Header";
 export default function BodyContent() {
   return (
     <div className="setting-top content px-3">
-      <section className="top-nav pt-4">
+      <section className="top-nav pb-1">
         <div className="container">
           <div className="row">
-            <div className="col-md-4 py-3">
-              <h4 className="heading mb-0 color-dark">Settings</h4>
-              <span className="text-thin">Change or update your Settings</span>
-            </div>
-            <div className="col-md-8">
-              <div className="d-flex justify-content-end m-hide">
-                <div className="buttons py-2 my-3">
-                  <Link href="" className="top-menu-buttons ms-2">
-                    <img src={settingo} className="" alt="" />
-                  </Link>
-                  <Link href="" className="top-menu-buttons ms-2 px-3">
-                    <img src={notifi} className="" alt="" />
-                  </Link>
-                </div>
-                <div className="profile-div ms-3 my-2">
-                  <img src={profileimage} className="profile-img" alt="" />
-                  <img src={Badge} className="profile-badge" alt="" />
-                </div>
-              </div>
-            </div>
+            <Header page="setting" />
           </div>
         </div>
       </section>
@@ -174,8 +159,8 @@ export default function BodyContent() {
                       </div>
                       <div className="py-3 align-center">
                         <div className="file btn btn-lg btn-primary upload-btn">
-                        <FontAwesomeIcon icon={faPlus} />
-                           Upload Picture
+                          <FontAwesomeIcon icon={faPlus} />
+                          Upload Picture
                           <input
                             type="file"
                             name="file"
@@ -238,8 +223,7 @@ export default function BodyContent() {
                       <div className="bg-grey rounded px-4 py-4 my-2">
                         <div className="d-md-flex justify-content-between">
                           <div className="">
-                          
-                          <img src={facebook} alt="" className="faceboo"/>
+                            <img src={facebook} alt="" className="faceboo" />
                             <span className="color-light">
                               <b>Facebook Account</b>
                             </span>
@@ -258,7 +242,7 @@ export default function BodyContent() {
                         </div>
                       </div>
                       <div className="bg-grey rounded px-4 py-4 my-2">
-                      <img src={facebook} alt="" className="faceboo"/>
+                        <img src={facebook} alt="" className="faceboo" />
                         <span className="color-light">
                           <b>Facebook Pixel</b>
                         </span>
@@ -353,9 +337,10 @@ export default function BodyContent() {
                             </label>
                             <div className="d-flex justify-content-between crm-icon-box bg-grey rounded py-2 px-3">
                               <img src={crmicon} alt="" />
-                              <FontAwesomeIcon icon={faPen} className="rounded-circle px-2 py-2 edit-icon"/>
-                            
-                              
+                              <FontAwesomeIcon
+                                icon={faPen}
+                                className="rounded-circle px-2 py-2 edit-icon"
+                              />
                             </div>
                           </div>
                         </div>
@@ -581,7 +566,7 @@ export default function BodyContent() {
                             className="btn btn-lg btn-primary upload-btn"
                           >
                             <FontAwesomeIcon icon={faPlus} />
-                             Add New Card
+                            Add New Card
                           </button>
                         </div>
                       </div>
@@ -662,67 +647,79 @@ export default function BodyContent() {
                   </div>
                   <div className="col-md-12">
                     <div className="lead-scroll">
-                    <table className="table table-striped user-table">
-                      <thead>
-                        <tr>
-                          <th>Username</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Role</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>john42</td>
-                          <td>John Wick</td>
-                          <td>johnwick42@gmail.com</td>
-                          <td>Admininsterator</td>
-                          <td>
-                            <Link href="#">
-                            <FontAwesomeIcon icon={faTrashCan} className="color-red me-2"/>
-                              
-                            </Link>
-                            <Link href="#">
-                            <FontAwesomeIcon icon={faPen} className="color-blue"/>
-                              
-                            </Link>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>ryan_parker11</td>
-                          <td>Rayan Parker</td>
-                          <td>ryanparker1142@gmail.com</td>
-                          <td>Analysts</td>
-                          <td>
-                          <Link href="#">
-                            <FontAwesomeIcon icon={faTrashCan} className="color-red me-2"/>
-                              
-                            </Link>
-                            <Link href="#">
-                            <FontAwesomeIcon icon={faPen} className="color-blue"/>
-                              
-                            </Link>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>bershan_122</td>
-                          <td>Bershan Shaw</td>
-                          <td>bershanwarrioe@gmail.com</td>
-                          <td>Member</td>
-                          <td>
-                          <Link href="#">
-                            <FontAwesomeIcon icon={faTrashCan} className="color-red me-2"/>
-                              
-                            </Link>
-                            <Link href="#">
-                            <FontAwesomeIcon icon={faPen} className="color-blue"/>
-                              
-                            </Link>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                      <table className="table table-striped user-table">
+                        <thead>
+                          <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>john42</td>
+                            <td>John Wick</td>
+                            <td>johnwick42@gmail.com</td>
+                            <td>Admininsterator</td>
+                            <td>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faTrashCan}
+                                  className="color-red me-2"
+                                />
+                              </Link>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faPen}
+                                  className="color-blue"
+                                />
+                              </Link>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>ryan_parker11</td>
+                            <td>Rayan Parker</td>
+                            <td>ryanparker1142@gmail.com</td>
+                            <td>Analysts</td>
+                            <td>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faTrashCan}
+                                  className="color-red me-2"
+                                />
+                              </Link>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faPen}
+                                  className="color-blue"
+                                />
+                              </Link>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>bershan_122</td>
+                            <td>Bershan Shaw</td>
+                            <td>bershanwarrioe@gmail.com</td>
+                            <td>Member</td>
+                            <td>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faTrashCan}
+                                  className="color-red me-2"
+                                />
+                              </Link>
+                              <Link href="#">
+                                <FontAwesomeIcon
+                                  icon={faPen}
+                                  className="color-blue"
+                                />
+                              </Link>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>

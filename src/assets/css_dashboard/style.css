@@ -99,27 +99,27 @@ body {
 }
 h1 {
   font-size: 62px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h2 {
   font-size: 65px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h3 {
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h4 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h5 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 p {
@@ -1554,4 +1554,7 @@ ul.bul-li strong {
   .Statistics_mob .dropdown {
     flex-basis: 100%;
   }
+}
+.top-nav .my-5 {
+  margin-top: 2rem !important;
 }
