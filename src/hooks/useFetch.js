@@ -10,7 +10,6 @@ export default function useFetch(url, params) {
 
     useEffect(() => {
         if (isArrayItemNotNull([...params, cookies['_auth']])) {
-            //if (isArrayItemNotNull([ cookies['_auth']])) {
             axios.get(url, {
                 headers: {
                     'Authorization': `Bearer ${cookies['_auth']}`

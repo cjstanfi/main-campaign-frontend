@@ -72,7 +72,7 @@ export default function Header({
   }
 
   return (
-    <div className="d-flex my-5 pt-3 m-flex-column total-section-filters">
+    <div className="d-flex my-5 m-flex-column total-section-filters">
       {page === "analytics" && (
         <>
           <div className="wel-analytices">
