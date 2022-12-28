@@ -16,8 +16,8 @@ import {useNavigate} from "react-router-dom";
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
   const [cookies, setCookie] = useCookies();
-  const [startDate, setStartDate] = useState(daysBackInTimestamp(new Date(), 7))
-  const [endDate, setEndDate] =   useState(new Date());
+  const [startDate, setStartDate] = useState()
+  const [endDate, setEndDate] =   useState();
   const dispatch = useDispatch()
   const navigate = useNavigate()
 

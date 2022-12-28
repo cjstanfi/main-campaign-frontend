@@ -182,6 +182,7 @@ export default function Headingbar({
               ndate={endDate}
               setndate={setEndDate}
               placeholderText="End Date"
+              startDate={startDate}
             />
             <svg
               width="24"
