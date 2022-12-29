@@ -168,7 +168,19 @@ export default function TableContent() {
             onClick={handleRefreshClick}
             className={`btn theme-btn w-auto ${load ? "displayclass" : ""}`}
           >
-            Back
+            <svg
+              className="mx-1"
+              width="7"
+              height="10"
+              viewBox="0 0 7 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.54826 8.63375L2.92242 5L6.54826 1.36625L5.43201 0.25L0.682007 5L5.43201 9.75L6.54826 8.63375Z"
+                fill="white"
+              />
+            </svg>
           </button>
         ) : null}
         <Sorting
@@ -177,7 +189,7 @@ export default function TableContent() {
         />
       </div>
       <div className="table-scroll">
-        <div className="table-container">
+        <div className="table-container table_content">
           <div className="d-flex mt-sm-5 mt-4 px-sm-4 px-2">
             <div className="w-10">
               <label className="color-grey">Campaigns</label>
@@ -231,7 +243,7 @@ export default function TableContent() {
           )}
           {summaryData?.map((summaryRow) => (
             <div
-              className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3"
+              className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow"
               key={summaryRow.id}
               onClick={() => handleTableRowClick(summaryRow.id)}
             >
@@ -276,7 +288,7 @@ export default function TableContent() {
               </div>
               {summaryRow.childType !== "ad" ? (
                 <div className="w-8">
-                  <h5 className="color-black2">{"$" + summaryRow.budget}</h5>
+                  <h5 className="color-black2">{"$" + summaryRow.lifetimeBudget}</h5>
                 </div>
               ) : null}
               <div className="w-6">

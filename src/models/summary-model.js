@@ -22,7 +22,8 @@ export default function makeSummary(summaryInfo) {
                           reach = requiredParam('reach'),
                           leads = requiredParam('leads'),
                           conversions = requiredParam('conversions'),
-                          budget = optionalParam()
+                          lifetimeBudget = optionalParam(),
+                          dailyBudget = optionalParam()
                       } = {}) {
         return {
             campaignName,
@@ -39,7 +40,8 @@ export default function makeSummary(summaryInfo) {
             reach,
             leads,
             conversions,
-            budget
+            lifetimeBudget,
+            dailyBudget
         }
     }
 }

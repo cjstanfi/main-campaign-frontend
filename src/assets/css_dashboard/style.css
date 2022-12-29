@@ -99,27 +99,27 @@ body {
 }
 h1 {
   font-size: 62px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h2 {
   font-size: 65px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h3 {
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h4 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 h5 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   /* font-family: "THICCCBOI-Bold"; */
 }
 p {
@@ -802,7 +802,7 @@ label {
   }
   .mobile {
     display: flex !important;
-    margin-bottom: 20px !important;
+    /* margin-bottom: 20px !important; */
   }
   .mobile-nav {
     display: flex !important;
@@ -850,8 +850,8 @@ label {
   }
 
   .total-section-filters {
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .total-section-filters .links {
     margin-left: 0;
@@ -1464,9 +1464,7 @@ ul.bul-li strong {
 .content-analy {
   margin-left: 240px !important;
 }
-.product-section .my-5 {
-  margin-top: 2rem !important;
-}
+
 .product-section .total-section .links {
   margin-left: -10px;
 }
@@ -1474,7 +1472,7 @@ ul.bul-li strong {
   #sidebarMenu {
     position: relative;
     box-shadow: inherit;
-    padding: 8px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
   }
   .content-analy {
     margin-left: 0px !important;
@@ -1547,11 +1545,23 @@ ul.bul-li strong {
 .datapickerFont {
   font-family: "thicccboi" !important;
 }
+.product-section .my-5 {
+  margin-top: 2rem !important;
+}
+.top-nav .my-5 {
+  margin-top: 2rem !important;
+}
 @media only screen and (max-width: 1024px) {
   .Statistics_mob {
     flex-direction: column;
   }
   .Statistics_mob .dropdown {
     flex-basis: 100%;
+  }
+  .total-section {
+    margin-top: 2rem !important;
+  }
+  .top-nav .my-5 {
+    margin-top: 1rem !important;
   }
 }

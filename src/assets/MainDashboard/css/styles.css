@@ -99,7 +99,7 @@ div#navbarSupportedContent {
 
 .top-menu-buttons {
   background-color: #8ea9e036;
-  padding: 10px 10px 10px 10px;
+  padding: 12px;
   border-radius: 10px;
   display: inline-block;
 }
@@ -601,4 +601,10 @@ div#navbarSupportedContent {
 .companyFb {
   width: 150px;
   max-width: 100%;
+}
+.table_content .tableRow:hover {
+  background: #bdd3ff !important;
+}
+.table_content .tableRow > div:hover h5 {
+  color: #1362ff;
 }

@@ -8,7 +8,8 @@ export default function makeFacebookAdSet(facebookAdSetInfo) {
     const validFacebookAdSet = validate(facebookAdSetInfo)
     return Object.freeze(validFacebookAdSet)
     function validate({
-                          facebookAdSetBudget = optionalParam(),
+                          facebookAdSetLifetimeBudget = optionalParam(),
+                          facebookAdSetDailyBudget = optionalParam(),
                           facebookAdSetEffectiveStatus = requiredParam('facebook_ad_set_effective_status'),
                           facebookAdSetImpressions = optionalParam(),
                           facebookAdSetName = requiredParam('facebook_ad_set_name'),
@@ -22,7 +23,8 @@ export default function makeFacebookAdSet(facebookAdSetInfo) {
                           facebookAdSetId = requiredParam('facebook_ad_set_id'),
                       } = {}) {
         return {
-            facebookAdSetBudget,
+            facebookAdSetLifetimeBudget,
+            facebookAdSetDailyBudget,
             facebookAdSetEffectiveStatus,
             facebookAdSetImpressions,
             facebookAdSetName,
