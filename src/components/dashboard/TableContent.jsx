@@ -286,10 +286,15 @@ export default function TableContent() {
               <div className="w-8">
                 <h5 className="color-black2">{summaryRow.conversions}</h5>
               </div>
-              {summaryRow.childType !== "ad" ? (
+              {summaryRow.childType === "campaign" ? (
                 <div className="w-8">
-                  <h5 className="color-black2">{"$" + summaryRow.lifetimeBudget}</h5>
+                  <h5 className="color-black2">{summaryRow.lifetimeBudget ? "$" + summaryRow.lifetimeBudget : summaryRow.dailyBudget ? "$" + summaryRow.dailyBudget : "Ad Set Budget" }</h5>
                 </div>
+              ) : null}
+              {summaryRow.childType === "ad_set" ? (
+                  <div className="w-8">
+                    <h5 className="color-black2">{summaryRow.lifetimeBudget ? "$" + summaryRow.lifetimeBudget : "$" + summaryRow.dailyBudget }</h5>
+                  </div>
               ) : null}
               <div className="w-6">
                 <img src={greenup} alt="" />
