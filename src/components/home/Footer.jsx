@@ -195,7 +195,9 @@ export default function Footer(props) {
                 <Link to={"/privacy"} target="_blank">
                   Privacy Policy
                 </Link>
-                • <Link to={"/terms"}>Terms & Conditions</Link>
+                <Link to={"/terms"} target="_blank">
+                  Terms & Conditions
+                </Link>
               </p>
             </div>
             <div className="ms-sm-auto d-flex mt-sm-0 mt-2">
