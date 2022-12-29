@@ -293,7 +293,7 @@ export default function TableContent() {
               ) : null}
               {summaryRow.childType === "ad_set" ? (
                   <div className="w-8">
-                    <h5 className="color-black2">{summaryRow.lifetimeBudget ? "$" + summaryRow.lifetimeBudget : "$" + summaryRow.dailyBudget }</h5>
+                    <h5 className="color-black2">{summaryRow.lifetimeBudget ? "Lifetime " + "$" + summaryRow.lifetimeBudget : summaryRow.dailyBudget ? "Daily " + "$" + summaryRow.dailyBudget : "Campaign Budget" }</h5>
                   </div>
               ) : null}
               <div className="w-6">
