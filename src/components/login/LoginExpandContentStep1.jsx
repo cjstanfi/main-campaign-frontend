@@ -361,6 +361,7 @@ export default function LoginExpand1ContentStep1(props) {
                                 <Link className="color-black2 font-14 mt-2" alt="">
                                     or sign up with SSO
                                 </Link>
+                                <p className="color-black2 font-14 mt-2" alt="">By creating an account, you agree to the <Link to={"/privacy"}>privacy policy</Link> and <Link to={"/terms"} >terms of service</Link></p>
                             </div>
                         </div>
                     </form>
