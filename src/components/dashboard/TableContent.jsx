@@ -288,7 +288,7 @@ export default function TableContent() {
               </div>
               {summaryRow.childType !== "ad" ? (
                 <div className="w-8">
-                  <h5 className="color-black2">{"$" + summaryRow.budget}</h5>
+                  <h5 className="color-black2">{"$" + summaryRow.lifetimeBudget}</h5>
                 </div>
               ) : null}
               <div className="w-6">
