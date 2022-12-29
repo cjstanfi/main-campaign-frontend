@@ -13,6 +13,7 @@ import Privacy from "./components/home/Privacy";
 import {RequireAuth} from "react-auth-kit";
 import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
+import Terms from "./components/home/Terms";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/analytics" element={<RequireAuth loginPath="/login"><MainDashboard /></RequireAuth>} />
         <Route path="/dashboard" element={<RequireAuth loginPath="/login"><Dashboard /></RequireAuth>} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/settings" element={<RequireAuth loginPath={"/login"}><Settings /></RequireAuth>} />
         <Route path="/leads" element={<RequireAuth loginPath={"/login"}><Leads/></RequireAuth>} />
       </Routes>
