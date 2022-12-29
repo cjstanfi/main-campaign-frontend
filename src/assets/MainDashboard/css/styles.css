@@ -602,3 +602,9 @@ div#navbarSupportedContent {
   width: 150px;
   max-width: 100%;
 }
+.table_content .tableRow:hover {
+  background: #bdd3ff !important;
+}
+.table_content .tableRow > div:hover h5 {
+  color: #1362ff;
+}
