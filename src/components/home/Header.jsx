@@ -305,7 +305,6 @@ function Header(props) {
             <div className=" ms-auto mobile-color">
               <Link
                 onClick={handleLoginClick}
-                to={"/loginstep1"}
                 className="nav-link"
               >
                 {isLoggedIn ? "Sign Out" : "Login or Register"}
