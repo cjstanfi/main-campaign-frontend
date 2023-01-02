@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import exclamation from "../../assets/img/exclamation.svg";
 import SummaryViewSmall from "../dashboard/SummaryViewSmall";
 // import info from "../../assets/MainDashboard/assets/images/info.svg";
-import formatUnderscores from "../../helpers/utils/format_underscores";
+import formatUnderscores from "../../helpers/utils/format-underscores";
 import useSmallViewNumbersAndRedux from "../../hooks/useSmallViewNumbersAndRedux";
 export default function TotalCount({startDate, endDate}) {
   const { currentMarketingPlatformBusinessData: {marketingPlatformBusinessId} } = useSelector((state) => state.marketingPlatformBusiness)

@@ -4,13 +4,13 @@ import {getallPost} from "../../actions/action";
 import SummaryViewSmall from "./SummaryViewSmall";
 import useSmallViewNumbersAndRedux from "../../hooks/useSmallViewNumbersAndRedux";
 import upperFirst from "../../helpers/utils/upper-first";
-import formatUnderscores from "../../helpers/utils/format_underscores";
+import formatUnderscores from "../../helpers/utils/format-underscores";
 
 
 export default function TotalCount( {startDate, endDate}) {
     const { currentMarketingPlatformBusinessData: {marketingPlatformBusinessId} } = useSelector((state) => state.marketingPlatformBusiness)
     const { validDataArray: smallViewNumbers } = useSmallViewNumbersAndRedux(marketingPlatformBusinessId, startDate, endDate)
-    
+
     const dispatch = useDispatch();
 
     useEffect(() => {

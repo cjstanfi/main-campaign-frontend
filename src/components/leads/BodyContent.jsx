@@ -24,7 +24,7 @@ import makeGeneratedLead from "../../models/generated-lead-model";
 import { addGeneratedLeadData } from "../../reducer/GeneratedLeadSlice";
 import { useSelector } from "react-redux";
 import Sorting from "../Sorting";
-import { formatUtcToDate } from "../../helpers/utils/formatUtcToDate";
+import { formatUtcToDate } from "../../helpers/utils/format-utc-to-date";
 import Header from "../Header";
 export default function BodyContent() {
   const {

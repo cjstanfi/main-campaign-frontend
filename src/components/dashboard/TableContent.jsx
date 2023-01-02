@@ -19,7 +19,7 @@ import makeGeneratedLead from "../../models/generated-lead-model";
 import { addGeneratedLeadData } from "../../reducer/GeneratedLeadSlice";
 import makeChart from "../../models/chart-model";
 import { addChartData } from "../../reducer/ChartSlice";
-import formatUnderscores from "../../helpers/utils/format_underscores";
+import formatUnderscores from "../../helpers/utils/format-underscores";
 import Sorting from "../Sorting";
 export default function TableContent() {
   const [currentId, setCurrentId] = useState(null);

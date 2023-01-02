@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 import makeSmallViewNumbers from "../models/small-view-numbers-model";
 import {setSmallViewNumbersData} from "../reducer/SmallViewNumbersSlice";
 import axios from "axios";
-import {dateTimeToTimestamp} from "../helpers/utils/datetoUnixTimestamp";
+import {dateTimeToTimestamp} from "../helpers/utils/date-to-unix-timestamp";
 import {end} from "@popperjs/core";
 import {useCookies} from "react-cookie";
 
