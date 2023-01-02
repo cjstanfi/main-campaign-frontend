@@ -22,8 +22,9 @@ function Header(props) {
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
 
   function handleLoginClick() {
+    
     if (!isLoggedIn) {
-      navigate("/login");
+      navigate("login");
     } else {
       signOut();
       dispatch(setIsLoggedIn(false));
@@ -303,12 +304,22 @@ function Header(props) {
                 </li>
               )}
             <div className=" ms-auto mobile-color">
-              <Link
-                onClick={handleLoginClick}
-                className="nav-link"
-              >
-                {isLoggedIn ? "Sign Out" : "Login or Register"}
-              </Link>
+
+              {isLoggedIn && (
+                 <Link onClick={handleLoginClick}
+                 className="nav-link"
+               >
+                Sign Out
+                </Link>
+              )}
+              {!isLoggedIn && (
+                 <Link to={"login"}
+                 className="nav-link"
+               >
+                Login or Register
+                </Link>
+              )}
+              
 
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>
