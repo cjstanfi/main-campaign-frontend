@@ -207,6 +207,28 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
               Lowest Conversions
             </Link>
           </li>
+          <li>
+            <Link
+                className="dropdown-item"
+                onClick={() => {
+                  setOrderBy("performance");
+                  setOrderDirection("DESC");
+                }}
+            >
+              Highest Performance
+            </Link>
+          </li>
+          <li>
+            <Link
+                className="dropdown-item"
+                onClick={() => {
+                  setOrderBy("performance");
+                  setOrderDirection("ASC");
+                }}
+            >
+              Lowest Performance
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="dropdown ms-3">

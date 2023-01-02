@@ -232,6 +232,9 @@ export default function TableContent() {
               <label className="color-grey"></label>
             </div>
           </div>
+          <div className="w-8">
+            <label className="color-grey">Performance</label>
+          </div>
           {is_loading && (
             <div className="">
               <h1 className="color-black2 text-center">
