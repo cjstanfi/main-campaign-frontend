@@ -42,7 +42,7 @@ export default function BodyContent() {
   }, [leadData]);
 
   return (
-    <div className="lead-top content px-3">
+    <div className="col-sm-10 ps-sm-5 p-0 lead-top content">
       <section className="top-nav pb-1">
         <div className="container">
           <div className="row">

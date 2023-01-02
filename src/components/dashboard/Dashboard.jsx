@@ -8,13 +8,14 @@ import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
 import { useDispatch, useSelector } from "react-redux";
-import { BubbleChart } from "./BubbleChart";
-import { daysBackInTimestamp } from "../../helpers/utils/date-to-unix-timestamp";
+// import { BubbleChart } from "./BubbleChart";
+import { daysBackInTimestamp } from "../../helpers/utils/datetoUnixTimestamp";
 import {
   setIsLoggedIn,
   setMainCampaignAccountData,
 } from "../../reducer/MainCampaignAccountSlice";
 import { useNavigate } from "react-router-dom";
+import ApexChart from "./ApexChart";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
@@ -26,6 +27,7 @@ export default function Dashboard() {
 
   //check cookies to see if user is already logged in
   useEffect(() => {
+    console.log(cookies["_auth_state"])
     if (cookies["_auth_state"]) {
       dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
       dispatch(setIsLoggedIn(true));
@@ -55,7 +57,8 @@ export default function Dashboard() {
                     setEndDate={setEndDate}
                   />
                   <TotalCount startDate={startDate} endDate={endDate} />
-                  <BubbleChart />
+                  <ApexChart />
+                  {/* <BubbleChart /> */}
                   <TableContent />
                 </div>
               </div>

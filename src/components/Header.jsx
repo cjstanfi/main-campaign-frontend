@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import avatar from "../assets/img/avatar-new.png";
-import Badge from "../assets/img/Badge.svg";
+// import Badge from "../assets/img/Badge.svg";
 import { Link } from "react-router-dom";
 import { updatesearch } from "../actions/action";
 import "./dashboard/analytics.css";
@@ -338,11 +338,11 @@ export default function Header({
             <Link>
               <img src={avatar} alt="" />
             </Link>
-            <img
+            {/* <img
               src={Badge}
               className="position-absolute avatar-badge"
               alt=""
-            />
+            /> */}
           </div>
         </div>
       </div>

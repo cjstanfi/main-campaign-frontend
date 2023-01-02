@@ -1,5 +1,30 @@
+import React from "react";
+import Select from "react-select";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
+const sort = [
+  { value: "Highest ROAS", label: "Highest ROAS" },
+  { value: "Lowest ROAS", label: "Lowest ROAS" },
+  { value: "Highest Impressions", label: "Highest Impressions" },
+  { value: "Lowest Impressions", label: "Lowest Impressions" },
+  { value: "Highest Reach", label: "Highest Reach" },
+  { value: "Lowest Reach", label: "Lowest Reach" },
+  { value: "Highest Spend", label: "Highest Spend" },
+  { value: "Lowest Spend", label: "Lowest Spend" },
+  { value: "Highest Budget", label: "Highest Budget" },
+  { value: "Lowest Budget", label: "Lowest Budget" },
+  { value: "Highest Leads", label: "Highest Leads" },
+  { value: "Lowest Leads", label: "Lowest Leads" },
+  { value: "Highest Conversions", label: "Highest Conversions" },
+  { value: "Lowest Conversions", label: "Lowest Conversions" },
+];
+
+const filter = [
+  { value: "Sort 1", label: "Sort 1" },
+  { value: "Sort 2", label: "Sort 2" },
+  { value: "Sort 3", label: "Sort 3" },
+];
 
 const Sorting = ({ setOrderBy, setOrderDirection }) => {
   const [toggledSortByclass, settoggledSortByclass] = useState(false);
@@ -11,11 +36,13 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
   }
   const addremoveFilterbyevent = () => {
     settoggledFilterByclass(!toggledFilterByclass);
-  }
+  };
   return (
     <div className="ms-lg-auto d-flex align-items-center">
       <div className="dropdown">
-        <Link
+        <Select options={sort} />
+
+        {/* <Link
           className={`btn custom-dropdown2 dropdown-toggle d-flex align-items-center `}
           role="button"
           id="dropdownMenuLink"
@@ -37,9 +64,11 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
               fill="#7D889E"
             />
           </svg>
-        </Link>
-        <ul
-          className={`dropdown-menu   newclass ${toggledSortByclass ? "show" : ""}`}
+        </Link> */}
+        {/* <ul
+          className={`dropdown-menu   newclass ${
+            toggledSortByclass ? "show" : ""
+          }`}
           aria-labelledby="dropdownMenuLink"
         >
           <li>
@@ -207,32 +236,11 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
               Lowest Conversions
             </Link>
           </li>
-          <li>
-            <Link
-                className="dropdown-item"
-                onClick={() => {
-                  setOrderBy("performance");
-                  setOrderDirection("DESC");
-                }}
-            >
-              Highest Performance
-            </Link>
-          </li>
-          <li>
-            <Link
-                className="dropdown-item"
-                onClick={() => {
-                  setOrderBy("performance");
-                  setOrderDirection("ASC");
-                }}
-            >
-              Lowest Performance
-            </Link>
-          </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="dropdown ms-3">
-        <Link
+        <Select options={filter} />
+        {/* <Link
           className="btn custom-dropdown2 dropdown-toggle d-flex align-items-center"
           role="button"
           id="dropdownMenuLink"
@@ -257,7 +265,9 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
         </Link>
 
         <ul
-          className={`dropdown-menu newclass ${toggledFilterByclass ? "show" : ""}`}
+          className={`dropdown-menu newclass ${
+            toggledFilterByclass ? "show" : ""
+          }`}
           aria-labelledby="dropdownMenuLink"
         >
           <li>
@@ -269,9 +279,9 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
           <li>
             <Link className="dropdown-item">Sort 3</Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
-      <div className="dropdown stats-opts ms-3">
+      {/* <div className="dropdown stats-opts ms-3">
         <button
           className="dropdown-toggle d-flex p-0"
           type="button"
@@ -279,7 +289,7 @@ const Sorting = ({ setOrderBy, setOrderDirection }) => {
           data-mdb-toggle="dropdown"
           aria-expanded="false"
         ></button>
-      </div>
+      </div> */}
     </div>
   );
 };
