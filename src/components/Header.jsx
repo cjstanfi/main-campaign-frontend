@@ -14,14 +14,8 @@ import {
   setMarketingPlatformBusinessData,
 } from "../reducer/MarketingPlatformBusinessSlice";
 import makeMarketingPlatformBusiness from "../models/marketing-platform-business-model";
-
+import { useCookies } from "react-cookie";
 import calender from "../assets/MainDashboard/assets/images/calender.svg";
-
-import settingo from "../assets/MainDashboard/assets/images/setting-o.svg";
-
-import notifi from "../assets/MainDashboard/assets/images/notifi.svg";
-
-import profile from "../assets/MainDashboard/assets/images/profile-image.png";
 
 export default function Header({
   startDate,
@@ -32,10 +26,15 @@ export default function Header({
 }) {
   const [businessName, setBusinessName] = useState("");
   const [toggledclass, settoggledclass] = useState(false);
-  const {
+  const [cookies, setCookie] = useCookies();
+  
+  let {
     mainCampaignAccountData: { mainCampaignAccountId },
   } = useSelector((state) => state.mainCampaignAccount);
-
+  if(mainCampaignAccountId === undefined){
+    mainCampaignAccountId = cookies["_auth_state"].mainCampaignAccountId;
+  }
+//console.log(cookies["_auth_state"].mainCampaignAccountId)
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
     `https://test.api.maincampaign.com/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
     mainCampaignAccountId,
