@@ -48,7 +48,7 @@ export default function Sidebar(props) {
                     <img
                       src={logo}
                       height=""
-                      alt="Main Compaign"
+                      alt="Main Campaign"
                       loading="lazy"
                     />
                   </Link>

@@ -2,7 +2,7 @@ import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import "../../assets/css_dashboard/style.css";
 function ApexChart() {
-  
+
   const chartData = {
     series: [
       {
@@ -25,7 +25,7 @@ function ApexChart() {
         type: "gradient",
       },
       title: {
-        text: "MainCompaign",
+        text: "MainCampaign",
       },
       xaxis: {
         type: "Revenue/Spend",

@@ -22,7 +22,7 @@ function Header(props) {
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
 
   function handleLoginClick() {
-    
+
     if (!isLoggedIn) {
       navigate("login");
     } else {
@@ -42,7 +42,7 @@ function Header(props) {
               to={"/"}
               className="navbar-brand mt-lg-0 me-auto mt-0 d-flex align-items-center"
             >
-              <img src={logo} height="" alt="Main Compaign" loading="lazy" />
+              <img src={logo} height="" alt="Main Campaign" loading="lazy" />
             </Link>
             <ul className="navbar-nav m-auto">
               <li className="nav-item dropdown">
@@ -297,7 +297,7 @@ function Header(props) {
                 </li>
               </ul>
             </li>
-            
+
             {isLoggedIn && (
                 <li className="nav-item">
                   <Link to={"/dashboard"} className="nav-link">My Dashboard</Link>
@@ -319,7 +319,7 @@ function Header(props) {
                 Login or Register
                 </Link>
               )}
-              
+
 
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>

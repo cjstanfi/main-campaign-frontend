@@ -35,7 +35,7 @@ export default function Sidebar(props) {
             id="navbarSupportedContent"
           >
             <Link className="navbar-brand mt-0 mt-5 py-3">
-              <img src={logo} height="" alt="Main Compaign" loading="lazy" />
+              <img src={logo} height="" alt="Main Campaign" loading="lazy" />
             </Link>
           </div>
         </nav>
