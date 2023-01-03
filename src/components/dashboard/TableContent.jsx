@@ -39,9 +39,9 @@ const sort = [
 ];
 
 const filter = [
-  { value: "Sort 1", label: "Sort 1" },
-  { value: "Sort 2", label: "Sort 2" },
-  { value: "Sort 3", label: "Sort 3" },
+  { value: "Filter 1", label: "Filter 1" },
+  { value: "Filter 2", label: "Filter 2" },
+  { value: "Filter 3", label: "Filter 3" },
 ];
 export default function TableContent() {
   const [currentId, setCurrentId] = useState(null);
