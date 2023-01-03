@@ -232,7 +232,7 @@ export default function TableContent() {
               <label className="color-grey">Campaigns</label>
             </div>
             <div className="w-8">
-              <label className="color-grey">Ad sets</label>
+              <label className="color-grey">Ad Sets</label>
             </div>
             <div className="w-8">
               <label className="color-grey">Ads</label>
@@ -266,7 +266,7 @@ export default function TableContent() {
               </div>
             ) : null}
             <div className="w-6">
-              <label className="color-grey"></label>
+              <label className="color-grey">Performance</label>
             </div>
           </div>
           {is_loading && (
