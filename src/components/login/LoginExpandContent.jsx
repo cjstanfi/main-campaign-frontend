@@ -191,7 +191,7 @@ export default function LoginExpandContent(props) {
                               )}
                           {errors.password &&
                               errors.password.type === "minLength" && (
-                                  <span>Please enter atleast 8 Characters</span>
+                                  <span>Please enter at least 8 Characters</span>
                               )}
                           <div className="position-absolute new-ab">
                             <Link
