@@ -84,7 +84,7 @@ export default function BodyContent() {
           <div className="tab-content">
             <div id="all" className="container tab-pane  my-3 active p-0">
               <div className="row shadow-sm rounded">
-                <div className="col-md-12 lead-scroll">
+                <div className="col-md-12 lead-scroll table-responsive">
                   <table className="table table-striped leads-table">
                     <thead>
                       <tr className="w-8 color-grey">

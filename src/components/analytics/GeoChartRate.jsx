@@ -186,9 +186,7 @@ export default function GeoChartRate() {
                   <div className="d-flex justify-content-between">
                     <div>
                       <img src={unitedstates} className="me-1" alt="" />
-                      <span className="country-name">
-                        <b>United States</b>
-                      </span>
+                      <span className="country-name">United States</span>
                     </div>
                     <span className="gray-color py-2 country-name">
                       <b>50.2k</b>
@@ -223,9 +221,7 @@ export default function GeoChartRate() {
                   <div className="d-flex justify-content-between">
                     <div>
                       <img src={australia} className="me-1" alt="" />
-                      <span className="country-name">
-                        <b>Australia</b>
-                      </span>
+                      <span className="country-name">Australia</span>
                     </div>
                     <span className="gray-color py-2 country-name">
                       <b>46.1k</b>
@@ -260,9 +256,7 @@ export default function GeoChartRate() {
                   <div className="d-flex justify-content-between">
                     <div>
                       <img src={unitedkingdom} className="me-1" alt="" />
-                      <span className="country-name">
-                        <b>United Kingdom</b>
-                      </span>
+                      <span className="country-name">United Kingdom</span>
                     </div>
                     <span className="gray-color py-2 country-name">
                       <b>22.8k</b>
@@ -297,9 +291,7 @@ export default function GeoChartRate() {
                   <div className="d-flex justify-content-between">
                     <div>
                       <img src={brazil} className="me-1" alt="" />
-                      <span className="country-name">
-                        <b>Brazil</b>
-                      </span>
+                      <span className="country-name">Brazil</span>
                     </div>
                     <span className="gray-color py-2 country-name">
                       <b>15.8k</b>
@@ -371,9 +363,7 @@ export default function GeoChartRate() {
                   <div className="d-flex justify-content-between">
                     <div>
                       <img src={india} className="me-1" alt="" />
-                      <span className="country-name">
-                        <b>India</b>
-                      </span>
+                      <span className="country-name">India</span>
                     </div>
                     <span className="gray-color py-2 country-name">
                       <b>28.8k</b>
