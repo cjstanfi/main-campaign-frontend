@@ -1632,3 +1632,91 @@ select.flat-select:hover {
 .react-datepicker__year-text:hover {
   background-color: #bdd3ff !important;
 }
+
+.statistics-section .bg-grey {
+  border: 0px;
+}
+.checkBox_row {
+  background: #fff;
+}
+.statBtn_Box > * + * {
+  margin-left: 0.25rem;
+}
+.statBtn_Box .statBtn {
+  background: #3b5998;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  border: 1px solid #3b5998;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+/*checkbox design*/
+.label-cbx {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.label-cbx input:checked + .checkbox {
+  border-color: #3b5998;
+}
+.label-cbx input:checked + .checkbox svg path {
+  fill: #3b5998;
+}
+.label-cbx input:checked + .checkbox svg polyline {
+  stroke-dashoffset: 0;
+}
+.label-cbx:hover .checkbox svg path {
+  stroke-dashoffset: 0;
+}
+.label-cbx .checkbox {
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c8ccd4;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.label-cbx .checkbox svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+.label-cbx .checkbox svg path {
+  fill: none;
+  stroke: #3b5998;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.6s ease;
+}
+.label-cbx .checkbox svg polyline {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.3s ease;
+}
+.label-cbx > span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr {
+  position: relative;
+}
+
+.invisible {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}

@@ -175,7 +175,7 @@ export default function LoginExpandContent(props) {
                               name="password"
                               {...register("password", {
                                 required: true,
-                                maxLength: 8,
+                                maxLength: 64,
                                 minLength: 8,
                               })}
                               aria-invalid={errors.password ? "true" : "false"}
