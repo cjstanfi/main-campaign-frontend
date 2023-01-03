@@ -184,7 +184,7 @@ export default function TableContent() {
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
         <div class="statBtn_Box me-auto">
           <a class="statBtn" href="#">
-            campaign
+            Campaign
           </a>
           <a class="statBtn" href="#">
             Ad Set
