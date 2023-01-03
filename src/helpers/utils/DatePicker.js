@@ -1,4 +1,5 @@
 import React, { forwardRef, useState } from "react";
+import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -44,6 +45,7 @@ const DatePickerComponent = ({
           open={isOpen}
           customInput={<CustomInput2/>}
           minDate={startDate}
+          maxDate={moment().toDate()} 
         />
       )}
     </>

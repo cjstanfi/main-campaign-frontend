@@ -3,30 +3,30 @@ import Select from "react-select";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const sort = [
-  { value: "Highest ROAS", label: "Highest ROAS" },
-  { value: "Lowest ROAS", label: "Lowest ROAS" },
-  { value: "Highest Impressions", label: "Highest Impressions" },
-  { value: "Lowest Impressions", label: "Lowest Impressions" },
-  { value: "Highest Reach", label: "Highest Reach" },
-  { value: "Lowest Reach", label: "Lowest Reach" },
-  { value: "Highest Spend", label: "Highest Spend" },
-  { value: "Lowest Spend", label: "Lowest Spend" },
-  { value: "Highest Budget", label: "Highest Budget" },
-  { value: "Lowest Budget", label: "Lowest Budget" },
-  { value: "Highest Leads", label: "Highest Leads" },
-  { value: "Lowest Leads", label: "Lowest Leads" },
-  { value: "Highest Conversions", label: "Highest Conversions" },
-  { value: "Lowest Conversions", label: "Lowest Conversions" },
-];
+// const sort = [
+//   { value: "Highest ROAS", label: "Highest ROAS" },
+//   { value: "Lowest ROAS", label: "Lowest ROAS" },
+//   { value: "Highest Impressions", label: "Highest Impressions" },
+//   { value: "Lowest Impressions", label: "Lowest Impressions" },
+//   { value: "Highest Reach", label: "Highest Reach" },
+//   { value: "Lowest Reach", label: "Lowest Reach" },
+//   { value: "Highest Spend", label: "Highest Spend" },
+//   { value: "Lowest Spend", label: "Lowest Spend" },
+//   { value: "Highest Budget", label: "Highest Budget" },
+//   { value: "Lowest Budget", label: "Lowest Budget" },
+//   { value: "Highest Leads", label: "Highest Leads" },
+//   { value: "Lowest Leads", label: "Lowest Leads" },
+//   { value: "Highest Conversions", label: "Highest Conversions" },
+//   { value: "Lowest Conversions", label: "Lowest Conversions" },
+// ];
 
-const filter = [
-  { value: "Sort 1", label: "Sort 1" },
-  { value: "Sort 2", label: "Sort 2" },
-  { value: "Sort 3", label: "Sort 3" },
-];
+// const filter = [
+//   { value: "Sort 1", label: "Sort 1" },
+//   { value: "Sort 2", label: "Sort 2" },
+//   { value: "Sort 3", label: "Sort 3" },
+// ];
 
-const Sorting = ({ setOrderBy, setOrderDirection }) => {
+const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
   const [toggledSortByclass, settoggledSortByclass] = useState(false);
   const [toggledFilterByclass, settoggledFilterByclass] = useState(false);
   //console.log(setOrderBy)

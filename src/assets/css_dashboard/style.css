@@ -1620,3 +1620,15 @@ select.flat-select:hover {
     display: none;
   }
 }
+.home_btn {
+  box-shadow: 0 10px 25px rgb(59 89 151 / 50%);
+}
+.react-datepicker-popper[data-placement^="bottom"] {
+  padding-top: 24px !important;
+}
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover {
+  background-color: #bdd3ff !important;
+}

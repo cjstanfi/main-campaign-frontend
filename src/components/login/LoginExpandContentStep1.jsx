@@ -288,7 +288,7 @@ export default function LoginExpand1ContentStep1(props) {
 
                                             {errors.password &&
                                                 errors.password.type === "required" && (
-                                                    <span>Password is required</span>
+                                                    <span>Password is required"</span>
                                                 )}
                                             {errors.password &&
                                                 errors.password.type === "maxLength" && (
@@ -296,7 +296,7 @@ export default function LoginExpand1ContentStep1(props) {
                                                 )}
                                             {errors.password &&
                                                 errors.password.type === "minLength" && (
-                                                    <span>Please enter at least 8 Characters</span>
+                                                    <span>Please enter atleast 8 Characters</span>
                                                 )}
                                             <div className="position-absolute new-ab">
                                                 <Link
@@ -335,7 +335,7 @@ export default function LoginExpand1ContentStep1(props) {
                                                 )}
                                             {errors.confirmPassword &&
                                                 errors.confirmPassword.type === "minLength" && (
-                                                    <span>Please enter at least 8 Characters</span>
+                                                    <span>Please enter atleast 8 Characters</span>
                                                 )}
                                             {errors.confirmPassword &&
                                                 errors.confirmPassword.type === "required" && (

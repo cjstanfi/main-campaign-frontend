@@ -9,7 +9,6 @@ import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
 import { useDispatch, useSelector } from "react-redux";
 // import { BubbleChart } from "./BubbleChart";
-import { daysBackInTimestamp } from "../../helpers/utils/datetoUnixTimestamp";
 import {
   setIsLoggedIn,
   setMainCampaignAccountData,

@@ -129,7 +129,7 @@ export default function IndexBodyContent(props) {
                 Seamless integrations with your CRM and marketing platforms
               </p>
               <div className="d-flex my-sm-3 my-1 m-flex-column">
-                <button className="btn theme-btn h-56 w-auto">
+                <button className="btn theme-btn h-56 w-auto home_btn">
                   <Link style={{ color: "#FFFFFF" }}>Get started</Link>
                 </button>
                 <p className="require_text">

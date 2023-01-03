@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import leadStyle from "../../assets/Leads/css/leads.module.css";
 
 import settingo from "../../assets/Settings/images/setting-o.svg";
@@ -24,9 +24,27 @@ import makeGeneratedLead from "../../models/generated-lead-model";
 import { addGeneratedLeadData } from "../../reducer/GeneratedLeadSlice";
 import { useSelector } from "react-redux";
 import Sorting from "../Sorting";
-import { formatUtcToDate } from "../../helpers/utils/format-utc-to-date";
+import { formatUtcToDate } from "../../helpers/utils/format-utc-to-date.jsx";
 import Header from "../Header";
+
+const sort = [
+  { value: "None", label: "None " },
+  { value: "Converted First", label: "Converted First " },
+  { value: "Converted Last", label: "Converted Last " },
+  { value: "Highest Revenue", label: "Highest Revenue " },
+  { value: "Lowest Revenue", label: "Lowest Revenue " },
+  { value: "Created First", label: "Created First " },
+  { value: "Created Last", label: "Created Last " },
+];
+
+const filter = [
+  { value: "None", label: "None" },
+  { value: "Converted", label: "Converted" },
+];
+
 export default function BodyContent() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState();
   const {
     currentMarketingPlatformBusinessData: { marketingPlatformBusinessId },
   } = useSelector((state) => state.marketingPlatformBusiness);
@@ -46,13 +64,19 @@ export default function BodyContent() {
       <section className="top-nav pb-1">
         <div className="container">
           <div className="row">
-            <Header page="lead" />
+            <Header
+              page="dashboard"
+              startDate={startDate}
+              endDate={endDate}
+              setStartDate={setStartDate}
+              setEndDate={setEndDate}
+            />
           </div>
         </div>
       </section>
       <section>
         <div className="container d-flex">
-          <Sorting />
+          <Sorting sort={sort} filter={filter} />
         </div>
       </section>
       <section className="settings">
@@ -71,7 +95,6 @@ export default function BodyContent() {
                         <th>Ad Set</th>
                         <th>Ad</th>
                         <th>Converted</th>
-                        <th>Revenue</th>
                         <th>Created Date</th>
                       </tr>
                     </thead>
@@ -100,8 +123,9 @@ export default function BodyContent() {
                                 />
                               )}
                             </td>
-                            <td>{lead.generatedLeadRevenue}</td>
-                            <td>{formatUtcToDate(lead.generatedLeadCreatedTime)}</td>
+                            <td>
+                              {formatUtcToDate(lead.generatedLeadCreatedTime)}
+                            </td>
                           </tr>
                         );
                       })}

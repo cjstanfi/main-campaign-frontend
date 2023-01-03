@@ -19,8 +19,30 @@ import makeGeneratedLead from "../../models/generated-lead-model";
 import { addGeneratedLeadData } from "../../reducer/GeneratedLeadSlice";
 import makeChart from "../../models/chart-model";
 import { addChartData } from "../../reducer/ChartSlice";
-import formatUnderscores from "../../helpers/utils/format-underscores";
+import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
+const sort = [
+  { value: "Highest ROAS", label: "Highest ROAS" },
+  { value: "Lowest ROAS", label: "Lowest ROAS" },
+  { value: "Highest Impressions", label: "Highest Impressions" },
+  { value: "Lowest Impressions", label: "Lowest Impressions" },
+  { value: "Highest Reach", label: "Highest Reach" },
+  { value: "Lowest Reach", label: "Lowest Reach" },
+  { value: "Highest Spend", label: "Highest Spend" },
+  { value: "Lowest Spend", label: "Lowest Spend" },
+  { value: "Highest Budget", label: "Highest Budget" },
+  { value: "Lowest Budget", label: "Lowest Budget" },
+  { value: "Highest Leads", label: "Highest Leads" },
+  { value: "Lowest Leads", label: "Lowest Leads" },
+  { value: "Highest Conversions", label: "Highest Conversions" },
+  { value: "Lowest Conversions", label: "Lowest Conversions" },
+];
+
+const filter = [
+  { value: "Sort 1", label: "Sort 1" },
+  { value: "Sort 2", label: "Sort 2" },
+  { value: "Sort 3", label: "Sort 3" },
+];
 export default function TableContent() {
   const [currentId, setCurrentId] = useState(null);
   const [idQueue, setIdQueue] = useState([]);
@@ -183,14 +205,15 @@ export default function TableContent() {
             </svg>
           </button>
         ) : null}
-        <Sorting
+        {/* <Sorting
           setOrderBy={setOrderBy}
           setOrderDirection={setOrderDirection}
-        />
+        /> */}
+        <Sorting sort={sort} filter={filter} />
       </div>
       <div className="table-scroll">
         <div className="table-container table_content">
-          <div className="d-flex mt-sm-5 mt-4 px-sm-4 px-2">
+          <div className="d-flex mt-sm-5 mt-4 px-0">
             <div className="w-10">
               <label className="color-grey">Campaigns</label>
             </div>
@@ -231,9 +254,6 @@ export default function TableContent() {
             <div className="w-6">
               <label className="color-grey"></label>
             </div>
-          </div>
-          <div className="w-8">
-            <label className="color-grey">Performance</label>
           </div>
           {is_loading && (
             <div className="">
@@ -291,13 +311,25 @@ export default function TableContent() {
               </div>
               {summaryRow.childType === "campaign" ? (
                 <div className="w-8">
-                  <h5 className="color-black2">{summaryRow.lifetimeBudget ? "$" + summaryRow.lifetimeBudget : summaryRow.dailyBudget ? "$" + summaryRow.dailyBudget : "Ad Set Budget" }</h5>
+                  <h5 className="color-black2">
+                    {summaryRow.lifetimeBudget
+                      ? "$" + summaryRow.lifetimeBudget
+                      : summaryRow.dailyBudget
+                      ? "$" + summaryRow.dailyBudget
+                      : "Ad Set Budget"}
+                  </h5>
                 </div>
               ) : null}
               {summaryRow.childType === "ad_set" ? (
-                  <div className="w-8">
-                    <h5 className="color-black2">{summaryRow.lifetimeBudget ? "Lifetime " + "$" + summaryRow.lifetimeBudget : summaryRow.dailyBudget ? "Daily " + "$" + summaryRow.dailyBudget : "Campaign Budget" }</h5>
-                  </div>
+                <div className="w-8">
+                  <h5 className="color-black2">
+                    {summaryRow.lifetimeBudget
+                      ? "Lifetime " + "$" + summaryRow.lifetimeBudget
+                      : summaryRow.dailyBudget
+                      ? "Daily " + "$" + summaryRow.dailyBudget
+                      : "Campaign Budget"}
+                  </h5>
+                </div>
               ) : null}
               <div className="w-6">
                 <img src={greenup} alt="" />
