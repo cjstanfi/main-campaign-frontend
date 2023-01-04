@@ -2055,7 +2055,8 @@ svg g circle:nth-child(9):hover {
      font-size: 13px;
 }
 .free_for .theme-btn a {
-	color: #ffffff;
+  color: #fff;
+  font-weight: 600;
 }
 .free_for .theme-btn {
 	text-transform: capitalize;
