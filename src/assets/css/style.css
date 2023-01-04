@@ -2074,3 +2074,13 @@ svg g circle:nth-child(9):hover {
 	height: 50px !important;
 }
 }
+.free_for .theme-btn {
+  max-width: -webkit-fit-content;
+  max-width: fit-content;
+  max-width: -moz-fit-content;
+  min-width: 138px;
+  outline: 0;
+  position: relative;
+  text-transform: capitalize;
+  box-shadow: 0 10px 25px rgb(59 89 152 / 50%);
+}
