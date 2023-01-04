@@ -27,7 +27,6 @@ export default function Header({
   const [businessName, setBusinessName] = useState("");
   const [toggledclass, settoggledclass] = useState(false);
   const [cookies, setCookie] = useCookies();
-  
   let {
     mainCampaignAccountData: { mainCampaignAccountId },
   } = useSelector((state) => state.mainCampaignAccount);
@@ -48,6 +47,7 @@ export default function Header({
   const dispatch = useDispatch();
 
   useEffect(() => {
+
     if (filteredBusiness) {
       dispatch(setCurrentMarketingPlatformBusinessData(filteredBusiness));
     } else if (
@@ -58,6 +58,8 @@ export default function Header({
         marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
       );
     }
+    const business_value = localStorage.getItem("business_value");
+    setBusinessName(business_value)
   }, [filteredBusiness, marketingPlatformBusinessData]);
 
   function searchItems(e) {
@@ -69,10 +71,14 @@ export default function Header({
   function addremoveclassmouseleave() {
     settoggledclass(false);
   }
+  const businessListed = (e) => {
+    setBusinessName(e.target.innerHTML)
+    localStorage.setItem("business_value",e.target.innerHTML);
+  }
 
   return (
     <div className="d-flex my-5 m-flex-column total-section-filters">
-      {page === "analytics" && (
+      {/* {page === "analytics" && (
         <>
           <div className="wel-analytices">
             <h4 className="heading mb-0">Welcome Back!</h4>
@@ -125,12 +131,7 @@ export default function Header({
             </div>
           </div>
         </>
-      )}
-      {page === "lead" && (
-        <div className="col-md-4">
-          <h4 className="heading mb-0 color-dark">Leads</h4>
-        </div>
-      )}
+      )} */}
       {page === "setting" && (
         <div className="col-md-4">
           <h4 className="heading mb-0 color-dark">Settings</h4>
@@ -182,7 +183,7 @@ export default function Header({
                     <li key={index}>
                       <Link
                         className="dropdown-item"
-                        onClick={(e) => setBusinessName(e.target.innerHTML)}
+                        onClick={businessListed}
                       >
                         {
                           marketingPlatformBusiness.marketingPlatformBusinessName

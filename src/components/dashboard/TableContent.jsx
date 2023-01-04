@@ -182,14 +182,14 @@ export default function TableContent() {
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
-        <div class="statBtn_Box me-auto">
-          <a class="statBtn" href="#">
+        <div className="statBtn_Box me-auto">
+          <a className="statBtn" href="#">
             Campaign
           </a>
-          <a class="statBtn" href="#">
+          <a className="statBtn" href="#">
             Ad Set
           </a>
-          <a class="statBtn" href="#">
+          <a className="statBtn" href="#">
             Ad
           </a>
         </div>
@@ -285,8 +285,8 @@ export default function TableContent() {
               onClick={() => handleTableRowClick(summaryRow.id)}
             >
               <div className="w-6 checkBox_row">
-                <div class="cntr">
-                  <label for="cbx" className="label-cbx">
+                <div className="cntr">
+                  <label htmlFor="cbx" className="label-cbx">
                     <input id="cbx" type="checkbox" className="invisible" />
                     <div className="checkbox">
                       <svg width="20px" height="20px" viewBox="0 0 20 20">
