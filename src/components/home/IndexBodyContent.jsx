@@ -128,7 +128,25 @@ export default function IndexBodyContent(props) {
               <p className="font-20 color-black1">
                 Seamless integrations with your CRM and marketing platforms
               </p>
-              <div className="d-flex my-sm-3 my-1 m-flex-column">
+              <div class="free_for">
+                <input
+                  class="cu-em-get-started__input"
+                  placeholder="Enter your work email"
+                  type="email"
+                />
+                <div class="d-flex my-sm-3 my-1 m-flex-row">
+                  <button class="btn theme-btn h-56 w-auto home_btn">
+                    <Link to="/">
+                      Get started
+                    </Link>
+                  </button>
+                  <p class="require_text">
+                    14 FREE TRIAL
+                    <br /> NO CREDIT CARD REQUIRED
+                  </p>
+                </div>
+              </div>
+              {/* <div className="d-flex my-sm-3 my-1 m-flex-column">
                 <button className="btn theme-btn h-56 w-auto home_btn">
                   <Link style={{ color: "#FFFFFF" }}>Get started</Link>
                 </button>
@@ -152,8 +170,8 @@ export default function IndexBodyContent(props) {
                   </svg>
 
                   <span className="ms-3">Learn more about us</span>
-                </button> */}
-              </div>
+                </button> 
+              </div> */}
             </div>
             {/* <div className="position-relative arrow-down">
               <img src={arrowdown} className="position-absolute" alt="" />

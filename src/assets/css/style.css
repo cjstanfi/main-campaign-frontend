@@ -2008,3 +2008,69 @@ svg g circle:nth-child(9):hover {
   stroke: rgb(0, 0, 0, 0.5);
   filter: drop-shadow(2px 2px 15px rgb(252, 108, 133, 0.5));
 }
+.free_for input.cu-em-get-started__input {
+	display: block;
+}
+
+.free_for input.cu-em-get-started__input {
+	outline: 0;
+	font: 400 14px/16px Poppins,sans-serif;
+	color: #292d34;
+	max-height: 56px;
+	padding: 21px;
+	border-radius: 9px;
+	width: 360px;
+	border: 1px solid rgba(185,190,199,.6);
+	box-shadow: 0 19px 25px rgb(10 10 51 / 4%);
+	transition: .2s;
+	margin-bottom: 20px;
+}
+.free_for input.cu-em-get-started__input:focus {
+	border: 1px solid #7b68ee;
+	box-shadow: 0 19px 25px rgb(10 10 51 / 11%);
+}
+
+.free_for .theme-btn2 ,  .theme-btn2 {
+	margin: 0 auto;
+	text-transform: capitalize;
+	outline: 0;
+	position: relative;
+	font: 800 14px/16px Axiforma,Arial,serif;
+	min-width: 138px;
+	max-width: -webkit-fit-content;
+	max-width: fit-content;
+	max-width: -moz-fit-content;
+	background: #7b68ee;
+	border-radius: 9px;
+	box-shadow: 0 10px 25px rgba(123,104,238,.5);
+	border: 1px solid #7b68ee;
+	transition: .2s;
+	padding: 2px 30px 0;
+}
+.free_for .theme-btn2:hover ,  .theme-btn2:hover {
+    background: #5c4dbc;
+    border: 1px solid #5c4dbc;
+}
+.free_for .require_text {
+     font-size: 13px;
+}
+.free_for .theme-btn a {
+	color: #ffffff;
+}
+.free_for .theme-btn {
+	text-transform: capitalize;
+	outline: 0;
+	position: relative;
+	min-width: 138px;
+	max-width: -webkit-fit-content;
+	max-width: fit-content;
+	max-width: -moz-fit-content;
+}
+@media screen and (max-width: 768px){
+	.free_for .theme-btn2 a {
+    font-size: 15px;
+}
+.free_for .theme-btn {
+	height: 50px !important;
+}
+}

@@ -1759,3 +1759,7 @@ select.flat-select:hover {
   background-color: #eef2fa !important;
   border-bottom: 1px solid #eef2fa !important;
 }
+#sidebarMenu {
+  z-index: 999999;
+}
+ul.nav-items.nav-level-1 li.nav-item svg path { fill: #ffffff;}
