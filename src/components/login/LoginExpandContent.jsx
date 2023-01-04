@@ -183,7 +183,7 @@ export default function LoginExpandContent(props) {
 
                           {errors.password &&
                               errors.password.type === "required" && (
-                                  <span>Password is required"</span>
+                                  <span>Password is required</span>
                               )}
                           {errors.password &&
                               errors.password.type === "maxLength" && (
