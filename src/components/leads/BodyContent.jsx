@@ -43,8 +43,9 @@ const filter = [
 ];
 
 export default function BodyContent() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState();
+  const d = new Date();
+  const [startDate, setStartDate] = useState(d.setDate(d.getDate() - 7));
+  const [endDate, setEndDate] = useState(new Date());
   const {
     currentMarketingPlatformBusinessData: { marketingPlatformBusinessId },
   } = useSelector((state) => state.marketingPlatformBusiness);
@@ -87,7 +88,7 @@ export default function BodyContent() {
                 <div className="col-md-12 lead-scroll table-responsive">
                   <table className="table table-striped leads-table">
                     <thead>
-                      <tr className="w-8 color-grey">
+                      <tr className="w-8 color-grey text-center">
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>

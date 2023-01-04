@@ -234,6 +234,7 @@ export default function Header({
                 ndate={startDate}
                 setndate={setStartDate}
                 placeholderText="Start Date"
+                endDate={endDate}
               />
               <svg
                 width="24"
@@ -262,6 +263,7 @@ export default function Header({
                 setndate={setEndDate}
                 startDate={startDate}
                 placeholderText="End Date"
+                src={true}
               />
               <svg
                 width="24"

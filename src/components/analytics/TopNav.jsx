@@ -3,8 +3,9 @@ import React from "react";
 import { useState } from "react";
 import Header from "../Header";
 export default function TopNav() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState();
+  const d = new Date();
+  const [startDate, setStartDate] = useState(d.setDate(d.getDate() - 7));
+  const [endDate, setEndDate] = useState(new Date());
 
   return (
     <section className="top-nav pb-1">

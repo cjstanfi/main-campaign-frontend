@@ -19,11 +19,12 @@ import ApexChart from "./ApexChart";
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
   const [cookies, setCookie] = useCookies();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const d = new Date();
+  const [startDate, setStartDate] = useState(d.setDate(d.getDate() - 7));
+  const [endDate, setEndDate] = useState(new Date());
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
   //check cookies to see if user is already logged in
   useEffect(() => {
     console.log(cookies["_auth_state"])

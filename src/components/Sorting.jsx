@@ -1,7 +1,6 @@
 import React from "react";
-import Select from "react-select";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import Form from "react-bootstrap/Form";
 
 // const sort = [
 //   { value: "Highest ROAS", label: "Highest ROAS" },
@@ -37,10 +36,26 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
   const addremoveFilterbyevent = () => {
     settoggledFilterByclass(!toggledFilterByclass);
   };
+  const clickedOption = (e)=>{
+    console.log(e.target.value)
+    const data = sort.find(option => option.value === e.target.value);
+    setOrderBy(data.ob);
+    setOrderDirection(data.od);
+  }
   return (
     <div className="ms-lg-auto d-flex align-items-center">
       <div className="dropdown">
-        <Select options={sort} />
+        <div className="selectBox">
+          <Form.Select aria-label="Default select example" onChange={clickedOption}>
+          <option>Open this select menu</option>
+            {sort?.map((data,index) => (
+               <option key={index} value={data.value} >{data.label}</option>
+            ))}
+            
+          </Form.Select>
+        </div>
+
+        {/* <Select options={sort} /> */}
 
         {/* <Link
           className={`btn custom-dropdown2 dropdown-toggle d-flex align-items-center `}
@@ -239,7 +254,15 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
         </ul> */}
       </div>
       <div className="dropdown ms-3">
-        <Select options={filter} />
+        <div className="selectBox">
+          <Form.Select aria-label="Default select example">
+            <option>Open this select menu</option>
+            <option value="1">Sort 1</option>
+            <option value="2">Sort 2</option>
+            <option value="3">Sort 3</option>
+          </Form.Select>
+        </div>
+        {/* <Select options={filter} /> */}
         {/* <Link
           className="btn custom-dropdown2 dropdown-toggle d-flex align-items-center"
           role="button"

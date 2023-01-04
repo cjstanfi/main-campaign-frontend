@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import greenup from "../../assets/img/green-up.svg";
 import loading from "../../assets/img/loading-gif.gif";
 import { useState } from "react";
@@ -22,20 +24,20 @@ import { addChartData } from "../../reducer/ChartSlice";
 import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
 const sort = [
-  { value: "Highest ROAS", label: "Highest ROAS" },
-  { value: "Lowest ROAS", label: "Lowest ROAS" },
-  { value: "Highest Impressions", label: "Highest Impressions" },
-  { value: "Lowest Impressions", label: "Lowest Impressions" },
-  { value: "Highest Reach", label: "Highest Reach" },
-  { value: "Lowest Reach", label: "Lowest Reach" },
-  { value: "Highest Spend", label: "Highest Spend" },
-  { value: "Lowest Spend", label: "Lowest Spend" },
-  { value: "Highest Budget", label: "Highest Budget" },
-  { value: "Lowest Budget", label: "Lowest Budget" },
-  { value: "Highest Leads", label: "Highest Leads" },
-  { value: "Lowest Leads", label: "Lowest Leads" },
-  { value: "Highest Conversions", label: "Highest Conversions" },
-  { value: "Lowest Conversions", label: "Lowest Conversions" },
+  { value: "Highest ROAS", label: "Highest ROAS",ob:"roas",od:"DESC" },
+  { value: "Lowest ROAS", label: "Lowest ROAS",ob:"roas",od:"ASC" },
+  { value: "Highest Impressions", label: "Highest Impressions",ob:"impressions",od:"DESC" },
+  { value: "Lowest Impressions", label: "Lowest Impressions",ob:"impressions",od:"ASC" },
+  { value: "Highest Reach", label: "Highest Reach",ob:"reach",od:"DESC" },
+  { value: "Lowest Reach", label: "Lowest Reach",ob:"reach",od:"ASC" },
+  { value: "Highest Spend", label: "Highest Spend",ob:"spend",od:"DESC" },
+  { value: "Lowest Spend", label: "Lowest Spend",ob:"spend",od:"ASC" },
+  { value: "Highest Budget", label: "Highest Budget",ob:"budget",od:"DESC" },
+  { value: "Lowest Budget", label: "Lowest Budget",ob:"budget",od:"ASC" },
+  { value: "Highest Leads", label: "Highest Leads",ob:"leads",od:"DESC" },
+  { value: "Lowest Leads", label: "Lowest Leads",ob:"leads",od:"ASC" },
+  { value: "Highest Conversions", label: "Highest Conversions",ob:"conversions",od:"DESC" },
+  { value: "Lowest Conversions", label: "Lowest Conversions",ob:"conversions",od:"ASC" },
 ];
 
 const filter = [
@@ -182,17 +184,17 @@ export default function TableContent() {
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
-        <div className="statBtn_Box me-auto">
-          <a className="statBtn" href="#">
+        {/* <div class="statBtn_Box me-auto">
+          <a class="statBtn" href="#">
             Campaign
           </a>
-          <a className="statBtn" href="#">
+          <a class="statBtn" href="#">
             Ad Set
           </a>
-          <a className="statBtn" href="#">
+          <a class="statBtn" href="#">
             Ad
           </a>
-        </div>
+        </div> */}
         {/* <h4 className="color-grey me-auto">
           Statistics: {formatUnderscores(childType)}
         </h4> */}
@@ -220,8 +222,25 @@ export default function TableContent() {
           setOrderBy={setOrderBy}
           setOrderDirection={setOrderDirection}
         /> */}
-        <Sorting sort={sort} filter={filter} />
+        <Sorting sort={sort} filter={filter} setOrderBy={setOrderBy} setOrderDirection={setOrderDirection} />
       </div>
+      <Tabs
+        defaultActiveKey="profile"
+        id="uncontrolled-tab-example"
+        className="tabList mt-3"
+        fill
+        justify
+      >
+        <Tab eventKey="campaign" title="Campaign">
+          tab 1
+        </Tab>
+        <Tab eventKey="adset" title="Ad Set">
+          tab 2
+        </Tab>
+        <Tab eventKey="ad" title="Ad">
+          tab 3
+        </Tab>
+      </Tabs>
       <div className="table-scroll">
         <div className="table-container table_content">
           <div className="d-flex mt-sm-5 mt-4 px-0">

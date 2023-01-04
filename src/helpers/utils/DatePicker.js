@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,46 +8,61 @@ const DatePickerComponent = ({
   ndate,
   setndate,
   placeholderText,
-  imgsrc,
-  startDate
+  src,
+  startDate,
+  endDate
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const CustomInput = forwardRef(({ value, onClick }, ref) => (
-    <img src={imgsrc} className="" alt={value} readOnly onClick={onClick} ref={ref} />
-  ));
+
 
   const CustomInput2 = forwardRef(({ value, onClick }, ref) => (
     <input className="" placeholder={placeholderText} value={value} readOnly onClick={onClick} ref={ref} />
   ));
 
+
   return (
     <>
-      {imgsrc ? (
+      {src ? (
         <DatePicker
           className={classname}
           selected={ndate}
           onChange={(date) => setndate(date)}
-          placeholderText={placeholderText}
-          onInputClick={() => setIsOpen(true)}
           onClickOutside={() => setIsOpen(false)}
-          open={isOpen}
-          customInput={<CustomInput />}
-          onFocus={(e) => e.target.readOnly = true}
+          customInput={<CustomInput2 />}
+          endDate={endDate} 
+          disabledKeyboardNavigation
+          minDate={startDate}
+          maxDate={moment().toDate()}
+          selectsEnd
         />
+      //   <DatePicker
+      //   selected={endDate}
+      //   onChange={(date) => setndate(date)}
+      //   selectsEnd
+      //   startDate={startDate}
+      //   endDate={endDate}
+      //   minDate={startDate}
+
+      // />
       ) : (
         <DatePicker
           className={classname}
           selected={ndate}
           onChange={(date) => setndate(date)}
-          placeholderText={placeholderText}
-          onInputClick={() => setIsOpen(true)}
           onClickOutside={() => setIsOpen(false)}
-          open={isOpen}
           customInput={<CustomInput2/>}
-          minDate={startDate}
-          maxDate={moment().toDate()} 
+          startDate={startDate}
           disabledKeyboardNavigation
+          maxDate={endDate}
+          selectsStart
         />
+      //   <DatePicker
+      //   selected={startDate}
+      //   onChange={(date) => setndate(date)}
+      //   selectsStart
+      //   startDate={startDate}
+      //   endDate={endDate}
+      // />
       )}
     </>
   );
