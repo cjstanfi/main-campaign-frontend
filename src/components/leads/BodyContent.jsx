@@ -96,6 +96,7 @@ export default function BodyContent() {
                         <th>Ad Set</th>
                         <th>Ad</th>
                         <th>Converted</th>
+                        <th>Revenue</th>
                         <th>Created Date</th>
                       </tr>
                     </thead>
@@ -124,6 +125,7 @@ export default function BodyContent() {
                                 />
                               )}
                             </td>
+                            <td>{lead.generatedLeadRevenue}</td>
                             <td>
                               {formatUtcToDate(lead.generatedLeadCreatedTime)}
                             </td>
