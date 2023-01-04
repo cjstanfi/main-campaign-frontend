@@ -46,6 +46,7 @@ const DatePickerComponent = ({
           customInput={<CustomInput2/>}
           minDate={startDate}
           maxDate={moment().toDate()} 
+          disabledKeyboardNavigation
         />
       )}
     </>
