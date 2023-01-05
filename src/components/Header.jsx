@@ -59,7 +59,14 @@ export default function Header({
       );
     }
     const business_value = localStorage.getItem("business_value");
-    setBusinessName(business_value)
+    if(business_value){
+      setBusinessName(business_value)
+    } else {
+      setBusinessName(
+        marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
+      );
+    }
+    
   }, [filteredBusiness, marketingPlatformBusinessData]);
 
   function searchItems(e) {
