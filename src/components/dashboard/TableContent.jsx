@@ -356,14 +356,14 @@ export default function TableContent() {
                     {summaryRow?.childType === "ad_set" ||
                     summaryRow?.childType === "ad"
                       ? summaryRow.adSetName
-                      : summaryRow?.adSetCount}
+                      : numberWithCommas(summaryRow?.adSetCount)}
                   </h5>
                 </div>
                 <div className="w-8">
                   <h5 className="color-black2">
                     {summaryRow?.childType === "ad"
                       ? summaryRow?.adName
-                      : summaryRow?.adCount}
+                      : numberWithCommas(summaryRow?.adCount)}
                   </h5>
                 </div>
                 <div className="w-8">
