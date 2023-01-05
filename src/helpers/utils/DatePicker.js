@@ -29,7 +29,7 @@ const DatePickerComponent = ({
           onChange={(date) => setndate(date)}
           onClickOutside={() => setIsOpen(false)}
           customInput={<CustomInput2 />}
-          endDate={endDate} 
+          startDate={startDate}
           disabledKeyboardNavigation
           minDate={startDate}
           maxDate={moment().toDate()}
@@ -52,7 +52,6 @@ const DatePickerComponent = ({
           onClickOutside={() => setIsOpen(false)}
           customInput={<CustomInput2/>}
           startDate={startDate}
-          disabledKeyboardNavigation
           maxDate={endDate}
           selectsStart
         />

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import Form from "react-bootstrap/Form";
 import greenup from "../../assets/img/green-up.svg";
 import loading from "../../assets/img/loading-gif.gif";
 import { useState } from "react";
@@ -25,20 +26,45 @@ import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
 import {numberWithCommas} from "../../helpers/utils/format-commas";
 const sort = [
-  { value: "Highest ROAS", label: "Highest ROAS",ob:"roas",od:"DESC" },
-  { value: "Lowest ROAS", label: "Lowest ROAS",ob:"roas",od:"ASC" },
-  { value: "Highest Impressions", label: "Highest Impressions",ob:"impressions",od:"DESC" },
-  { value: "Lowest Impressions", label: "Lowest Impressions",ob:"impressions",od:"ASC" },
-  { value: "Highest Reach", label: "Highest Reach",ob:"reach",od:"DESC" },
-  { value: "Lowest Reach", label: "Lowest Reach",ob:"reach",od:"ASC" },
-  { value: "Highest Spend", label: "Highest Spend",ob:"spend",od:"DESC" },
-  { value: "Lowest Spend", label: "Lowest Spend",ob:"spend",od:"ASC" },
-  { value: "Highest Budget", label: "Highest Budget",ob:"budget",od:"DESC" },
-  { value: "Lowest Budget", label: "Lowest Budget",ob:"budget",od:"ASC" },
-  { value: "Highest Leads", label: "Highest Leads",ob:"leads",od:"DESC" },
-  { value: "Lowest Leads", label: "Lowest Leads",ob:"leads",od:"ASC" },
-  { value: "Highest Conversions", label: "Highest Conversions",ob:"conversions",od:"DESC" },
-  { value: "Lowest Conversions", label: "Lowest Conversions",ob:"conversions",od:"ASC" },
+  { value: "Highest ROAS", label: "Highest ROAS", ob: "roas", od: "DESC" },
+  { value: "Lowest ROAS", label: "Lowest ROAS", ob: "roas", od: "ASC" },
+  {
+    value: "Highest Impressions",
+    label: "Highest Impressions",
+    ob: "impressions",
+    od: "DESC",
+  },
+  {
+    value: "Lowest Impressions",
+    label: "Lowest Impressions",
+    ob: "impressions",
+    od: "ASC",
+  },
+  { value: "Highest Reach", label: "Highest Reach", ob: "reach", od: "DESC" },
+  { value: "Lowest Reach", label: "Lowest Reach", ob: "reach", od: "ASC" },
+  { value: "Highest Spend", label: "Highest Spend", ob: "spend", od: "DESC" },
+  { value: "Lowest Spend", label: "Lowest Spend", ob: "spend", od: "ASC" },
+  {
+    value: "Highest Budget",
+    label: "Highest Budget",
+    ob: "budget",
+    od: "DESC",
+  },
+  { value: "Lowest Budget", label: "Lowest Budget", ob: "budget", od: "ASC" },
+  { value: "Highest Leads", label: "Highest Leads", ob: "leads", od: "DESC" },
+  { value: "Lowest Leads", label: "Lowest Leads", ob: "leads", od: "ASC" },
+  {
+    value: "Highest Conversions",
+    label: "Highest Conversions",
+    ob: "conversions",
+    od: "DESC",
+  },
+  {
+    value: "Lowest Conversions",
+    label: "Lowest Conversions",
+    ob: "conversions",
+    od: "ASC",
+  },
 ];
 
 const filter = [
@@ -199,7 +225,7 @@ export default function TableContent() {
         {/* <h4 className="color-grey me-auto">
           Statistics: {formatUnderscores(childType)}
         </h4> */}
-        {childType !== "campaign" ? (
+        {/* {childType !== "campaign" ? (
           <button
             onClick={handleRefreshClick}
             className={`btn theme-btn w-auto ${load ? "displayclass" : ""}`}
@@ -218,28 +244,30 @@ export default function TableContent() {
               />
             </svg>
           </button>
-        ) : null}
+        ) : null} */}
         {/* <Sorting
           setOrderBy={setOrderBy}
           setOrderDirection={setOrderDirection}
         /> */}
-        <Sorting sort={sort} filter={filter} setOrderBy={setOrderBy} setOrderDirection={setOrderDirection} />
+        <Sorting
+          sort={sort}
+          filter={filter}
+          setOrderBy={setOrderBy}
+          setOrderDirection={setOrderDirection}
+        />
       </div>
       <Tabs
-        defaultActiveKey="profile"
+        defaultActiveKey="Campaign"
         id="uncontrolled-tab-example"
         className="tabList mt-3"
         fill
         justify
       >
         <Tab eventKey="campaign" title="Campaign">
-          tab 1
         </Tab>
         <Tab eventKey="adset" title="Ad Set">
-          tab 2
         </Tab>
         <Tab eventKey="ad" title="Ad">
-          tab 3
         </Tab>
       </Tabs>
       <div className="table-scroll">
@@ -248,7 +276,7 @@ export default function TableContent() {
             <div className="w-6">
               <label className="color-grey"></label>
             </div>
-            <div className="w-10">
+            <div className="w-12">
               <label className="color-grey">Campaigns</label>
             </div>
             <div className="w-8">
@@ -285,7 +313,7 @@ export default function TableContent() {
                 <label className="color-grey">Budget</label>
               </div>
             ) : null}
-            <div className="w-6">
+            <div className="w-8">
               <label className="color-grey">Performance</label>
             </div>
           </div>
@@ -298,89 +326,92 @@ export default function TableContent() {
               </h1>
             </div>
           )}
-          {summaryData?.map((summaryRow) => (
-            <div
-              className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow"
-              key={summaryRow.id}
-              onClick={() => handleTableRowClick(summaryRow.id)}
-            >
+          {summaryData?.map((summaryRow,index) => (
+            <div className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow">
               <div className="w-6 checkBox_row">
                 <div className="cntr">
-                  <label htmlFor="cbx" className="label-cbx">
-                    <input id="cbx" type="checkbox" className="invisible" />
+                <Form.Check aria-label="option 1" />
+                  {/* <label htmlFor={`cbx${index}`} className="label-cbx">
+                    <input id={`cbx${index}`} name={index} type="checkbox"  className="invisible" checked="" />
                     <div className="checkbox">
                       <svg width="20px" height="20px" viewBox="0 0 20 20">
                         <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
                         <polyline points="4 11 8 15 16 6"></polyline>
                       </svg>
                     </div>
-                    {/* <span>Checkbox</span> */}
-                  </label>
+                    {/* <span>Checkbox</span>
+                  </label> */}
                 </div>
               </div>
-              <div className="w-10">
-                <h5 className="color-black2">{summaryRow?.campaignName}</h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">
-                  {summaryRow?.childType === "ad_set" ||
-                  summaryRow?.childType === "ad"
-                    ? summaryRow.adSetName
-                    : summaryRow?.adSetCount}
-                </h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">
-                  {summaryRow?.childType === "ad"
-                    ? summaryRow?.adName
-                    : summaryRow?.adCount}
-                </h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.revenue)}</h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.spend)}</h5>
-              </div>
-              <div className="w-10">
-                <h5 className="color-black2">{summaryRow.roas}</h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">{numberWithCommas(summaryRow.impressions)}</h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">{numberWithCommas(summaryRow.reach)}</h5>
-              </div>
-              <div className="w-10">
-                <h5 className="color-black2">{numberWithCommas(summaryRow.leads)}</h5>
-              </div>
-              <div className="w-8">
-                <h5 className="color-black2">{numberWithCommas(summaryRow.conversions)}</h5>
-              </div>
-              {summaryRow.childType === "campaign" ? (
+              <div
+                className="w-100 d-flex"
+                key={summaryRow.id}
+                onClick={() => handleTableRowClick(summaryRow.id)}
+              >
+                <div className="w-12">
+                  <h5 className="color-black2">{summaryRow?.campaignName}</h5>
+                </div>
                 <div className="w-8">
                   <h5 className="color-black2">
-                    {summaryRow.lifetimeBudget
-                      ? "$" + numberWithCommas(summaryRow.lifetimeBudget)
-                      : summaryRow.dailyBudget
-                      ? "$" + numberWithCommas(summaryRow.dailyBudget)
-                      : "Ad Set Budget"}
+                    {summaryRow?.childType === "ad_set" ||
+                    summaryRow?.childType === "ad"
+                      ? summaryRow.adSetName
+                      : summaryRow?.adSetCount}
                   </h5>
                 </div>
-              ) : null}
-              {summaryRow.childType === "ad_set" ? (
                 <div className="w-8">
                   <h5 className="color-black2">
-                    {summaryRow.lifetimeBudget
-                      ? "Lifetime " + "$" + numberWithCommas(summaryRow.lifetimeBudget)
-                      : summaryRow.dailyBudget
-                      ? "Daily " + "$" + numberWithCommas(summaryRow.dailyBudget)
-                      : "Campaign Budget"}
+                    {summaryRow?.childType === "ad"
+                      ? summaryRow?.adName
+                      : summaryRow?.adCount}
                   </h5>
                 </div>
-              ) : null}
-              <div className="w-6">
-                <img src={greenup} alt="" />
+                <div className="w-8">
+                  <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.revenue)}</h5>
+                </div>
+                <div className="w-8">
+                  <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.spend)}</h5>
+                </div>
+                <div className="w-10">
+                  <h5 className="color-black2">{summaryRow.roas}</h5>
+                </div>
+                <div className="w-8">
+                  <h5 className="color-black2">{numberWithCommas(summaryRow.impressions)}</h5>
+                </div>
+                <div className="w-8">
+                  <h5 className="color-black2">{numberWithCommas(summaryRow.reach)}</h5>
+                </div>
+                <div className="w-10">
+                  <h5 className="color-black2">{numberWithCommas(summaryRow.leads)}</h5>
+                </div>
+                <div className="w-8">
+                  <h5 className="color-black2">{numberWithCommas(summaryRow.conversions)}</h5>
+                </div>
+                {summaryRow.childType === "campaign" ? (
+                  <div className="w-8">
+                    <h5 className="color-black2">
+                      {summaryRow.lifetimeBudget
+                        ? "$" + numberWithCommas(summaryRow.lifetimeBudget)
+                        : summaryRow.dailyBudget
+                        ? "$" + numberWithCommas(summaryRow.dailyBudget)
+                        : "Ad Set Budget"}
+                    </h5>
+                  </div>
+                ) : null}
+                {summaryRow.childType === "ad_set" ? (
+                  <div className="w-8">
+                    <h5 className="color-black2">
+                      {summaryRow.lifetimeBudget
+                        ? "Lifetime " + "$" + numberWithCommas(summaryRow.lifetimeBudget)
+                        : summaryRow.dailyBudget
+                        ? "Daily " + "$" + numberWithCommas(summaryRow.dailyBudget)
+                        : "Campaign Budget"}
+                    </h5>
+                  </div>
+                ) : null}
+                <div className="w-8">
+                  <img src={greenup} alt="" />
+                </div>
               </div>
             </div>
           ))}
@@ -447,7 +478,7 @@ export default function TableContent() {
         </div>
       </div>
 
-      <div className="row m-0 p-0 position-relative mobile mt-5">
+      {/* <div className="row m-0 p-0 position-relative mobile mt-5">
         <div className="d-flex align-items-center justify-content-center">
           <button
             className={`btn theme-btn w-auto ${load ? "displayclass" : ""}`}
@@ -456,7 +487,7 @@ export default function TableContent() {
             Load more
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
