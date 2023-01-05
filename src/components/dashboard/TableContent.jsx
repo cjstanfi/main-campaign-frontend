@@ -23,6 +23,7 @@ import makeChart from "../../models/chart-model";
 import { addChartData } from "../../reducer/ChartSlice";
 import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
+import {numberWithCommas} from "../../helpers/utils/format-commas";
 const sort = [
   { value: "Highest ROAS", label: "Highest ROAS",ob:"roas",od:"DESC" },
   { value: "Lowest ROAS", label: "Lowest ROAS",ob:"roas",od:"ASC" },
@@ -336,33 +337,33 @@ export default function TableContent() {
                 </h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{"$" + summaryRow.revenue}</h5>
+                <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.revenue)}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{"$" + summaryRow.spend}</h5>
+                <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.spend)}</h5>
               </div>
               <div className="w-10">
                 <h5 className="color-black2">{summaryRow.roas}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{summaryRow.impressions}</h5>
+                <h5 className="color-black2">{numberWithCommas(summaryRow.impressions)}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{summaryRow.reach}</h5>
+                <h5 className="color-black2">{numberWithCommas(summaryRow.reach)}</h5>
               </div>
               <div className="w-10">
-                <h5 className="color-black2">{summaryRow.leads}</h5>
+                <h5 className="color-black2">{numberWithCommas(summaryRow.leads)}</h5>
               </div>
               <div className="w-8">
-                <h5 className="color-black2">{summaryRow.conversions}</h5>
+                <h5 className="color-black2">{numberWithCommas(summaryRow.conversions)}</h5>
               </div>
               {summaryRow.childType === "campaign" ? (
                 <div className="w-8">
                   <h5 className="color-black2">
                     {summaryRow.lifetimeBudget
-                      ? "$" + summaryRow.lifetimeBudget
+                      ? "$" + numberWithCommas(summaryRow.lifetimeBudget)
                       : summaryRow.dailyBudget
-                      ? "$" + summaryRow.dailyBudget
+                      ? "$" + numberWithCommas(summaryRow.dailyBudget)
                       : "Ad Set Budget"}
                   </h5>
                 </div>
@@ -371,9 +372,9 @@ export default function TableContent() {
                 <div className="w-8">
                   <h5 className="color-black2">
                     {summaryRow.lifetimeBudget
-                      ? "Lifetime " + "$" + summaryRow.lifetimeBudget
+                      ? "Lifetime " + "$" + numberWithCommas(summaryRow.lifetimeBudget)
                       : summaryRow.dailyBudget
-                      ? "Daily " + "$" + summaryRow.dailyBudget
+                      ? "Daily " + "$" + numberWithCommas(summaryRow.dailyBudget)
                       : "Campaign Budget"}
                   </h5>
                 </div>
