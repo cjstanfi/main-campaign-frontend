@@ -606,7 +606,7 @@ div#navbarSupportedContent {
   background: #bdd3ff !important;
   cursor: pointer;
 }
-.table_content .tableRow > div:hover h5 {
+.table_content .tableRow > div > div:hover h5 {
   color: #1362ff;
 }
 .table_content .tableRow {
