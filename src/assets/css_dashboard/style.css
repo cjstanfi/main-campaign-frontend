@@ -1725,15 +1725,15 @@ select.flat-select:hover {
   height: 0;
   opacity: 0;
 }
-.tabList {
+/* .tabList {
   border-bottom: 1px solid #e0e0e0 !important;
-}
-.tabList li {
-  padding-right: 8px;
+} */
+.tabList li + li {
+  padding-left: 8px;
 }
 .tabList li .nav-link {
-  background: #e0e0e0;
-  border: 1px solid #e0e0e0;
+  background: #e7edf8;
+  border: 1px solid #e7edf8;
 }
 .tabList .nav-item .nav-link {
   width: 100%;
@@ -1742,10 +1742,16 @@ select.flat-select:hover {
 }
 .tabList .nav-item.show .nav-link,
 .tabList .nav-link.active {
-  border-color: #e0e0e0;
-  border-bottom-color: #fff;
+  border-color: #8ab0ff;
+  color: #fff;
+  background: #8ab0ff;
 }
-.statistics-section .tab-content {
+.tabList .nav-link:hover {
+  background-color: #8ab0ff;
+  border-color: #8ab0ff;
+  color: #fff;
+}
+/* .statistics-section .tab-content {
   padding: 10px;
   border-top: 0px;
   border-left: 1px solid #e0e0e0;
@@ -1754,7 +1760,7 @@ select.flat-select:hover {
   border-top-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-}
+} */
 .react-datepicker__header {
   background-color: #eef2fa !important;
   border-bottom: 1px solid #eef2fa !important;
@@ -1762,4 +1768,6 @@ select.flat-select:hover {
 #sidebarMenu {
   z-index: 999999;
 }
-ul.nav-items.nav-level-1 li.nav-item svg path { fill: #ffffff;}
+ul.nav-items.nav-level-1 li.nav-item svg path {
+  fill: #ffffff;
+}

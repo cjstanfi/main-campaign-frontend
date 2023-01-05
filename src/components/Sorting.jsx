@@ -36,22 +36,25 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
   const addremoveFilterbyevent = () => {
     settoggledFilterByclass(!toggledFilterByclass);
   };
-  const clickedOption = (e)=>{
-    console.log(e.target.value)
-    const data = sort.find(option => option.value === e.target.value);
+  const clickedOption = (e) => {
+    const data = sort.find((option) => option.value === e.target.value);
     setOrderBy(data.ob);
     setOrderDirection(data.od);
-  }
+  };
   return (
     <div className="ms-lg-auto d-flex align-items-center">
       <div className="dropdown">
         <div className="selectBox">
-          <Form.Select aria-label="Default select example" onChange={clickedOption}>
-          <option>Open this select menu</option>
-            {sort?.map((data,index) => (
-               <option key={index} value={data.value} >{data.label}</option>
+          <Form.Select
+            aria-label="Default select example"
+            onChange={clickedOption}
+          >
+            <option>Open this select menu</option>
+            {sort?.map((data, index) => (
+              <option key={index} value={data.value}>
+                {data.label}
+              </option>
             ))}
-            
           </Form.Select>
         </div>
 
@@ -255,11 +258,22 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
       </div>
       <div className="dropdown ms-3">
         <div className="selectBox">
-          <Form.Select aria-label="Default select example">
+          {/* <Form.Select aria-label="Default select example">
             <option>Open this select menu</option>
             <option value="1">Sort 1</option>
             <option value="2">Sort 2</option>
             <option value="3">Sort 3</option>
+          </Form.Select> */}
+          <Form.Select
+            aria-label="Default select example"
+            onChange={clickedOption}
+          >
+            <option>Open this select menu</option>
+            {filter?.map((data, index) => (
+              <option key={index} value={data.value}>
+                {data.label}
+              </option>
+            ))}
           </Form.Select>
         </div>
         {/* <Select options={filter} /> */}

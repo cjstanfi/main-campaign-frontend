@@ -181,6 +181,9 @@ export default function TableContent() {
       setload(true);
     }
   }
+  const checkTab = (chtype)=>{
+console.log("chtype")
+  }
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
@@ -225,20 +228,17 @@ export default function TableContent() {
         <Sorting sort={sort} filter={filter} setOrderBy={setOrderBy} setOrderDirection={setOrderDirection} />
       </div>
       <Tabs
-        defaultActiveKey="profile"
+        defaultActiveKey="campaign"
         id="uncontrolled-tab-example"
         className="tabList mt-3"
         fill
         justify
       >
-        <Tab eventKey="campaign" title="Campaign">
-          tab 1
+        <Tab eventKey="campaign" title="Campaign" onSelect={(e)=>checkTab}>
         </Tab>
-        <Tab eventKey="adset" title="Ad Set">
-          tab 2
+        <Tab eventKey="adset" title="Ad Set"  onSelect={checkTab("adset")}>
         </Tab>
-        <Tab eventKey="ad" title="Ad">
-          tab 3
+        <Tab eventKey="ad" title="Ad"  onSelect={checkTab("ad")}>
         </Tab>
       </Tabs>
       <div className="table-scroll">
@@ -446,7 +446,7 @@ export default function TableContent() {
         </div>
       </div>
 
-      <div className="row m-0 p-0 position-relative mobile mt-5">
+      {/* <div className="row m-0 p-0 position-relative mobile mt-5">
         <div className="d-flex align-items-center justify-content-center">
           <button
             className={`btn theme-btn w-auto ${load ? "displayclass" : ""}`}
@@ -455,7 +455,7 @@ export default function TableContent() {
             Load more
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
