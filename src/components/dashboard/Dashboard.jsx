@@ -27,7 +27,7 @@ export default function Dashboard() {
   
   //check cookies to see if user is already logged in
   useEffect(() => {
-    console.log(cookies["_auth_state"])
+    //console.log(cookies["_auth_state"])
     if (cookies["_auth_state"]) {
       dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
       dispatch(setIsLoggedIn(true));

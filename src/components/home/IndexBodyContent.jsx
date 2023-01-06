@@ -128,19 +128,19 @@ export default function IndexBodyContent(props) {
               <p className="font-20 color-black1">
                 Seamless integrations with your CRM and marketing platforms
               </p>
-              <div class="free_for">
+              <div className="free_for">
                 <input
-                  class="cu-em-get-started__input"
+                  className="cu-em-get-started__input"
                   placeholder="Enter your work email"
                   type="email"
                 />
-                <div class="d-flex my-sm-3 my-1 m-flex-row">
-                  <button class="btn theme-btn h-56 w-auto home_btn">
+                <div className="d-flex my-sm-3 my-1 m-flex-row">
+                  <button className="btn theme-btn h-56 w-auto home_btn">
                     <Link to="/">
                       Get started
                     </Link>
                   </button>
-                  <p class="require_text">
+                  <p className="require_text">
                     14 FREE TRIAL
                     <br /> NO CREDIT CARD REQUIRED
                   </p>

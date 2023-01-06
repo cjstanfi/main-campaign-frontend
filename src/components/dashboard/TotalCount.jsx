@@ -68,12 +68,13 @@ export default function TotalCount({ startDate, endDate }) {
       <div className="container p-0">
         <div className="slider_area">
           <div className="row slider_wrap">
-            {smallViewNumbers?.map((view) => {
+            {smallViewNumbers?.map((view,index) => {
               return (
                 <SummaryViewSmall
                   title={formatUnderscores(view?.title)}
                   amount={view?.valueDuringTimeframe}
                   percent={view?.valuePercentChange}
+                  key={index}
                 />
               );
             })}

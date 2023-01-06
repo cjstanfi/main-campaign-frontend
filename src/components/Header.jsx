@@ -40,10 +40,11 @@ export default function Header({
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData
   );
+  
   const filteredBusiness = useSelector(
     marketingPlatformBusinessByNameSelector(businessName)
   );
-
+  console.log(marketingPlatformBusinessData)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -58,13 +59,14 @@ export default function Header({
         marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
       );
     }
+  
     const business_value = localStorage.getItem("business_value");
     if(business_value){
       setBusinessName(business_value)
     } else {
-      setBusinessName(
-        marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
-      );
+      // setBusinessName(
+      //   marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
+      // );
     }
     
   }, [filteredBusiness, marketingPlatformBusinessData]);
