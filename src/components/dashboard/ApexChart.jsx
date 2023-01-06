@@ -42,22 +42,39 @@ function ApexChart() {
         palette: "palette2",
       },
     },
-    zoom: {
-      enabled: true,
-      type: 'x',  
-      autoScaleYaxis: false,  
-      zoomedArea: {
-        fill: {
-          color: '#90CAF9',
-          opacity: 0.4
+    toolbar: {
+      show: true,
+      offsetX: 0,
+      offsetY: 0,
+      tools: {
+        download: true,
+        selection: true,
+        zoom: true,
+        zoomin: true,
+        zoomout: true,
+        pan: true,
+        reset: true | '<img src="/static/icons/reset.png" width="20">',
+        customIcons: []
+      },
+      export: {
+        csv: {
+          filename: undefined,
+          columnDelimiter: ',',
+          headerCategory: 'category',
+          headerValue: 'value',
+          dateFormatter(timestamp) {
+            return new Date(timestamp).toDateString()
+          }
         },
-        stroke: {
-          color: '#0D47A1',
-          opacity: 0.4,
-          width: 1
+        svg: {
+          filename: undefined,
+        },
+        png: {
+          filename: undefined,
         }
-      }
-  }
+      },
+      autoSelected: 'zoom' 
+    },
   };
 
   function generateData(baseval, count, yrange) {
