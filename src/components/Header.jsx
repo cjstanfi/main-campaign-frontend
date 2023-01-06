@@ -30,25 +30,24 @@ export default function Header({
   let {
     mainCampaignAccountData: { mainCampaignAccountId },
   } = useSelector((state) => state.mainCampaignAccount);
-  if(mainCampaignAccountId === undefined){
+  if (mainCampaignAccountId === undefined) {
     mainCampaignAccountId = cookies["_auth_state"].mainCampaignAccountId;
   }
-//console.log(cookies["_auth_state"].mainCampaignAccountId)
+  //console.log(cookies["_auth_state"].mainCampaignAccountId)
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
     `https://test.api.maincampaign.com/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
     mainCampaignAccountId,
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData
   );
-  
+
   const filteredBusiness = useSelector(
     marketingPlatformBusinessByNameSelector(businessName)
   );
-  console.log(marketingPlatformBusinessData)
+  console.log(marketingPlatformBusinessData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-
     if (filteredBusiness) {
       dispatch(setCurrentMarketingPlatformBusinessData(filteredBusiness));
     } else if (
@@ -59,16 +58,15 @@ export default function Header({
         marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
       );
     }
-  
+
     const business_value = localStorage.getItem("business_value");
-    if(business_value){
-      setBusinessName(business_value)
+    if (business_value) {
+      setBusinessName(business_value);
     } else {
       // setBusinessName(
       //   marketingPlatformBusinessData[0]?.marketingPlatformBusinessName
       // );
     }
-    
   }, [filteredBusiness, marketingPlatformBusinessData]);
 
   function searchItems(e) {
@@ -81,9 +79,9 @@ export default function Header({
     settoggledclass(false);
   }
   const businessListed = (e) => {
-    setBusinessName(e.target.innerHTML)
-    localStorage.setItem("business_value",e.target.innerHTML);
-  }
+    setBusinessName(e.target.innerHTML);
+    localStorage.setItem("business_value", e.target.innerHTML);
+  };
 
   return (
     <div className="d-flex my-5 m-flex-column total-section-filters">
@@ -190,10 +188,7 @@ export default function Header({
                 (marketingPlatformBusiness, index) => {
                   return (
                     <li key={index}>
-                      <Link
-                        className="dropdown-item"
-                        onClick={businessListed}
-                      >
+                      <Link className="dropdown-item" onClick={businessListed}>
                         {
                           marketingPlatformBusiness.marketingPlatformBusinessName
                         }
@@ -297,7 +292,7 @@ export default function Header({
           </div>
         )}
         <div className="desktop">
-          <div className="grey-btn d-flex align-items-center justify-content-center ms-4 header-btns">
+          {/* <div className="grey-btn d-flex align-items-center justify-content-center ms-4 header-btns">
             <Link className="d-flex align-items-center justify-content-center">
               <svg
                 width="24"
@@ -320,7 +315,7 @@ export default function Header({
                 />
               </svg>
             </Link>
-          </div>
+          </div> */}
           <div className="grey-btn d-flex align-items-center justify-content-center ms-3 header-btns">
             <Link className="d-flex align-items-center justify-content-center">
               <svg

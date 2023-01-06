@@ -91,6 +91,7 @@ function ApexChart() {
       i++;
 
     }
+    
     return series;
   }
 
