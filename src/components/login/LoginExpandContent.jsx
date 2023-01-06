@@ -15,6 +15,7 @@ import makeMainCampaignLogin from "../../models/main-campaign-account-login-mode
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import {useSignIn} from "react-auth-kit";
 
+
 export default function LoginExpandContent(props) {
   const [passwordShown, setPasswordShown] = useState(false);
   const signIn = useSignIn()
@@ -31,10 +32,10 @@ export default function LoginExpandContent(props) {
   password.current = watch("password", "");
 
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
-      axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(({ data }) => {
+     await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(({ data }) => {
         const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
         dispatch(setMainCampaignAccountData(validMainCampaignAccount))
         dispatch(setIsLoggedIn(true))

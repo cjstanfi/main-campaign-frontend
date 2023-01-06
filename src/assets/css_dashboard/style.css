@@ -342,7 +342,7 @@ label {
   box-shadow: none;
   padding: 9px;
   position: relative;
-  z-index: 9999;
+  z-index: 9;
 }
 .custom-input2 input {
   background: none;
@@ -1751,6 +1751,16 @@ select.flat-select:hover {
   border-color: #8ab0ff;
   color: #fff;
 }
+@media only screen and (max-width: 479px) {
+  .tabList {
+    flex-wrap: nowrap;
+  }
+  .tabList .nav-item .nav-link {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
 /* .statistics-section .tab-content {
   padding: 10px;
   border-top: 0px;

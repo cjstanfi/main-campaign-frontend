@@ -42,6 +42,22 @@ function ApexChart() {
         palette: "palette2",
       },
     },
+    zoom: {
+      enabled: true,
+      type: 'x',  
+      autoScaleYaxis: false,  
+      zoomedArea: {
+        fill: {
+          color: '#90CAF9',
+          opacity: 0.4
+        },
+        stroke: {
+          color: '#0D47A1',
+          opacity: 0.4,
+          width: 1
+        }
+      }
+  }
   };
 
   function generateData(baseval, count, yrange) {
@@ -58,7 +74,6 @@ function ApexChart() {
       i++;
 
     }
-    console.log(series)
     return series;
   }
 
