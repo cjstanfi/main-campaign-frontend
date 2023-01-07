@@ -342,7 +342,7 @@ label {
   box-shadow: none;
   padding: 9px;
   position: relative;
-  z-index: 9999;
+  z-index: 9;
 }
 .custom-input2 input {
   background: none;
@@ -1350,14 +1350,15 @@ label {
 }
 
 .navbar a.dropdown-toggle:after {
-  display: inline-block;
+  /* display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
   border-bottom: 0;
-  border-left: 0.3em solid transparent;
+  border-left: 0.3em solid transparent; */
+  content: none;
 }
 
 .margin-auto {
@@ -1751,6 +1752,16 @@ select.flat-select:hover {
   border-color: #8ab0ff;
   color: #fff;
 }
+@media only screen and (max-width: 479px) {
+  .tabList {
+    flex-wrap: nowrap;
+  }
+  .tabList .nav-item .nav-link {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
 /* .statistics-section .tab-content {
   padding: 10px;
   border-top: 0px;
@@ -1762,12 +1773,45 @@ select.flat-select:hover {
   border-bottom-right-radius: 4px;
 } */
 .react-datepicker__header {
-  background-color: #eef2fa !important;
-  border-bottom: 1px solid #eef2fa !important;
+  background-color: #216ba5 !important;
+  border-bottom: 1px solid #216ba5 !important;
+  color: #fff !important;
 }
 #sidebarMenu {
   z-index: 999999;
 }
 ul.nav-items.nav-level-1 li.nav-item svg path {
   fill: #ffffff;
+}
+.navbar-brand img {
+  margin-bottom: 15px;
+}
+.navArrow {
+  width: 8px;
+  vertical-align: baseline;
+  margin-left: 4px;
+  transform: rotate(-90deg);
+  transition: all ease 0.5s;
+}
+.dropdown:hover .navArrow {
+  transform: rotate(0deg);
+  transition: all ease 0.5s;
+}
+.react-datepicker__navigation {
+  top: 10px !important;
+}
+.react-datepicker__day-name,
+.react-datepicker__current-month {
+  color: #fff !important;
+}
+.react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-year-read-view--down-arrow,
+.react-datepicker__navigation-icon::before {
+  border-color: #fff !important;
+}
+.selectBox .form-select {
+  background-color: #eef2fa;
+  border-color: #eef2fa;
+  cursor: pointer;
 }

@@ -1778,6 +1778,7 @@ footer a:hover path {
 }
 .dropdown:hover .dropdown-menu {
   display: block;
+  z-index: 9999;
 }
 .show {
   display: block;
@@ -1968,7 +1969,14 @@ footer a:hover path {
     margin-top: -80px !important;
   }
 }
-svg g circle:nth-child(1) {
+svg g circle {
+  stroke: rgb(0, 0, 0, 0);
+  filter: drop-shadow(2px 2px 15px rgb(121, 136, 193, 1));
+}
+svg g circle:hover {
+  filter: drop-shadow(2px 2px 15px rgb(121, 136, 193, 1));
+}
+/* svg g circle:nth-child(1) {
   stroke: rgb(0, 0, 0, 0.7);
   filter: drop-shadow(2px 2px 15px rgb(174, 202, 141, 1));
 }
@@ -2007,7 +2015,7 @@ svg g circle:nth-child(9) {
 svg g circle:nth-child(9):hover {
   stroke: rgb(0, 0, 0, 0.5);
   filter: drop-shadow(2px 2px 15px rgb(252, 108, 133, 0.5));
-}
+} */
 .free_for input.cu-em-get-started__input {
   display: block;
 }

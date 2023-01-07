@@ -49,7 +49,7 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
             aria-label="Default select example"
             onChange={clickedOption}
           >
-            <option>Open this select menu</option>
+            <option>Sort</option>
             {sort?.map((data, index) => (
               <option key={index} value={data.value}>
                 {data.label}
@@ -268,7 +268,7 @@ const Sorting = ({ setOrderBy, setOrderDirection, sort, filter }) => {
             aria-label="Default select example"
             onChange={clickedOption}
           >
-            <option>Open this select menu</option>
+            <option>Filter</option>
             {filter?.map((data, index) => (
               <option key={index} value={data.value}>
                 {data.label}

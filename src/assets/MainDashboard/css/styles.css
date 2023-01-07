@@ -54,11 +54,17 @@ div#navbarSupportedContent {
   border: none !important;
 }
 .active-item {
-  background-color: #8ea9e036 !important;
+  /* background-color: #8ea9e036 !important; */
+  background-color: #3b5998 !important;
   border-radius: 10px !important;
+  color: #fff !important;
 }
 .active-item > span {
-  color: #3b5998 !important;
+  /* color: #3b5998 !important; */
+  color: #fff !important;
+}
+.active-item svg path {
+  fill: #fff !important;
 }
 .more-text {
   color: #3b5998 !important;
@@ -609,15 +615,25 @@ div#navbarSupportedContent {
 .table_content .tableRow > div > div:hover h5 {
   color: #1362ff;
 }
+.table_content .tableRow.active {
+  background: #3b5998 !important;
+  color: #fff;
+}
+.table_content .tableRow.active > div > div h5 {
+  color: #fff;
+}
 .table_content .tableRow {
   padding: 0px !important;
 }
-.table_content .tableRow > div {
+.table_content .tableRow > div > div {
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.table_content .tableRow > div + div {
+.table_content .tableRow > div > div + div {
   border-left: 1px solid rgba(142, 169, 224, 0.15);
+}
+.home_nav .nav-item + .nav-item {
+  margin-left: 2rem;
 }

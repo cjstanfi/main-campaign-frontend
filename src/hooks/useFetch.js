@@ -9,22 +9,26 @@ export default function useFetch(url, params) {
     const [cookies, setCookies] = useCookies()
 
     useEffect(() => {
-        if (isArrayItemNotNull([...params, cookies['_auth']])) {
-            axios.get(url, {
-                headers: {
-                    'Authorization': `Bearer ${cookies['_auth']}`
-                }
-            })
-                .then(({data}) => {
-                    setData(data)
-                    setIsPending(false)
-                    setError(null)
+        async function fetchingData(){
+            if (isArrayItemNotNull([...params, cookies['_auth']])) {
+                axios.get(url, {
+                    headers: {
+                        'Authorization': `Bearer ${cookies['_auth']}`
+                    }
                 })
-                .catch(err => {
-                    setIsPending(false)
-                    setError(err.message)
-                })
+                    .then(({data}) => {
+                        setData(data)
+                        setIsPending(false)
+                        setError(null)
+                    })
+                    .catch(err => {
+                        setIsPending(false)
+                        setError(err.message)
+                    })
+            }
         }
+         fetchingData();
+        
     }, [url])
 
     return {data, isPending, error}

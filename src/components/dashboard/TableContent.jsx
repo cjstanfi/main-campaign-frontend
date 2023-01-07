@@ -24,7 +24,7 @@ import makeChart from "../../models/chart-model";
 import { addChartData } from "../../reducer/ChartSlice";
 import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
-import {numberWithCommas} from "../../helpers/utils/format-commas";
+import { numberWithCommas } from "../../helpers/utils/format-commas";
 const sort = [
   { value: "Highest ROAS", label: "Highest ROAS", ob: "roas", od: "DESC" },
   { value: "Lowest ROAS", label: "Lowest ROAS", ob: "roas", od: "ASC" },
@@ -165,7 +165,7 @@ export default function TableContent() {
   // const [toggledclassfilter, settoggledclassfilter] = useState(false);
   const [load, setload] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [isCardActive, setIsCardActive] = useState(false);
   const [recordsPerPage, setrecordsPerPage] = useState(10);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -208,6 +208,9 @@ export default function TableContent() {
       setload(true);
     }
   }
+  const toggleActiveClass = () => {
+    setIsCardActive((prev) => !prev);
+  };
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
@@ -263,12 +266,9 @@ export default function TableContent() {
         fill
         justify
       >
-        <Tab eventKey="campaign" title="Campaign">
-        </Tab>
-        <Tab eventKey="adset" title="Ad Set">
-        </Tab>
-        <Tab eventKey="ad" title="Ad">
-        </Tab>
+        <Tab eventKey="campaign" title="Campaign"></Tab>
+        <Tab eventKey="adset" title="Ad Set"></Tab>
+        <Tab eventKey="ad" title="Ad"></Tab>
       </Tabs>
       <div className="table-scroll">
         <div className="table-container table_content">
@@ -329,11 +329,17 @@ export default function TableContent() {
               </h1>
             </div>
           )}
-          {summaryData?.map((summaryRow,index) => (
-            <div className="d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow">
+          {summaryData?.map((summaryRow, index) => (
+            <div
+              key={index}
+              className={`d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow${
+                isCardActive ? " active" : ""
+              }`}
+              onClick={toggleActiveClass}
+            >
               <div className="w-6 checkBox_row">
                 <div className="cntr">
-                <Form.Check aria-label="option 1" />
+                  <Form.Check aria-label="option 1" />
                   {/* <label htmlFor={`cbx${index}`} className="label-cbx">
                     <input id={`cbx${index}`} name={index} type="checkbox"  className="invisible" checked="" />
                     <div className="checkbox">
@@ -370,28 +376,40 @@ export default function TableContent() {
                   </h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{numberWithCommas(summaryRow.status)}</h5>
+                  <h5 className="color-black2">{summaryRow.status}</h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.revenue)}</h5>
+                  <h5 className="color-black2">
+                    {"$" + numberWithCommas(summaryRow.revenue)}
+                  </h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.spend)}</h5>
+                  <h5 className="color-black2">
+                    {"$" + numberWithCommas(summaryRow.spend)}
+                  </h5>
                 </div>
                 <div className="w-10">
                   <h5 className="color-black2">{summaryRow.roas}</h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{numberWithCommas(summaryRow.impressions)}</h5>
+                  <h5 className="color-black2">
+                    {numberWithCommas(summaryRow.impressions)}
+                  </h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{numberWithCommas(summaryRow.reach)}</h5>
+                  <h5 className="color-black2">
+                    {numberWithCommas(summaryRow.reach)}
+                  </h5>
                 </div>
                 <div className="w-10">
-                  <h5 className="color-black2">{numberWithCommas(summaryRow.leads)}</h5>
+                  <h5 className="color-black2">
+                    {numberWithCommas(summaryRow.leads)}
+                  </h5>
                 </div>
                 <div className="w-8">
-                  <h5 className="color-black2">{numberWithCommas(summaryRow.conversions)}</h5>
+                  <h5 className="color-black2">
+                    {numberWithCommas(summaryRow.conversions)}
+                  </h5>
                 </div>
                 {summaryRow.childType === "campaign" ? (
                   <div className="w-8">
@@ -408,9 +426,13 @@ export default function TableContent() {
                   <div className="w-8">
                     <h5 className="color-black2">
                       {summaryRow.lifetimeBudget
-                        ? "Lifetime " + "$" + numberWithCommas(summaryRow.lifetimeBudget)
+                        ? "Lifetime " +
+                          "$" +
+                          numberWithCommas(summaryRow.lifetimeBudget)
                         : summaryRow.dailyBudget
-                        ? "Daily " + "$" + numberWithCommas(summaryRow.dailyBudget)
+                        ? "Daily " +
+                          "$" +
+                          numberWithCommas(summaryRow.dailyBudget)
                         : "Campaign Budget"}
                     </h5>
                   </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/img/logo.svg";
+import navArrow from "../../assets/img/navArrow.png";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
@@ -22,7 +23,6 @@ function Header(props) {
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
 
   function handleLoginClick() {
-
     if (!isLoggedIn) {
       navigate("login");
     } else {
@@ -44,16 +44,16 @@ function Header(props) {
             >
               <img src={logo} height="" alt="Main Campaign" loading="lazy" />
             </Link>
-            <ul className="navbar-nav m-auto">
+            <ul className="navbar-nav m-auto home_nav">
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle mx-2"
+                  className="nav-link dropdown-toggle"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Product
+                  Product <img src={navArrow} alt="Logo" className="navArrow" />
                 </Link>
                 <ul
                   className="dropdown-menu"
@@ -91,17 +91,18 @@ function Header(props) {
                 </ul>
               </li> */}
               <li className="nav-item">
-                <Link className="nav-link mx-3">Pricing</Link>
+                <Link className="nav-link">Pricing</Link>
               </li>
-              <li className="nav-item dropdown mx-3">
+              <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle mx-2"
+                  className="nav-link dropdown-toggle"
                   id="navbarDropdown"
                   role="button"
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Our Approach
+                  <img src={navArrow} alt="Logo" className="navArrow" />
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
@@ -114,7 +115,9 @@ function Header(props) {
               </li>
               {isLoggedIn && (
                 <li className="nav-item">
-                  <Link to={"/dashboard"} className="nav-link mx-3">My Dashboard</Link>
+                  <Link to={"/dashboard"} className="nav-link">
+                    My Dashboard
+                  </Link>
                 </li>
               )}
             </ul>
@@ -299,28 +302,23 @@ function Header(props) {
             </li>
 
             {isLoggedIn && (
-                <li className="nav-item">
-                  <Link to={"/dashboard"} className="nav-link">My Dashboard</Link>
-                </li>
-              )}
+              <li className="nav-item">
+                <Link to={"/dashboard"} className="nav-link">
+                  My Dashboard
+                </Link>
+              </li>
+            )}
             <div className=" ms-auto mobile-color">
-
               {isLoggedIn && (
-                 <Link onClick={handleLoginClick}
-                 className="nav-link"
-               >
-                Sign Out
+                <Link onClick={handleLoginClick} className="nav-link">
+                  Sign Out
                 </Link>
               )}
               {!isLoggedIn && (
-                 <Link to={"login"}
-                 className="nav-link"
-               >
-                Login or Register
+                <Link to={"login"} className="nav-link">
+                  Login or Register
                 </Link>
               )}
-
-
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>
