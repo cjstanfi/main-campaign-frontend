@@ -286,6 +286,9 @@ export default function TableContent() {
               <label className="color-grey">Ads</label>
             </div>
             <div className="w-8">
+              <label className="color-grey">Status</label>
+            </div>
+            <div className="w-8">
               <label className="color-grey">Revenue</label>
             </div>
             <div className="w-8">
@@ -365,6 +368,9 @@ export default function TableContent() {
                       ? summaryRow?.adName
                       : numberWithCommas(summaryRow?.adCount)}
                   </h5>
+                </div>
+                <div className="w-8">
+                  <h5 className="color-black2">{numberWithCommas(summaryRow.status)}</h5>
                 </div>
                 <div className="w-8">
                   <h5 className="color-black2">{"$" + numberWithCommas(summaryRow.revenue)}</h5>
