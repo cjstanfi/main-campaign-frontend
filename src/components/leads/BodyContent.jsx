@@ -50,7 +50,7 @@ export default function BodyContent() {
     currentMarketingPlatformBusinessData: { marketingPlatformBusinessId },
   } = useSelector((state) => state.marketingPlatformBusiness);
   const { validData: leadData } = useFetchWithRedux(
-    `https://test.api.maincampaign.com/generated-lead/marketingPlatformBusiness/${marketingPlatformBusinessId}`,
+    `https://test.api.maincampaign.com/generated-lead/marketingPlatformBusiness/${marketingPlatformBusinessId}?searchType=summary`,
     [marketingPlatformBusinessId],
     makeGeneratedLead,
     addGeneratedLeadData
@@ -107,9 +107,9 @@ export default function BodyContent() {
                             <td>{lead.generatedLeadName}</td>
                             <td>{lead.generatedLeadEmail}</td>
                             <td>{lead.generatedLeadPhoneNumber}</td>
-                            <td>{lead.campaignId}</td>
-                            <td>{lead.adSetId}</td>
-                            <td>{lead.adId}</td>
+                            <td>{lead.campaignName}</td>
+                            <td>{lead.adSetName}</td>
+                            <td>{lead.adName}</td>
                             <td>
                               {lead.generatedLeadIsConverted === 1 ? (
                                 <img
