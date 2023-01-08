@@ -125,7 +125,7 @@ export default function BodyContent() {
                                 />
                               )}
                             </td>
-                            <td>{lead.generatedLeadRevenue}</td>
+                            <td>{ '$' + lead.generatedLeadRevenue}</td>
                             <td>
                               {formatUtcToDate(lead.generatedLeadCreatedTime)}
                             </td>
