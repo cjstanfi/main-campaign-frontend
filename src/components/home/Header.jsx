@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../assets/img/logo.svg";
 import navArrow from "../../assets/img/navArrow.png";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useSignOut } from "react-auth-kit";
-import isObjectEmpty from "../../helpers/utils/is-object-empty";
-import { useDispatch, useSelector } from "react-redux";
-import { setIsLoggedIn } from "../../reducer/MainCampaignAccountSlice";
+import {useIsAuthenticated, useSignOut} from "react-auth-kit";
 
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
-  const { isLoggedIn } = useSelector((state) => state.mainCampaignAccount);
+
+  const isAuthenticated = useIsAuthenticated();
+  const auth = isAuthenticated();
+
   const signOut = useSignOut();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   function handleClick() {
     setnavistoggledsub(!navistoggledsub);
@@ -23,11 +22,10 @@ function Header(props) {
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
 
   function handleLoginClick() {
-    if (!isLoggedIn) {
+    if (!auth) {
       navigate("login");
     } else {
       signOut();
-      dispatch(setIsLoggedIn(false));
     }
   }
   return (
@@ -113,7 +111,7 @@ function Header(props) {
                   </li>
                 </ul>
               </li>
-              {isLoggedIn && (
+              {auth && (
                 <li className="nav-item">
                   <Link to={"/dashboard"} className="nav-link">
                     My Dashboard
@@ -123,7 +121,7 @@ function Header(props) {
             </ul>
             <div className="d-flex ms-auto align-items-center">
               <button className="btn theme-btn ms-4" onClick={handleLoginClick}>
-                {isLoggedIn ? "Sign Out" : "Login or Register"}
+                {auth ? "Sign Out" : "Login or Register"}
               </button>
 
               <button className="btn theme-btn ms-4">Start Free Trial</button>
@@ -301,7 +299,7 @@ function Header(props) {
               </ul>
             </li>
 
-            {isLoggedIn && (
+            {auth && (
               <li className="nav-item">
                 <Link to={"/dashboard"} className="nav-link">
                   My Dashboard
@@ -309,12 +307,12 @@ function Header(props) {
               </li>
             )}
             <div className=" ms-auto mobile-color">
-              {isLoggedIn && (
+              {auth && (
                 <Link onClick={handleLoginClick} className="nav-link">
                   Sign Out
                 </Link>
               )}
-              {!isLoggedIn && (
+              {!auth && (
                 <Link to={"login"} className="nav-link">
                   Login or Register
                 </Link>

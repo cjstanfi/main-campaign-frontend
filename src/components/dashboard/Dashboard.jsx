@@ -7,18 +7,21 @@ import { useCookies } from "react-cookie";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
-import { useDispatch, useSelector } from "react-redux";
-// import { BubbleChart } from "./BubbleChart";
+import { useDispatch } from "react-redux";
 import {
-  setIsLoggedIn,
   setMainCampaignAccountData,
 } from "../../reducer/MainCampaignAccountSlice";
 import { useNavigate } from "react-router-dom";
 import ApexChart from "./ApexChart";
+import {useIsAuthenticated, useSignOut} from "react-auth-kit";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
   const [cookies, setCookie] = useCookies();
+  const isAuthenticated = useIsAuthenticated();
+  const auth = isAuthenticated();
+  const signOut = useSignOut()
+
   const d = new Date();
   const [startDate, setStartDate] = useState(d.setDate(d.getDate() - 7));
   const [endDate, setEndDate] = useState(new Date());
@@ -27,12 +30,10 @@ export default function Dashboard() {
   
   //check cookies to see if user is already logged in
   useEffect(() => {
-    //console.log(cookies["_auth_state"])
-    if (cookies["_auth_state"]) {
+    if (auth && cookies["_auth_state"]) {
       dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
-      dispatch(setIsLoggedIn(true));
     } else {
-      dispatch(setIsLoggedIn(false));
+      signOut()
       navigate("/login");
     }
   }, []);

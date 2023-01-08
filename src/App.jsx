@@ -6,8 +6,6 @@ import LoginExpandedStep2 from "./components/login/LoginExpandedStep2";
 import LoginExpandedStep3 from "./components/login/LoginExpandedStep3";
 import LoginExpandedStep4 from "./components/login/LoginExpandedStep4";
 import { Routes, Route } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import { useDispatch, useSelector } from "react-redux";
 import Dashboard from "./components/dashboard/Dashboard";
 import MainDashboard from "./components/analytics/MainDashboard";
 import Privacy from "./components/home/Privacy";
@@ -15,23 +13,8 @@ import {RequireAuth} from "react-auth-kit";
 import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
 import Terms from "./components/home/Terms";
-import {
-  setIsLoggedIn,
-  setMainCampaignAccountData,
-} from "./reducer/MainCampaignAccountSlice";
+
 function App() {
-  const [cookies, setCookie] = useCookies();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    //console.log(cookies["_auth_state"])
-    if (cookies["_auth_state"]) {
-      dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
-      dispatch(setIsLoggedIn(true));
-    } else {
-      dispatch(setIsLoggedIn(false));
-      //navigate("/login");
-    }
-  }, []);
   return (
     <div className="App">
       <Routes>

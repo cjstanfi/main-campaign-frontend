@@ -4,7 +4,6 @@ export const mainCampaignAccountSlice = createSlice({
     name: "mainCampaignAccount",
     initialState: {
         mainCampaignAccountData: {},
-        isLoggedIn: false
     },
     reducers: {
         setMainCampaignAccountData: (state, action) => {
@@ -13,9 +12,6 @@ export const mainCampaignAccountSlice = createSlice({
         addMainCampaignAccountData: (state, action) => {
             state.mainCampaignAccountData = [...state.mainCampaignAccountData, ...action.payload]
         },
-        setIsLoggedIn: (state, action) => {
-            state.isLoggedIn = action.payload
-        }
     }
 })
 
@@ -23,4 +19,4 @@ export function getMainCampaignAccountIdSelector(state) {
     return state.mainCampaignAccountData?.mainCampaignAccountId
 }
 
-export const {setMainCampaignAccountData, addMainCampaignAccountData, setIsLoggedIn} = mainCampaignAccountSlice.actions
+export const {setMainCampaignAccountData, addMainCampaignAccountData} = mainCampaignAccountSlice.actions

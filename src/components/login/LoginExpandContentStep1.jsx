@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import arrowup from "../../assets/img/arrow-up.svg";
 import arrowdown from "../../assets/img/arrow-down.svg";
 import "../../assets/css/mdb.min.css";
@@ -10,14 +10,24 @@ import {useForm} from "react-hook-form";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
-import {useDispatch} from "react-redux";
-import {setIsLoggedIn, setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
-import {useSignIn} from "react-auth-kit";
+import {useDispatch, useSelector} from "react-redux";
+import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
+import {useIsAuthenticated, useSignIn} from "react-auth-kit";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
+import isObjectEmpty from "../../helpers/utils/is-object-empty";
 
 export default function LoginExpand1ContentStep1(props) {
+    const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount);
+    const password = useRef({});
+    password.current = watch("password", "");
+    const [passwordShown, setPasswordShown] = useState(false);
+    const [repasswordShown, setrePasswordShown] = useState(false);
+
+    const isAuthenticated = useIsAuthenticated();
+    const auth = isAuthenticated();
     const signIn = useSignIn()
     const dispatch = useDispatch()
+
     const {
         register,
         handleSubmit,
@@ -35,14 +45,12 @@ export default function LoginExpand1ContentStep1(props) {
                 axios.post("https://test.api.maincampaign.com/main-campaign-account/login", loginBody).then(({data}) => {
                     const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
                     dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-                    dispatch(setIsLoggedIn(true))
                     signIn({
                         token: data.token,
                         expiresIn: 3600,
                         tokenType: "Bearer",
                         authState: validMainCampaignAccount
                     })
-                    navigate("/loginstep2");
                 }).catch(error => {
                     console.log(error)
                 })
@@ -52,10 +60,13 @@ export default function LoginExpand1ContentStep1(props) {
             })
         }
     };
-    const password = useRef({});
-    password.current = watch("password", "");
-    const [passwordShown, setPasswordShown] = useState(false);
-    const [repasswordShown, setrePasswordShown] = useState(false);
+
+    useEffect(() => {
+        if(auth && !isObjectEmpty(mainCampaignAccountData)) {
+            navigate("/loginstep2");
+        }
+    }, [auth, mainCampaignAccountData])
+
     const togglePassword = () => {
         setPasswordShown(!passwordShown);
     };

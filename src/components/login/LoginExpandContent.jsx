@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
-import {setIsLoggedIn, setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
+import {useDispatch} from "react-redux";
+import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
@@ -23,7 +23,6 @@ export default function LoginExpandContent(props) {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  const { isLoggedIn } = useSelector((state) => state.mainCampaignAccount);
   const signIn = useSignIn()
   const isAuthenticated = useIsAuthenticated();
   const auth = isAuthenticated();
@@ -47,7 +46,6 @@ export default function LoginExpandContent(props) {
      await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(async ({data}) => {
        const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
        dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-       dispatch(setIsLoggedIn(true))
        signIn({
          token: data.token,
          expiresIn: 3600,
@@ -63,10 +61,10 @@ export default function LoginExpandContent(props) {
   };
 
   useEffect(() => {
-    if(isLoggedIn && auth) {
+    if(auth) {
       navigate("/dashboard");
     }
-  },[isLoggedIn, auth])
+  },[auth])
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);

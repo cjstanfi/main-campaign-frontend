@@ -1,9 +1,0 @@
-.animated-chart g:nth-of-type(3) {
-    transition: 0.7s;
-    transform: scaleY(1);
-    transform-origin: 0 calc(100% - 50px);
-  }
-  
-  .animated-chart.animated-chart-start g:nth-of-type(3) {
-    transform: scaleY(0);
-  }
