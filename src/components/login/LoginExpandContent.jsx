@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import arrowup from "../../assets/img/arrow-up.svg";
 import arrowdown from "../../assets/img/arrow-down.svg";
 import "../../assets/css/mdb.min.css";
@@ -8,20 +8,29 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setIsLoggedIn, setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
-import {useSignIn} from "react-auth-kit";
+import {useIsAuthenticated, useSignIn} from "react-auth-kit";
+import {useCookies} from "react-cookie";
 
 
 export default function LoginExpandContent(props) {
   const [passwordShown, setPasswordShown] = useState(false);
-  const signIn = useSignIn()
-  const password = useRef({});
+
   const dispatch = useDispatch()
   const navigate = useNavigate();
+
+  const { isLoggedIn } = useSelector((state) => state.mainCampaignAccount);
+  const signIn = useSignIn()
+  const isAuthenticated = useIsAuthenticated();
+  const auth = isAuthenticated();
+
+  const password = useRef({});
+
+
 
   const {
     register,
@@ -35,24 +44,29 @@ export default function LoginExpandContent(props) {
   const onSubmit = async (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
-     await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(({ data }) => {
-        const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
-        dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-        dispatch(setIsLoggedIn(true))
-        signIn({
-          token: data.token,
-          expiresIn: 3600,
-          tokenType: "Bearer",
-          authState: validMainCampaignAccount
-        })
-        console.log(data)
-        navigate("/dashboard");
-      }).catch(error => {
+     await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(async ({data}) => {
+       const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
+       dispatch(setMainCampaignAccountData(validMainCampaignAccount))
+       dispatch(setIsLoggedIn(true))
+       signIn({
+         token: data.token,
+         expiresIn: 3600,
+         tokenType: "Bearer",
+         authState: validMainCampaignAccount
+       })
+
+     }).catch(error => {
         //Print Error message. Email or password probably incorrect
         console.log(error)
       })
     }
   };
+
+  useEffect(() => {
+    if(isLoggedIn && auth) {
+      navigate("/dashboard");
+    }
+  },[isLoggedIn, auth])
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
