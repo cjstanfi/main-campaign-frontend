@@ -9,8 +9,11 @@ export default function makeGeneratedLead(generatedLeadInfo) {
     return Object.freeze(validGeneratedLead)
     function validate({
                           adId = optionalParam(),
+                          adName = optionalParam(),
                           adSetId = optionalParam(),
+                          adSetName = optionalParam(),
                           campaignId = optionalParam(),
+                          campaignName = optionalParam(),
                           generatedLeadClosedTime = optionalParam(),
                           generatedLeadCreatedTime = requiredParam('generated_lead_created_time'),
                           generatedLeadEmail = requiredParam('generated_lead_email'), //normalize email
@@ -28,8 +31,11 @@ export default function makeGeneratedLead(generatedLeadInfo) {
                       } = {}) {
         return {
             adId,
+            adName,
             adSetId,
+            adSetName,
             campaignId,
+            campaignName,
             generatedLeadClosedTime,
             generatedLeadCreatedTime,
             generatedLeadEmail,
