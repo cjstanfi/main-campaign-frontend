@@ -13,19 +13,18 @@ import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice
 import Header from "../home/Header";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
-import {useIsAuthenticated, useSignIn} from "react-auth-kit";
-import {useCookies} from "react-cookie";
+import {useAuth0} from "@auth0/auth0-react";
+import Login from "./auth0/login";
 
 
 export default function LoginExpandContent(props) {
   const [passwordShown, setPasswordShown] = useState(false);
+  const { loginWithRedirect } = useAuth0();
+
 
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  const signIn = useSignIn()
-  const isAuthenticated = useIsAuthenticated();
-  const auth = isAuthenticated();
 
   const password = useRef({});
 
@@ -40,18 +39,17 @@ export default function LoginExpandContent(props) {
   password.current = watch("password", "");
 
 
+  const LoginButton = () => {
+    loginWithRedirect()
+  };
+
+
   const onSubmit = async (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
      await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(async ({data}) => {
        const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
        dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-       signIn({
-         token: data.token,
-         expiresIn: 3600,
-         tokenType: "Bearer",
-         authState: validMainCampaignAccount
-       })
 
      }).catch(error => {
         //Print Error message. Email or password probably incorrect
@@ -60,11 +58,11 @@ export default function LoginExpandContent(props) {
     }
   };
 
-  useEffect(() => {
-    if(auth) {
-      navigate("/dashboard");
-    }
-  },[auth])
+  // useEffect(() => {
+  //   if(auth) {
+  //     navigate("/dashboard");
+  //   }
+  // },[auth])
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -151,7 +149,7 @@ export default function LoginExpandContent(props) {
               <div className="position-relative arrow-up">
                 <img src={arrowup} className="position-absolute" alt=""/>
               </div>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(LoginButton)}>
                 <div className="container-style py-sm-4 py-2 mt-sm-4 mt-3">
                   <div className="d-flex  justify-content-center">
                     <div className="d-flex  flex-column">
@@ -219,9 +217,10 @@ export default function LoginExpandContent(props) {
                     </div>
                   </div>
                   <div className="d-flex align-items-center justify-content-center my-sm-5 my-4 flex-column">
-                    <button className="btn theme-btn w-auto" type="submit">
-                      Login
-                    </button>
+                    {/*<button className="btn theme-btn w-auto" type="submit">*/}
+                    {/*  Login*/}
+                    {/*</button>*/}
+                    <Login/>
                     <Link className="color-black2 font-14 mt-2" to={"/loginstep1"} alt="">
                       or sign up
                     </Link>

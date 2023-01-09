@@ -12,9 +12,9 @@ import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
 import {useDispatch, useSelector} from "react-redux";
 import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
-import {useIsAuthenticated, useSignIn} from "react-auth-kit";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import isObjectEmpty from "../../helpers/utils/is-object-empty";
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function LoginExpand1ContentStep1(props) {
     const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount);
@@ -22,10 +22,8 @@ export default function LoginExpand1ContentStep1(props) {
     password.current = watch("password", "");
     const [passwordShown, setPasswordShown] = useState(false);
     const [repasswordShown, setrePasswordShown] = useState(false);
+    const { isAuthenticated, isLoading } = useAuth0();
 
-    const isAuthenticated = useIsAuthenticated();
-    const auth = isAuthenticated();
-    const signIn = useSignIn()
     const dispatch = useDispatch()
 
     const {
@@ -45,12 +43,6 @@ export default function LoginExpand1ContentStep1(props) {
                 axios.post("https://test.api.maincampaign.com/main-campaign-account/login", loginBody).then(({data}) => {
                     const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
                     dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-                    signIn({
-                        token: data.token,
-                        expiresIn: 3600,
-                        tokenType: "Bearer",
-                        authState: validMainCampaignAccount
-                    })
                 }).catch(error => {
                     console.log(error)
                 })
@@ -62,10 +54,10 @@ export default function LoginExpand1ContentStep1(props) {
     };
 
     useEffect(() => {
-        if(auth && !isObjectEmpty(mainCampaignAccountData)) {
+        if(isAuthenticated && !isObjectEmpty(mainCampaignAccountData)) {
             navigate("/loginstep2");
         }
-    }, [auth, mainCampaignAccountData])
+    }, [isAuthenticated, mainCampaignAccountData])
 
     const togglePassword = () => {
         setPasswordShown(!passwordShown);

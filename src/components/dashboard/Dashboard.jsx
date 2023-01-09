@@ -13,14 +13,12 @@ import {
 } from "../../reducer/MainCampaignAccountSlice";
 import { useNavigate } from "react-router-dom";
 import ApexChart from "./ApexChart";
-import {useIsAuthenticated, useSignOut} from "react-auth-kit";
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
   const [cookies, setCookie] = useCookies();
-  const isAuthenticated = useIsAuthenticated();
-  const auth = isAuthenticated();
-  const signOut = useSignOut()
+  const { user, isAuthenticated, isLoading, logout } = useAuth0();
 
   const d = new Date();
   const [startDate, setStartDate] = useState(d.setDate(d.getDate() - 7));
@@ -30,10 +28,10 @@ export default function Dashboard() {
   
   //check cookies to see if user is already logged in
   useEffect(() => {
-    if (auth && cookies["_auth_state"]) {
-      dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
+    if (isAuthenticated) {
+      dispatch(setMainCampaignAccountData(user));
     } else {
-      signOut()
+      logout()
       navigate("/login");
     }
   }, []);

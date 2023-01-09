@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^1.12.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -15,6 +16,7 @@
     "aos": "^2.3.4",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.3",
+    "env-cmd": "^10.1.0",
     "history": "^5.3.0",
     "moment": "^2.29.4",
     "popper.js": "^1.16.1",
@@ -46,7 +48,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:development": "env-cmd -f .env.development react-scripts build",
+    "build:production": "env-cmd -f .env.production react-scripts build",
+    "start:development": "env-cmd -f .env.development react-scripts start",
+    "start:production": "env-cmd -f .env.production react-scripts start"
   },
   "eslintConfig": {
     "extends": [

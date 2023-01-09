@@ -1,33 +1,32 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import logo from "../../assets/img/logo.svg";
 import navArrow from "../../assets/img/navArrow.png";
 import "../../assets/css/mdb.min.css";
 import "../../assets/css/style.css";
 import "../../assets/css/slick.css";
-import { Link, useNavigate } from "react-router-dom";
-import {useIsAuthenticated, useSignOut} from "react-auth-kit";
+import { Link } from "react-router-dom";
+import {useAuth0} from "@auth0/auth0-react";
+import Login from "../login/auth0/login";
+import Logout from "../login/auth0/logout";
+import LoadingSpinner from "../login/auth0/LoadingSpinner";
 
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
-
-  const isAuthenticated = useIsAuthenticated();
-  const auth = isAuthenticated();
-
-  const signOut = useSignOut();
-  const navigate = useNavigate();
+  const { isAuthenticated, isLoading, user } = useAuth0();
 
   function handleClick() {
     setnavistoggledsub(!navistoggledsub);
   }
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
 
-  function handleLoginClick() {
-    if (!auth) {
-      navigate("login");
-    } else {
-      signOut();
-    }
-  }
+  useEffect(() => {
+    console.log(user)
+  }, [user])
+
+  useEffect(() => {
+    console.log(process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
+  })
+
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg m-0 desktop my-4">
@@ -111,7 +110,7 @@ function Header(props) {
                   </li>
                 </ul>
               </li>
-              {auth && (
+              {isAuthenticated && (
                 <li className="nav-item">
                   <Link to={"/dashboard"} className="nav-link">
                     My Dashboard
@@ -120,10 +119,11 @@ function Header(props) {
               )}
             </ul>
             <div className="d-flex ms-auto align-items-center">
-              <button className="btn theme-btn ms-4" onClick={handleLoginClick}>
-                {auth ? "Sign Out" : "Login or Register"}
-              </button>
-
+              {
+                !isLoading ?
+                    (isAuthenticated ? <Logout className="btn theme-btn ms-4"/> : <Login className="btn theme-btn ms-4"/>)
+                    : <LoadingSpinner/>
+              }
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>
           </div>
@@ -299,7 +299,7 @@ function Header(props) {
               </ul>
             </li>
 
-            {auth && (
+            {isAuthenticated && (
               <li className="nav-item">
                 <Link to={"/dashboard"} className="nav-link">
                   My Dashboard
@@ -307,17 +307,11 @@ function Header(props) {
               </li>
             )}
             <div className=" ms-auto mobile-color">
-              {auth && (
-                <Link onClick={handleLoginClick} className="nav-link">
-                  Sign Out
-                </Link>
-              )}
-              {!auth && (
-                <Link to={"login"} className="nav-link">
-                  Login or Register
-                </Link>
-              )}
-
+              {
+                !isLoading ?
+                    (isAuthenticated ? <Logout className="btn theme-btn ms-4"/> : <Login className="btn theme-btn ms-4"/>)
+                    : <LoadingSpinner/>
+              }
               <button className="btn theme-btn ms-4">Start Free Trial</button>
             </div>
           </ul>

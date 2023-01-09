@@ -18,18 +18,18 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<IndexComponent />} />
+        <Route path="/" element={<IndexComponent/>} />
         <Route path="/login" element={<LoginExpandContent />}/>
         <Route path="/loginstep1" element={<LoginExpandedStep1 />} />
         <Route path="/loginstep2" element={<LoginExpandedStep2 />} />
         <Route path="/loginstep3" element={<LoginExpandedStep3 />} />
         <Route path="/loginstep4" element={<LoginExpandedStep4 />} />
-        <Route path="/analytics" element={<RequireAuth loginPath={'/login'}><MainDashboard /></RequireAuth>} />
-        <Route path="/dashboard" element={<RequireAuth loginPath={'/login'}><Dashboard /></RequireAuth>} />
+        <Route path="/analytics" element={<MainDashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/settings" element={<RequireAuth loginPath={"/login"}><Settings /></RequireAuth>} />
-        <Route path="/leads" element={<RequireAuth loginPath={"/login"}><Leads/></RequireAuth>} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/leads" element={<Leads/>} />
       </Routes>
     </div>
   );
