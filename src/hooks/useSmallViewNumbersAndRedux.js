@@ -29,7 +29,7 @@ export default function useSmallViewNumbersAndRedux(marketingPlatformBusinessId,
 
                 const config = {
                     headers:{
-                        Authorization: `Bearer ${cookies['_auth']}` ,
+                        Authorization: `Bearer ` ,
                     }
                 }
 

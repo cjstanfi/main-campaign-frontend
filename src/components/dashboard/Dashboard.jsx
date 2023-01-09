@@ -17,9 +17,6 @@ import {useIsAuthenticated, useSignOut} from "react-auth-kit";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
-  const [cookies, setCookie] = useCookies();
-  const isAuthenticated = useIsAuthenticated();
-  const auth = isAuthenticated();
   const signOut = useSignOut()
 
   const d = new Date();
@@ -29,14 +26,14 @@ export default function Dashboard() {
   const navigate = useNavigate();
   
   //check cookies to see if user is already logged in
-  useEffect(() => {
-    if (auth && cookies["_auth_state"]) {
-      dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
-    } else {
-      signOut()
-      navigate("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (auth && cookies["_auth_state"]) {
+  //     dispatch(setMainCampaignAccountData(cookies["_auth_state"]));
+  //   } else {
+  //     signOut()
+  //     navigate("/login");
+  //   }
+  // }, []);
 
   function clickEvent() {
     setnavistoggled(!navistoggled);

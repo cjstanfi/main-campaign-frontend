@@ -13,8 +13,15 @@ import {RequireAuth} from "react-auth-kit";
 import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
 import Terms from "./components/home/Terms";
+import {useDispatch} from "react-redux";
+import {setMainCampaignAccountData} from "./reducer/MainCampaignAccountSlice";
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(setMainCampaignAccountData({mainCampaignAccountId: "auth0|63bb89bcc23d7ececc7d5543"}))
+  })
+
   return (
     <div className="App">
       <Routes>
@@ -24,12 +31,12 @@ function App() {
         <Route path="/loginstep2" element={<LoginExpandedStep2 />} />
         <Route path="/loginstep3" element={<LoginExpandedStep3 />} />
         <Route path="/loginstep4" element={<LoginExpandedStep4 />} />
-        <Route path="/analytics" element={<RequireAuth loginPath={'/login'}><MainDashboard /></RequireAuth>} />
-        <Route path="/dashboard" element={<RequireAuth loginPath={'/login'}><Dashboard /></RequireAuth>} />
+        <Route path="/analytics" element={<MainDashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/settings" element={<RequireAuth loginPath={"/login"}><Settings /></RequireAuth>} />
-        <Route path="/leads" element={<RequireAuth loginPath={"/login"}><Leads/></RequireAuth>} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/leads" element={<Leads/>} />
       </Routes>
     </div>
   );

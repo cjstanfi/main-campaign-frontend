@@ -30,9 +30,7 @@ export default function Header({
   let {
     mainCampaignAccountData: { mainCampaignAccountId },
   } = useSelector((state) => state.mainCampaignAccount);
-  if (mainCampaignAccountId === undefined) {
-    mainCampaignAccountId = cookies["_auth_state"].mainCampaignAccountId;
-  }
+
   //console.log(cookies["_auth_state"].mainCampaignAccountId)
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
     `https://test.api.maincampaign.com/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
@@ -40,6 +38,10 @@ export default function Header({
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData
   );
+
+  useEffect(() => {
+    console.log(mainCampaignAccountId)
+  }, [mainCampaignAccountId])
 
   const filteredBusiness = useSelector(
     marketingPlatformBusinessByNameSelector(businessName)
