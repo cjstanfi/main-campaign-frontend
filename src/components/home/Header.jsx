@@ -10,11 +10,11 @@ import Login from "../login/auth0/login";
 import Logout from "../login/auth0/logout";
 import LoadingSpinner from "../login/auth0/LoadingSpinner";
 import {useDispatch} from "react-redux";
-import {setMainCampaignAccountId} from "../../reducer/MainCampaignAccountSlice";
+import {setAccessToken, setMainCampaignAccountId, setUserMetaData} from "../../reducer/MainCampaignAccountSlice";
 
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
-  const { isAuthenticated, isLoading, user } = useAuth0();
+  const { isAuthenticated, isLoading, user, getAccessTokenSilently } = useAuth0();
   const dispatch = useDispatch()
 
   function handleClick() {
@@ -30,8 +30,35 @@ function Header(props) {
   }, [user])
 
   useEffect(() => {
-    console.log("ENV VARIABLES: ", process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
-  })
+    const getUserMetadata = async () => {
+      const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+
+      try {
+        const accessToken = await getAccessTokenSilently({
+          audience: `https://${domain}/api/v2/`,
+          scope: "read:current_user",
+        });
+
+        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+
+        const metadataResponse = await fetch(userDetailsByIdUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        const { user_metadata } = await metadataResponse.json();
+
+        dispatch(setAccessToken(accessToken))
+        dispatch(setUserMetaData(user_metadata))
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    getUserMetadata();
+  }, [getAccessTokenSilently, user?.sub]);
+
 
   return (
     <div className="header">

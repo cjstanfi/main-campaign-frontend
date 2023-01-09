@@ -26,11 +26,11 @@ export default function Header({
   const [businessName, setBusinessName] = useState("");
   const [toggledclass, settoggledclass] = useState(false);
   const { mainCampaignAccountId } = useSelector((state) => state.mainCampaignAccount);
-
-
+  const { accessToken } = useSelector((state) => state.mainCampaignAccount);
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
     mainCampaignAccountId,
+    accessToken,
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData
   );
@@ -40,13 +40,7 @@ export default function Header({
   );
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("mainCampaignAccountId: ", mainCampaignAccountId)
-  },[mainCampaignAccountId])
 
-  useEffect(() => {
-    console.log("ENV VARIABLES: ", process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
-  })
 
   useEffect(() => {
     if (filteredBusiness) {
