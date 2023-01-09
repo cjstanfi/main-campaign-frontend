@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {useDispatch} from "react-redux";
-import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
+import {setMainCampaignAccountId} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import makeMainCampaignAccount from "../../models/main-campaign-account-model";
@@ -44,25 +44,19 @@ export default function LoginExpandContent(props) {
   };
 
 
-  const onSubmit = async (data) => {
-    if (data) {
-      const body = makeMainCampaignLogin(data)
-     await axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account/login`, body).then(async ({data}) => {
-       const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
-       dispatch(setMainCampaignAccountData(validMainCampaignAccount))
-
-     }).catch(error => {
-        //Print Error message. Email or password probably incorrect
-        console.log(error)
-      })
-    }
-  };
-
-  // useEffect(() => {
-  //   if(auth) {
-  //     navigate("/dashboard");
+  // const onSubmit = async (data) => {
+  //   if (data) {
+  //     const body = makeMainCampaignLogin(data)
+  //    await axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account/login`, body).then(async ({data}) => {
+  //      const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
+  //      dispatch(setMainCampaignAccountId(validMainCampaignAccount))
+  //
+  //    }).catch(error => {
+  //       //Print Error message. Email or password probably incorrect
+  //       console.log(error)
+  //     })
   //   }
-  // },[auth])
+  // };
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);

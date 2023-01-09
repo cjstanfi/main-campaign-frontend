@@ -9,10 +9,13 @@ import {useAuth0} from "@auth0/auth0-react";
 import Login from "../login/auth0/login";
 import Logout from "../login/auth0/logout";
 import LoadingSpinner from "../login/auth0/LoadingSpinner";
+import {useDispatch} from "react-redux";
+import {setMainCampaignAccountId} from "../../reducer/MainCampaignAccountSlice";
 
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
   const { isAuthenticated, isLoading, user } = useAuth0();
+  const dispatch = useDispatch()
 
   function handleClick() {
     setnavistoggledsub(!navistoggledsub);
@@ -21,10 +24,13 @@ function Header(props) {
 
   useEffect(() => {
     console.log(user)
+    if(user?.sub) {
+      dispatch(setMainCampaignAccountId(user.sub))
+    }
   }, [user])
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
+    console.log("ENV VARIABLES: ", process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
   })
 
   return (

@@ -14,8 +14,7 @@ import {
   setMarketingPlatformBusinessData,
 } from "../reducer/MarketingPlatformBusinessSlice";
 import makeMarketingPlatformBusiness from "../models/marketing-platform-business-model";
-import { useCookies } from "react-cookie";
-import calender from "../assets/MainDashboard/assets/images/calender.svg";
+
 
 export default function Header({
   startDate,
@@ -26,14 +25,9 @@ export default function Header({
 }) {
   const [businessName, setBusinessName] = useState("");
   const [toggledclass, settoggledclass] = useState(false);
-  const [cookies, setCookie] = useCookies();
-  let {
-    mainCampaignAccountData: { mainCampaignAccountId },
-  } = useSelector((state) => state.mainCampaignAccount);
-  if (mainCampaignAccountId === undefined) {
-    mainCampaignAccountId = cookies["_auth_state"].mainCampaignAccountId;
-  }
-  //console.log(cookies["_auth_state"].mainCampaignAccountId)
+  const { mainCampaignAccountId } = useSelector((state) => state.mainCampaignAccount);
+
+
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
     mainCampaignAccountId,
@@ -44,8 +38,15 @@ export default function Header({
   const filteredBusiness = useSelector(
     marketingPlatformBusinessByNameSelector(businessName)
   );
-  console.log(marketingPlatformBusinessData);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("mainCampaignAccountId: ", mainCampaignAccountId)
+  },[mainCampaignAccountId])
+
+  useEffect(() => {
+    console.log("ENV VARIABLES: ", process.env.REACT_APP_MAIN_CAMPAIGN_API_URL)
+  })
 
   useEffect(() => {
     if (filteredBusiness) {

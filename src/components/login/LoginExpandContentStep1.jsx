@@ -11,7 +11,7 @@ import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
 import {useDispatch, useSelector} from "react-redux";
-import {setMainCampaignAccountData} from "../../reducer/MainCampaignAccountSlice";
+import {setMainCampaignAccountId} from "../../reducer/MainCampaignAccountSlice";
 import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
 import isObjectEmpty from "../../helpers/utils/is-object-empty";
 import {useAuth0} from "@auth0/auth0-react";
@@ -22,7 +22,7 @@ export default function LoginExpand1ContentStep1(props) {
     password.current = watch("password", "");
     const [passwordShown, setPasswordShown] = useState(false);
     const [repasswordShown, setrePasswordShown] = useState(false);
-    const { isAuthenticated, isLoading } = useAuth0();
+    const { isAuthenticated, isLoading, user } = useAuth0();
 
     const dispatch = useDispatch()
 
@@ -42,7 +42,7 @@ export default function LoginExpand1ContentStep1(props) {
                 const loginBody = makeMainCampaignLogin(data)
                 axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account/login`, loginBody).then(({data}) => {
                     const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
-                    dispatch(setMainCampaignAccountData(validMainCampaignAccount))
+                    dispatch(setMainCampaignAccountId(validMainCampaignAccount))
                 }).catch(error => {
                     console.log(error)
                 })

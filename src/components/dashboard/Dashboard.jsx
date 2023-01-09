@@ -3,13 +3,12 @@ import Sidebar from "../analytics/Sidebar";
 import "../../assets/css_dashboard/mdb.min.css";
 import "../../assets/css_dashboard/style.css";
 import "../../assets/css_dashboard/slick.css";
-import { useCookies } from "react-cookie";
 import Headingbar from "./Headingbar";
 import TotalCount from "./TotalCount";
 import TableContent from "./TableContent";
 import { useDispatch } from "react-redux";
 import {
-  setMainCampaignAccountData,
+  setMainCampaignAccountId,
 } from "../../reducer/MainCampaignAccountSlice";
 import { useNavigate } from "react-router-dom";
 import ApexChart from "./ApexChart";
@@ -17,7 +16,6 @@ import {useAuth0} from "@auth0/auth0-react";
 
 export default function Dashboard() {
   const [navistoggled, setnavistoggled] = useState(false);
-  const [cookies, setCookie] = useCookies();
   const { user, isAuthenticated, isLoading, logout } = useAuth0();
 
   const d = new Date();
@@ -28,11 +26,11 @@ export default function Dashboard() {
   
   //check cookies to see if user is already logged in
   useEffect(() => {
-    if (isAuthenticated) {
-      dispatch(setMainCampaignAccountData(user));
+    if (isAuthenticated && user?.sub) {
+      dispatch(setMainCampaignAccountId(user.sub));
     } else {
       logout()
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 

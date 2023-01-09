@@ -114,7 +114,6 @@ export default function TableContent() {
     return state.data;
   });
 
-  // console.log(is_loading);
   const currentUser = useSelector((state) => {
     return state.data.datas;
   });
