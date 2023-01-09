@@ -96,13 +96,13 @@ export default function TableContent() {
   //TODO: pass array to useFetch with redux to ensure all params are not null
   //Campaign Summary
   const { validData: summaryData } = useFetchWithRedux(
-    `https://test.api.maincampaign.com/summary/facebook/${currentId}?childType=${childType}&orderBy=${orderBy}&recordLimit=${recordLimit}&orderDirection=${orderDirection}&recordOffset=0`,
+    `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/summary/facebook/${currentId}?childType=${childType}&orderBy=${orderBy}&recordLimit=${recordLimit}&orderDirection=${orderDirection}&recordOffset=0`,
     [currentId, childType, orderBy, recordLimit],
     makeSummary,
     addSummaryData
   );
   const { validData: leadSummaryData } = useFetchWithRedux(
-    `https://test.api.maincampaign.com/generated-lead/${leadChildType}/${currentId}`,
+    `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/generated-lead/${leadChildType}/${currentId}`,
     [leadChildType, currentId],
     makeGeneratedLead,
     addGeneratedLeadData

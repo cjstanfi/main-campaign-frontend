@@ -30,7 +30,7 @@ export default function MainDashboard() {
       const domainSpecificUrl =
         location === "us" ? "https://accounts.zoho.com" : null;
       const result = await axios.post(
-        "https://test.api.maincampaign.com/zoho-user-access-token",
+        `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/zoho-user-access-token`,
         {
           code,
           domainSpecificUrl,

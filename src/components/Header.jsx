@@ -35,7 +35,7 @@ export default function Header({
   }
   //console.log(cookies["_auth_state"].mainCampaignAccountId)
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
-    `https://test.api.maincampaign.com/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
+    `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
     mainCampaignAccountId,
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData

@@ -28,7 +28,7 @@ export async function sendApiToken(mainCampaignAccountId, apiToken, userId, shor
         "marketingPlatformAccountPlatform": "facebook"
     }
     console.log(body)
-    return await axios.put(`https://test.api.maincampaign.com/marketing-platform-account/${userId}`, body, {
+    return await axios.put(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-account/${userId}`, body, {
         headers: {
             'Authorization': `Bearer ${apiToken}`
         }

@@ -20,11 +20,11 @@ export default function useSmallViewNumbersAndRedux(marketingPlatformBusinessId,
                 const endTime = dateTimeToTimestamp(endDate)
                 const resultsArray = []
                 const urlArray = [
-                     `https://test.api.maincampaign.com/small-view-numbers/${marketingPlatformBusinessId}?category=leads&startTime=${startTime}&endTime=${endTime}`,
-                     `https://test.api.maincampaign.com/small-view-numbers/${marketingPlatformBusinessId}?category=revenue&startTime=${startTime}&endTime=${endTime}`,
-                     `https://test.api.maincampaign.com/small-view-numbers/${marketingPlatformBusinessId}?category=campaign&startTime=${startTime}&endTime=${endTime}`,
-                     `https://test.api.maincampaign.com/small-view-numbers/${marketingPlatformBusinessId}?category=ad_set&startTime=${startTime}&endTime=${endTime}`,
-                     `https://test.api.maincampaign.com/small-view-numbers/${marketingPlatformBusinessId}?category=ad&startTime=${startTime}&endTime=${endTime}`,
+                     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/small-view-numbers/${marketingPlatformBusinessId}?category=leads&startTime=${startTime}&endTime=${endTime}`,
+                     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/small-view-numbers/${marketingPlatformBusinessId}?category=revenue&startTime=${startTime}&endTime=${endTime}`,
+                     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/small-view-numbers/${marketingPlatformBusinessId}?category=campaign&startTime=${startTime}&endTime=${endTime}`,
+                     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/small-view-numbers/${marketingPlatformBusinessId}?category=ad_set&startTime=${startTime}&endTime=${endTime}`,
+                     `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/small-view-numbers/${marketingPlatformBusinessId}?category=ad&startTime=${startTime}&endTime=${endTime}`,
                 ]
 
                 const config = {

@@ -37,10 +37,10 @@ export default function LoginExpand1ContentStep1(props) {
     const onSubmit = (data) => {
         if (data) {
             const body = makeMainCampaignAccountBody(data)
-            axios.post("https://test.api.maincampaign.com/main-campaign-account", body).then(res => {
+            axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account`, body).then(res => {
                 console.log(res)
                 const loginBody = makeMainCampaignLogin(data)
-                axios.post("https://test.api.maincampaign.com/main-campaign-account/login", loginBody).then(({data}) => {
+                axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account/login`, loginBody).then(({data}) => {
                     const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
                     dispatch(setMainCampaignAccountData(validMainCampaignAccount))
                 }).catch(error => {
