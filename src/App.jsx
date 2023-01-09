@@ -9,7 +9,6 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
 import MainDashboard from "./components/analytics/MainDashboard";
 import Privacy from "./components/home/Privacy";
-import {RequireAuth} from "react-auth-kit";
 import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
 import Terms from "./components/home/Terms";

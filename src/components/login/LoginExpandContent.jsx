@@ -47,7 +47,7 @@ export default function LoginExpandContent(props) {
   const onSubmit = async (data) => {
     if (data) {
       const body = makeMainCampaignLogin(data)
-     await axios.post("https://test.api.maincampaign.com/main-campaign-account/login", body).then(async ({data}) => {
+     await axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/main-campaign-account/login`, body).then(async ({data}) => {
        const validMainCampaignAccount = makeMainCampaignAccount(data.currentAccount)
        dispatch(setMainCampaignAccountData(validMainCampaignAccount))
 

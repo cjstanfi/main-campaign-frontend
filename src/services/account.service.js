@@ -11,7 +11,7 @@ export const accountService = {
 };
 
 export async function populateFacebookData(mainCampaignAccountId, apiToken, facebookAccountId){
-    return await axios.put(`https://test.api.maincampaign.com/facebook-everything/${mainCampaignAccountId}/${facebookAccountId}`,{}, {
+    return await axios.put(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/${mainCampaignAccountId}/${facebookAccountId}`,{}, {
         headers: {
             'Authorization': `Bearer ${apiToken}`
         }
