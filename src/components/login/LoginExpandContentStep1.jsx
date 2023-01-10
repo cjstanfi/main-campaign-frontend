@@ -19,7 +19,7 @@ import isObjectEmpty from "../../helpers/utils/is-object-empty";
 export default function LoginExpand1ContentStep1(props) {
     const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount);
     const password = useRef({});
-    password.current = watch("password", "");
+    
     const [passwordShown, setPasswordShown] = useState(false);
     const [repasswordShown, setrePasswordShown] = useState(false);
 
@@ -34,6 +34,7 @@ export default function LoginExpand1ContentStep1(props) {
         formState: {errors},
         watch,
     } = useForm();
+    password.current = watch("password", "");
     const navigate = useNavigate();
 
     const onSubmit = (data) => {

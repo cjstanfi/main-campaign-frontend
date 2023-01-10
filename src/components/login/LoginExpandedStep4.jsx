@@ -13,7 +13,7 @@ export default function LoginExpandedStep4() {
   //   document.title = "CRM Connection Page";
   // }, []);
   return (
-    <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
+    <div className={`homepage login-page ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
         <Header clickEvent={clickEvent} />
         <LoginExpandContentStep4 />

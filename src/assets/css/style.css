@@ -281,7 +281,7 @@ a {
   backdrop-filter: blur(
     17.5px
   ); /* Note: backdrop-filter has minimal browser support */
-  border-radius: 18px;
+  border-radius: 60px;
 }
 .custom-input {
   width: 368px;
@@ -292,7 +292,7 @@ a {
   backdrop-filter: blur(
     17.5px
   ); /* Note: backdrop-filter has minimal browser support */
-  border-radius: 18px;
+  border-radius: 60px;
 }
 ul:not(.navbar-nav) .dropdown-toggle:after {
   border-right: none;
@@ -542,14 +542,14 @@ footer a:hover path {
   margin-left: 16px;
 }
 .bg-grey {
-  background: rgba(142, 169, 224, 0.15) !important;
+  background:rgb(252 252 254) !important;
   backdrop-filter: blur(17.5px);
 }
 .line {
-  width: 200px;
+  width: 210px;
   height: 2px;
   background: #3b5998;
-  margin-left: -11px;
+  margin-left: -17px;
   margin-top: 12px;
 }
 .bg-line {
@@ -559,10 +559,10 @@ footer a:hover path {
   margin-left: -16px;
 }
 .mleft2 {
-  margin-left: -22px;
+  margin-left: -30px;
 }
 .mleft1 {
-  margin-left: -43px;
+  margin-left: -53px;
 }
 .container-style {
   background: rgba(142, 169, 224, 0.15);
@@ -579,6 +579,14 @@ footer a:hover path {
   font-weight: 500;
   font-size: 20px;
   color: #14142b;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234f4f4f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .login-section .arrow-up img {
   top: -10px;
@@ -2026,15 +2034,15 @@ svg g circle:nth-child(9):hover {
   color: #292d34;
   max-height: 56px;
   padding: 21px;
-  border-radius: 9px;
+  border-radius: 60px;
   width: 360px;
   border: 1px solid rgba(185, 190, 199, 0.6);
   box-shadow: 0 19px 25px rgb(10 10 51 / 4%);
   transition: 0.2s;
   margin-bottom: 20px;
 }
-.free_for input.cu-em-get-started__input:focus {
-  border: 1px solid #7b68ee;
+.free_for input.cu-em-get-started__input:hover, .free_for input.cu-em-get-started__input:focus {
+  border: 1px solid #4267b2;
   box-shadow: 0 19px 25px rgb(10 10 51 / 11%);
 }
 

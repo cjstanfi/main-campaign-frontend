@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 import "./barchart.css"
 import { useSelector } from "react-redux";
 import BarChart from "./BarChart";
@@ -24,8 +22,8 @@ export default function BarChartRate() {
     },
   ];
 
-const  data  = useSelector((state)=>state.barChart.data);
-
+const  chrtdata  = useSelector((state)=>state.barChart.data);
+//console.log(chrtdata)
   var options = {
     vAxis: {
       gridlines: { color: "#fff" },
@@ -90,7 +88,7 @@ const  data  = useSelector((state)=>state.barChart.data);
                     className="columnchart_material"
                     style={{ height: 250 }}
                   >
-                    <BarChart chartEvents={chartEvents} data={data} options={options} />
+                    <BarChart chartEvents={chartEvents} chrtData={chrtdata} options={options} />
                   </div>
                 </div>
               </div>

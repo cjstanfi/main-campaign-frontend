@@ -34,7 +34,7 @@ export default function Sidebar(props) {
     <header>
       <nav
         id="sidebarMenu"
-        className="collapse d-lg-block sidebar collapse bg-white"
+        className="collapse d-lg-block sidebar collapse gray1-color"
       >
         <div className="position-sticky">
           <div className="">

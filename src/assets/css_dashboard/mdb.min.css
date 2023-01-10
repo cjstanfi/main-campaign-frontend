@@ -3263,7 +3263,9 @@ fieldset:disabled .btn {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.5rem;
+  border-radius: 25px;
+  top: 54px;
+ 
 }
 .dropdown-menu[data-mdb-popper] {
   top: 100%;
@@ -3745,6 +3747,7 @@ fieldset:disabled .btn {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  justify-content: center;
 }
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
