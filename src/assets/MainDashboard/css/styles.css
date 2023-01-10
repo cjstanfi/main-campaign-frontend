@@ -676,3 +676,18 @@ body .loginmain-page{
 .gray1-color{
   background-color: #fcfcfe;
 }
+.react-datepicker__day--highlighted{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
+}
+.react-datepicker__day--selecting-range-start{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
+}
+.react-datepicker__day--selecting-range-end{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
+}
