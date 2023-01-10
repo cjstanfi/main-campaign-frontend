@@ -25,6 +25,7 @@ import { addChartData } from "../../reducer/ChartSlice";
 import formatUnderscores from "../../helpers/utils/format-underscores.jsx";
 import Sorting from "../Sorting";
 import { numberWithCommas } from "../../helpers/utils/format-commas";
+import { useRef } from "react";
 const sort = [
   { value: "Highest ROAS", label: "Highest ROAS", ob: "roas", od: "DESC" },
   { value: "Lowest ROAS", label: "Lowest ROAS", ob: "roas", od: "ASC" },
@@ -165,8 +166,9 @@ export default function TableContent() {
   // const [toggledclassfilter, settoggledclassfilter] = useState(false);
   const [load, setload] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isCardActive, setIsCardActive] = useState(false);
+  const [isCardActive, setIsCardActive] = useState([]);
   const [recordsPerPage, setrecordsPerPage] = useState(10);
+  const checkboxref = useRef(null);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
@@ -208,8 +210,15 @@ export default function TableContent() {
       setload(true);
     }
   }
-  const toggleActiveClass = () => {
-    setIsCardActive((prev) => !prev);
+  const toggleActiveClass = (e,index) => {
+    console.log(e.target.checked )
+   if(e.target.checked){
+    setIsCardActive([...isCardActive,index]);
+   } else {
+    const data = isCardActive.filter((i)=> i !== index)
+    setIsCardActive(data)
+   }
+    
   };
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
@@ -333,13 +342,13 @@ export default function TableContent() {
             <div
               key={index}
               className={`d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow${
-                isCardActive ? " active" : ""
+                (isCardActive.indexOf(index) > -1) ? " active" : ""
               }`}
-              onClick={toggleActiveClass}
+              onClick={(e)=>toggleActiveClass(e,index)}
             >
               <div className="w-6 checkBox_row">
                 <div className="cntr">
-                  <Form.Check aria-label="option 1" />
+                  <Form.Check aria-label="option 1" ref={checkboxref} />
                   {/* <label htmlFor={`cbx${index}`} className="label-cbx">
                     <input id={`cbx${index}`} name={index} type="checkbox"  className="invisible" checked="" />
                     <div className="checkbox">
