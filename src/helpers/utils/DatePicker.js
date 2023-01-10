@@ -3,7 +3,6 @@ import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
 const DatePickerComponent = ({
   classname,
   ndate,
@@ -19,16 +18,8 @@ const DatePickerComponent = ({
   const CustomInput2 = forwardRef(({ value, onClick }, ref) => (
     <input className="" placeholder={placeholderText} value={value} readOnly onClick={onClick} ref={ref} />
   ));
-  //var edate = new Date();
-  var numberOfDaysToAdd = 7;
 
 
-const addDays = (dateData,d)=>{
-  return dateData.setDate(dateData.getDate() + d);
-}
-const subDays = (dateData,d)=>{
-  return dateData.setDate(dateData.getDate() - d);
-}
   return (
     <>
       {src ? (
@@ -63,9 +54,6 @@ const subDays = (dateData,d)=>{
           startDate={startDate}
           maxDate={endDate}
           selectsStart
-          endDate={endDate}
-          highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
-
         />
       //   <DatePicker
       //   selected={startDate}
