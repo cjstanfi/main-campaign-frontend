@@ -53,11 +53,11 @@ export default function LoginExpand1ContentStep1(props) {
         }
     };
 
-    useEffect(() => {
-        if(isAuthenticated && !isObjectEmpty(mainCampaignAccountData)) {
-            navigate("/loginstep2");
-        }
-    }, [isAuthenticated, mainCampaignAccountData])
+    // useEffect(() => {
+    //     if(isAuthenticated && !isObjectEmpty(mainCampaignAccountData)) {
+    //         navigate("/loginstep2");
+    //     }
+    // }, [isAuthenticated, mainCampaignAccountData])
 
     const togglePassword = () => {
         setPasswordShown(!passwordShown);

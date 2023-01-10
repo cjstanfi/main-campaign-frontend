@@ -7,12 +7,8 @@ import "../../assets/css/slick.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import {useDispatch} from "react-redux";
-import {setMainCampaignAccountId} from "../../reducer/MainCampaignAccountSlice";
 import Header from "../home/Header";
-import makeMainCampaignLogin from "../../models/main-campaign-account-login-model";
-import makeMainCampaignAccount from "../../models/main-campaign-account-model";
 import {useAuth0} from "@auth0/auth0-react";
 import Login from "./auth0/login";
 

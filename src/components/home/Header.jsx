@@ -9,56 +9,16 @@ import {useAuth0} from "@auth0/auth0-react";
 import Login from "../login/auth0/login";
 import Logout from "../login/auth0/logout";
 import LoadingSpinner from "../login/auth0/LoadingSpinner";
-import {useDispatch} from "react-redux";
-import {setAccessToken, setMainCampaignAccountId, setUserMetaData} from "../../reducer/MainCampaignAccountSlice";
+
 
 function Header(props) {
   const [navistoggledsub, setnavistoggledsub] = useState(false);
-  const { isAuthenticated, isLoading, user, getAccessTokenSilently } = useAuth0();
-  const dispatch = useDispatch()
+  const { isAuthenticated, isLoading } = useAuth0();
 
   function handleClick() {
     setnavistoggledsub(!navistoggledsub);
   }
   let setnavistoggledsubnew = navistoggledsub ? "active" : null;
-
-  useEffect(() => {
-    console.log(user)
-    if(user?.sub) {
-      dispatch(setMainCampaignAccountId(user.sub))
-    }
-  }, [user])
-
-  useEffect(() => {
-    const getUserMetadata = async () => {
-      const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-
-      try {
-        const accessToken = await getAccessTokenSilently({
-          audience: `https://${domain}/api/v2/`,
-          scope: "read:current_user",
-        });
-
-        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
-
-        const metadataResponse = await fetch(userDetailsByIdUrl, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-
-        const { user_metadata } = await metadataResponse.json();
-
-        dispatch(setAccessToken(accessToken))
-        dispatch(setUserMetaData(user_metadata))
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-
-    getUserMetadata();
-  }, [getAccessTokenSilently, user?.sub]);
-
 
   return (
     <div className="header">

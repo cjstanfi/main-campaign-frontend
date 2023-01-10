@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import avatar from "../assets/img/avatar-new.png";
-// import Badge from "../assets/img/Badge.svg";
 import { Link } from "react-router-dom";
 import { updatesearch } from "../actions/action";
 import "./dashboard/analytics.css";
@@ -14,6 +13,7 @@ import {
   setMarketingPlatformBusinessData,
 } from "../reducer/MarketingPlatformBusinessSlice";
 import makeMarketingPlatformBusiness from "../models/marketing-platform-business-model";
+import {useAuth0} from "@auth0/auth0-react";
 
 
 export default function Header({
@@ -25,12 +25,10 @@ export default function Header({
 }) {
   const [businessName, setBusinessName] = useState("");
   const [toggledclass, settoggledclass] = useState(false);
-  const { mainCampaignAccountId } = useSelector((state) => state.mainCampaignAccount);
-  const { accessToken } = useSelector((state) => state.mainCampaignAccount);
+  const { user } = useAuth0();
   const { validData: marketingPlatformBusinessData } = useFetchWithRedux(
-    `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-business/mainCampaignAccount/${mainCampaignAccountId}`,
-    mainCampaignAccountId,
-    accessToken,
+    `${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-business/mainCampaignAccount/${user?.sub}`,
+    user?.sub,
     makeMarketingPlatformBusiness,
     setMarketingPlatformBusinessData
   );

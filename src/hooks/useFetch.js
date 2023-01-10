@@ -1,11 +1,14 @@
 import {useEffect, useState} from "react";
 import {useCookies} from "react-cookie";
 import axios from "axios";
+import useAccessToken from "./useAccessToken";
 
-export default function useFetch(url, params, accessToken) {
+export default function useFetch(url, params) {
     const [data, setData] = useState(null)
     const [isPending, setIsPending] = useState(true)
     const [error, setError] = useState(null)
+    const { accessToken } = useAccessToken()
+
 
     useEffect(() => {
         async function fetchingData(){
@@ -28,7 +31,7 @@ export default function useFetch(url, params, accessToken) {
         }
          fetchingData();
         
-    }, [url])
+    }, [url, accessToken])
 
     return {data, isPending, error}
 

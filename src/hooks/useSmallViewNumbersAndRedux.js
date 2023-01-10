@@ -5,17 +5,17 @@ import makeSmallViewNumbers from "../models/small-view-numbers-model";
 import {setSmallViewNumbersData} from "../reducer/SmallViewNumbersSlice";
 import axios from "axios";
 import {dateTimeToTimestamp} from "../helpers/utils/date-to-unix-timestamp";
-import {end} from "@popperjs/core";
-import {useCookies} from "react-cookie";
+import useAccessToken from "./useAccessToken";
 
 export default function useSmallViewNumbersAndRedux(marketingPlatformBusinessId, startDate, endDate) {
-    const [cookies, setCookies] = useCookies()
+    const { accessToken } = useAccessToken()
     const [validDataArray, setValidDataArray] = useState([])
     const dispatch = useDispatch()
 
+
     useEffect( () => {
         const getAllSmallViewNumbers = async (marketingPlatformBusinessId) => {
-            if (marketingPlatformBusinessId && startDate && endDate) {
+            if (marketingPlatformBusinessId && startDate && endDate && accessToken) {
                 const startTime = dateTimeToTimestamp(startDate)
                 const endTime = dateTimeToTimestamp(endDate)
                 const resultsArray = []
@@ -29,7 +29,7 @@ export default function useSmallViewNumbersAndRedux(marketingPlatformBusinessId,
 
                 const config = {
                     headers:{
-                        Authorization: `Bearer ${cookies['_auth']}` ,
+                        Authorization: `Bearer ${accessToken}` ,
                     }
                 }
 
@@ -51,6 +51,6 @@ export default function useSmallViewNumbersAndRedux(marketingPlatformBusinessId,
             }
         }
         getAllSmallViewNumbers(marketingPlatformBusinessId)
-    }, [marketingPlatformBusinessId, startDate, endDate])
+    }, [marketingPlatformBusinessId, startDate, endDate, accessToken])
     return { validDataArray }
 }

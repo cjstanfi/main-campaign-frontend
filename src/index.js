@@ -7,19 +7,19 @@ import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { CookiesProvider } from "react-cookie";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const {REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID} = process.env
 
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
   <CookiesProvider>
     <BrowserRouter>
       <Auth0Provider
-          domain="dev-2q246pibwgnsbdgt.us.auth0.com"
-          clientId="cAVdqVHKSZsyHEXoaJOvbZbCuUOwpdiP"
+          domain={REACT_APP_AUTH0_DOMAIN}
+          clientId={REACT_APP_AUTH0_CLIENT_ID}
           redirectUri={window.location.origin}
-          audience="https://dev-2q246pibwgnsbdgt.us.auth0.com/api/v2/"
-          scope="read:current_user update:current_user_metadata"
       >
         <Provider store={store}>
           <App />
