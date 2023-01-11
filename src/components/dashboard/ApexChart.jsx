@@ -1,5 +1,4 @@
 import ReactApexChart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
 import "../../assets/css_dashboard/style.css";
 function ApexChart() {
 
