@@ -55,9 +55,9 @@ div#navbarSupportedContent {
 }
 .active-item {
   /* background-color: #8ea9e036 !important; */
-  background-color: #3b5998 !important;
+  background-color: #8ba2d2!important;
   border-radius: 10px !important;
-  color: #fff !important;
+  color: #fcfcfe !important;
 }
 .active-item > span {
   /* color: #3b5998 !important; */
@@ -157,6 +157,7 @@ div#navbarSupportedContent {
 .stat-card {
   border: solid #cecece99 1px;
   border-radius: 18px;
+  background-color: #fff;
 }
 .stat-card-head {
   color: #7d889e !important;
@@ -636,4 +637,57 @@ div#navbarSupportedContent {
 }
 .home_nav .nav-item + .nav-item {
   margin-left: 2rem;
+}
+
+body{
+  background-color: #edf1f8 !important;
+}
+ body .homepage.index-page {
+  background-color: #fff !important;
+}
+body .homepage.login-page{
+  background-color: #ffffff !important;
+}
+body .loginmain-page{
+  background-color: #ffffff !important;
+}
+.bar-chart-div{
+  background-color: #ffffff;
+}
+.shadow-sm.rounded {
+  background-color: #fff;
+}
+.dropdown .selectBox select {
+  background-color: #c3cfe8;
+  border-radius: 60px;
+  color: #64676f;
+}
+.dropdown .selectBox select:focus{
+  border-color: #c3d0e8;
+  outline: 0;
+  box-shadow: inset 0 0 0 1px #c3d0e8
+}
+.setting-top{
+  background: #fff;
+}
+#dropdownMenuLink {
+  background: #fff;
+}
+.gray1-color{
+  background-color: #fcfcfe;
+}
+.react-datepicker__day--highlighted{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
+}
+.react-datepicker__day--selecting-range-start{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
+}
+.react-datepicker__day--selecting-range-end{
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #216ba5 !important;
 }

@@ -58,7 +58,7 @@ export default function LoginExpandContent(props) {
     setPasswordShown(!passwordShown);
   };
   return (
-      <div>
+      <div className="loginmain-page">
         <Header/>
         <div className="row pt-5 mt-5 position-relative login-section secondStep animation-element bounce-up in-view">
           <div className="container main-container subject">

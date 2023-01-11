@@ -12,7 +12,7 @@ function IndexComponent() {
 
 
   return (
-    <div className={`homepage ${navistoggled ? "nav-is-toggled" : ""}`}>
+    <div className={`homepage index-page ${navistoggled ? "nav-is-toggled" : ""}`}>
       <div className="p-0">
         <Header clickEvent={clickEvent} />
         <IndexBodyContent />

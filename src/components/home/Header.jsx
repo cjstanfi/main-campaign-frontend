@@ -22,7 +22,7 @@ function Header(props) {
 
   return (
     <div className="header">
-      <nav className="navbar navbar-expand-lg m-0 desktop my-4">
+      <nav className="navbar navbar-expand-lg m-0 desktop mb-4">
         <div className="container nav-container">
           <div
             className="navbar-nav collapse navbar-collapse"
