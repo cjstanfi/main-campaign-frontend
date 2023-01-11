@@ -13,14 +13,8 @@ import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
 import Terms from "./components/home/Terms";
 import {useDispatch} from "react-redux";
-import {setMainCampaignAccountData} from "./reducer/MainCampaignAccountSlice";
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(setMainCampaignAccountData({mainCampaignAccountId: "auth0|63bb89bcc23d7ececc7d5543"}))
-  })
-
   return (
     <div className="App">
       <Routes>
