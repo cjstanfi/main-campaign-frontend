@@ -8,14 +8,11 @@ import {Link, useNavigate} from "react-router-dom";
 import {accountService, populateFacebookData, sendApiToken} from "../../services";
 import {initFacebookSdk, history, facebookLogin} from "../../helpers";
 import {useSelector} from "react-redux";
-import {useCookies} from "react-cookie";
-import {useAuth0} from "@auth0/auth0-react";
 const facebookAppId = '593152215811984'
 
 export default function LoginExpandContentStep3() {
   const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount)
-  const [cookies, setCookies] = useCookies()
-  const { user, isAuthenticated, isLoading } = useAuth0();
+
 
 
 

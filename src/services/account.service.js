@@ -11,7 +11,7 @@ export const accountService = {
 };
 
 export async function populateFacebookData(mainCampaignAccountId, apiToken, facebookAccountId){
-    return await axios.put(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/${mainCampaignAccountId}/${facebookAccountId}`,{}, {
+    return await axios.put(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/facebook-everything/${mainCampaignAccountId}/${facebookAccountId}`,{}, {
         headers: {
             'Authorization': `Bearer ${apiToken}`
         }
@@ -19,7 +19,6 @@ export async function populateFacebookData(mainCampaignAccountId, apiToken, face
 }
 
 export async function sendApiToken(mainCampaignAccountId, apiToken, userId, shortLivedAccessToken, longLivedAccessToken) {
-
     const body = {
         "mainCampaignAccountId": mainCampaignAccountId,
         "marketingPlatformAccountId": userId,
@@ -32,6 +31,23 @@ export async function sendApiToken(mainCampaignAccountId, apiToken, userId, shor
         headers: {
             'Authorization': `Bearer ${apiToken}`
         }
+    })
+}
+
+export async function createMarketingPlatformAccount(userId, apiToken){
+    const body = {
+        "mainCampaignAccountId": userId,
+        "marketingPlatformAccountId": userId.split("|")[1],
+        "marketingPlatformAccountLongLivedAccessToken": null,
+        "marketingPlatformAccountShortLivedAccessToken": null,
+        "marketingPlatformAccountPlatform": "facebook"
+    }
+    await axios.post(`${process.env.REACT_APP_MAIN_CAMPAIGN_API_URL}/marketing-platform-account`, body, {
+        headers: {
+            'Authorization': `Bearer ${apiToken}`
+        }
+    }).catch(error => {
+        console.log(error)
     })
 }
 
