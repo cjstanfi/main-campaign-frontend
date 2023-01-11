@@ -12,7 +12,7 @@ import {useAuth0} from "@auth0/auth0-react";
 const facebookAppId = '593152215811984'
 
 export default function LoginExpandContentStep3() {
-  const { isAuthenticated, isLoading, user } = useAuth0();
+  // const { isAuthenticated, isLoading, user } = useAuth0();
 
   useEffect(() => {
     window.fbAsyncInit = () => {
