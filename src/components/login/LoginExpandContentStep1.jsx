@@ -28,7 +28,6 @@ export default function LoginExpand1ContentStep1() {
                 .catch(error => {
                     console.log(error)
                 })
-            const fbUserId = user?.sub.split("|")[1]
             await createMarketingPlatformAccount(user?.sub, accessToken)
             await populateFacebookData(user?.sub, accessToken, user?.sub.split("|")[1])
             navigate("/loginstep2");

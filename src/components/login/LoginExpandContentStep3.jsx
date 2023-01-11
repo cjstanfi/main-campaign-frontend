@@ -8,13 +8,11 @@ import {Link, useNavigate} from "react-router-dom";
 import {accountService, populateFacebookData, sendApiToken} from "../../services";
 import {initFacebookSdk, history, facebookLogin} from "../../helpers";
 import {useSelector} from "react-redux";
+import {useAuth0} from "@auth0/auth0-react";
 const facebookAppId = '593152215811984'
 
 export default function LoginExpandContentStep3() {
-  const { mainCampaignAccountData } = useSelector((state) => state.mainCampaignAccount)
-
-
-
+  const { isAuthenticated, isLoading, user } = useAuth0();
 
   useEffect(() => {
     window.fbAsyncInit = () => {
@@ -36,15 +34,16 @@ export default function LoginExpandContentStep3() {
 
   async function handleFacebookClick() {
     facebookLogin().then(async ({authResponse}) => {
-      if (authResponse) {
-        const response1 = await sendApiToken(mainCampaignAccountData.mainCampaignAccountId, cookies['_auth'], authResponse.userID, authResponse.accessToken, null)
-        const response2 = await populateFacebookData(mainCampaignAccountData.mainCampaignAccountId, cookies['_auth'], authResponse.userID)
-        console.log(response1)
-        console.log(response2)
-        if (!response1) return;
-      } else {
-        console.log("Authorization failed from facebook")
-      }
+      console.log("Facebook auth response: ", authResponse)
+      // if (authResponse) {
+      //   const response1 = await sendApiToken(mainCampaignAccountData.mainCampaignAccountId, cookies['_auth'], authResponse.userID, authResponse.accessToken, null)
+      //   const response2 = await populateFacebookData(mainCampaignAccountData.mainCampaignAccountId, cookies['_auth'], authResponse.userID)
+      //   console.log(response1)
+      //   console.log(response2)
+      //   if (!response1) return;
+      // } else {
+      //   console.log("Authorization failed from facebook")
+      // }
     })
   }
 
