@@ -542,7 +542,7 @@ footer a:hover path {
   margin-left: 16px;
 }
 .bg-grey {
-  background: rgb(252 252 254) !important;
+  background:rgb(252 252 254) !important;
   backdrop-filter: blur(17.5px);
 }
 .line {
@@ -584,7 +584,7 @@ footer a:hover path {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  -webkit-appearance: none;
+   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
@@ -2041,8 +2041,7 @@ svg g circle:nth-child(9):hover {
   transition: 0.2s;
   margin-bottom: 20px;
 }
-.free_for input.cu-em-get-started__input:hover,
-.free_for input.cu-em-get-started__input:focus {
+.free_for input.cu-em-get-started__input:hover, .free_for input.cu-em-get-started__input:focus {
   border: 1px solid #4267b2;
   box-shadow: 0 19px 25px rgb(10 10 51 / 11%);
 }
@@ -2121,10 +2120,4 @@ svg g circle:nth-child(9):hover {
   border-top: 10px solid #383636; /* Black */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
-}
-
-.marketing_image {
-  max-width: 900px;
-  width: 100%;
-  height: auto;
 }

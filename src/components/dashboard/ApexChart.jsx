@@ -1,7 +1,8 @@
 import ReactApexChart from "react-apexcharts";
-// import { ApexOptions } from "apexcharts";
+import { ApexOptions } from "apexcharts";
 import "../../assets/css_dashboard/style.css";
 function ApexChart() {
+
   const chartData = {
     series: [
       {
@@ -10,7 +11,7 @@ function ApexChart() {
           min: 10,
           max: 60,
         }),
-      },
+      }
     ],
     options: {
       chart: {
@@ -34,8 +35,8 @@ function ApexChart() {
       },
       yaxis: {
         max: 70,
-        show: true,
-        type: "Revenue",
+        show:true,
+        type:"Revenue"
       },
       theme: {
         palette: "palette2",
@@ -53,26 +54,26 @@ function ApexChart() {
         zoomout: true,
         pan: true,
         reset: true | '<img src="/static/icons/reset.png" width="20">',
-        customIcons: [],
+        customIcons: []
       },
       export: {
         csv: {
           filename: undefined,
-          columnDelimiter: ",",
-          headerCategory: "category",
-          headerValue: "value",
+          columnDelimiter: ',',
+          headerCategory: 'category',
+          headerValue: 'value',
           dateFormatter(timestamp) {
-            return new Date(timestamp).toDateString();
-          },
+            return new Date(timestamp).toDateString()
+          }
         },
         svg: {
           filename: undefined,
         },
         png: {
           filename: undefined,
-        },
+        }
       },
-      autoSelected: "zoom",
+      autoSelected: 'zoom' 
     },
   };
 
@@ -88,8 +89,9 @@ function ApexChart() {
       series.push([baseval, y, z]);
       baseval += 50;
       i++;
-    }
 
+    }
+    
     return series;
   }
 

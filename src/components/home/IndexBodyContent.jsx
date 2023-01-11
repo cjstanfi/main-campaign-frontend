@@ -92,7 +92,6 @@ export default function IndexBodyContent(props) {
   ];
 
   const data = useSelector((state) => state.barChart.data);
-  console.log(data, "chart");
   var options = {
     vAxis: {
       gridlines: { color: "#fff" },
@@ -137,7 +136,9 @@ export default function IndexBodyContent(props) {
                 />
                 <div className="d-flex my-sm-3 my-1 m-flex-row">
                   <button className="btn theme-btn h-56 w-auto home_btn">
-                    <Link to="/">Get started</Link>
+                    <Link to="/">
+                      Get started
+                    </Link>
                   </button>
                   <p className="require_text">
                     14 FREE TRIAL
@@ -655,8 +656,7 @@ export default function IndexBodyContent(props) {
               Marketing analytics that
               <br /> REALLY matter
             </h2>
-
-            <img src={stats2} className="mt-4 desktop marketing_image" alt="" />
+            <img src={stats2} className="mt-4 desktop" alt="" />
             {/* <img src={stats2mb} className="mt-3 mobile" alt="" /> */}
 
             <div className="chartBox_mob mt-3">
@@ -667,7 +667,7 @@ export default function IndexBodyContent(props) {
                 style={{ height: 250 }}
               >
                 <BarChart
-                  chrtData={data}
+                  data={data}
                   options={options}
                   chartEvents={chartEvents}
                 />
