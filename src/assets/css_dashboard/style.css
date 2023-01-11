@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-}
+} 
 /*****************************************Fonts*****************************************/
 @font-face {
   font-family: "thicccboi";
@@ -388,7 +388,7 @@ label {
   border-radius: 60px;
 }
 .links a:hover {
-  background: rgba(142, 169, 224, 0.15);
+  background: #b5c4e2;
   backdrop-filter: blur(17.5px);
   border-radius: 60px;
   color: #3b5998;
@@ -438,9 +438,7 @@ label {
   color: white;
 }
 /***************************************** Product page *****************************************/
-.product-section .main-container {
-  max-width: 1860px;
-}
+
 .statistics-section {
   background: #ffffff;
   border: 1px solid rgba(206, 206, 206, 0.25);

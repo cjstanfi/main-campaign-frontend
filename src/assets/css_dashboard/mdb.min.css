@@ -621,7 +621,27 @@ progress {
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1320px;
+    max-width: 1400px;
+  }
+}
+@media (min-width: 2000px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 2000px;
+  }
+}
+@media (min-width: 2400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 2400px;
   }
 }
 .row {
@@ -3267,6 +3287,26 @@ fieldset:disabled .btn {
   top: 54px;
  
 }
+
+.index-page .dropdown-menu{
+  top: 45px;
+  border-radius: 20px;
+  animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+  
+}
+@keyframes growDown {
+  0% {
+      transform: scaleY(0)
+  }
+  80% {
+      transform: scaleY(1.1)
+  }
+  100% {
+      transform: scaleY(1)
+  }
+}
+
 .dropdown-menu[data-mdb-popper] {
   top: 100%;
   left: 0;
