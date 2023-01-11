@@ -12,7 +12,6 @@ import Privacy from "./components/home/Privacy";
 import Settings from "./components/Settings/Settings";
 import Leads from "./components/leads/Leads";
 import Terms from "./components/home/Terms";
-import {useDispatch} from "react-redux";
 
 function App() {
   return (
