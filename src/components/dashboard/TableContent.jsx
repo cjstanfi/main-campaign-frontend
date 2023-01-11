@@ -210,34 +210,32 @@ export default function TableContent() {
       setload(true);
     }
   }
-  const toggleActiveClass = (e,index,sumdata) => {
-   
-   if(e.target.checked){
-    setIsCardActive([...isCardActive,index]);
-    setsummearyRowData([...summearyRowData,sumdata])
-   } else {
-    const data = isCardActive.filter((i)=> i !== index)
-    const data2 = summearyRowData.filter((s)=>s!==sumdata)
-    setIsCardActive(data)
-    setsummearyRowData(data2)
-   }
-    
+  const toggleActiveClass = (e, index, sumdata) => {
+    if (e.target.checked) {
+      setIsCardActive([...isCardActive, index]);
+      setsummearyRowData([...summearyRowData, sumdata]);
+    } else {
+      const data = isCardActive.filter((i) => i !== index);
+      const data2 = summearyRowData.filter((s) => s !== sumdata);
+      setIsCardActive(data);
+      setsummearyRowData(data2);
+    }
   };
   const handleTab = (key) => {
-    console.log(marketingPlatformBusinessId)
-    if(key==="campaign"){
+    console.log(marketingPlatformBusinessId);
+    if (key === "campaign") {
       setCurrentId(marketingPlatformBusinessId);
       setChildType("campaign");
-    } else if(key==="adset"){
-      handleTableRowClick(summearyRowData[0])
+    } else if (key === "adset") {
+      handleTableRowClick(summearyRowData[0]);
       setChildType("ad_set");
     } else {
-      handleTableRowClick(summearyRowData[0])
+      handleTableRowClick(summearyRowData[0]);
       setChildType("ad_set");
     }
     // handleTableRowClick(summearyRowData[0])
     // setsummearyRowData([]);
-  }
+  };
   return (
     <div className="row m-0 p-0 position-relative statistics-section my-sm-5 p-sm-4 p-2 text-center">
       <div className="d-flex mt-sm-0 mt-3 Statistics_mob">
@@ -292,7 +290,7 @@ export default function TableContent() {
         className="tabList mt-3"
         fill
         justify
-        onSelect={(key)=>handleTab(key)}
+        onSelect={(key) => handleTab(key)}
       >
         <Tab eventKey="campaign" title="Campaign"></Tab>
         <Tab eventKey="adset" title="Ad Set"></Tab>
@@ -361,9 +359,9 @@ export default function TableContent() {
             <div
               key={index}
               className={`d-flex mt-4 bg-grey p-sm-3 p-1 px-2 px-sm-4 pt-sm-4 pt-3 tableRow${
-                (isCardActive.indexOf(index) > -1) ? " active" : ""
+                isCardActive.indexOf(index) > -1 ? " active" : ""
               }`}
-              onClick={(e)=>toggleActiveClass(e,index,summaryRow.id)}
+              onClick={(e) => toggleActiveClass(e, index, summaryRow.id)}
             >
               <div className="w-6 checkBox_row">
                 <div className="cntr">

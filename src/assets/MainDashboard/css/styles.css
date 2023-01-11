@@ -55,9 +55,9 @@ div#navbarSupportedContent {
 }
 .active-item {
   /* background-color: #8ea9e036 !important; */
-  background-color: #8ba2d2!important;
+  background-color: #3b5998!important;
   border-radius: 10px !important;
-  color: #fcfcfe !important;
+  color: #ffffff !important;
 }
 .active-item > span {
   /* color: #3b5998 !important; */
@@ -690,4 +690,20 @@ body .loginmain-page{
   border-radius: 0.3rem;
   color: #fff;
   background-color: #216ba5 !important;
+}
+
+#sidebarMenu .links a:hover{
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 100%;
+}
+#sidebarMenu .links a:focus {
+  background-color: #8ba2d2;
+  color: #fcfcfe;
+}
+
+#sidebarMenu .links a:focus svg path {
+  fill: #fff !important;
 }
